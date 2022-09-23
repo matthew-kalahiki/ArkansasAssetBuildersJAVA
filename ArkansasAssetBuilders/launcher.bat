@@ -1,1 +1,0 @@
-java -jar --module-path C:\javafx\javafx-sdk-18.0.2\lib --add-modules=javafx.controls,javafx.fxml C:\users\astoy\documents\GitHub\ArkansasAssetBuildersJAVA\ArkansasAssetBuilders\out\artifacts\ArkansasAssetBuilders_jar\ArkansasAssetBuilders.jar
