@@ -32,4 +32,32 @@ public class ClientDAO {
         }
         return client;
     }
+    private static ObservableList<Client> getClientList(ResultSet rs) throws SQLException{
+        ObservableList<Client> clientList = FXCollections.observableArrayList();
+
+        while(rs.next()){
+            Client client = new Client();
+            client.setID(rs.getInt("ID"));
+            client.setFirstName(rs.getString("FirstName"));
+            client.setLastName(rs.getString("LastName"));
+            client.setDoB(rs.getString("DoB"));
+            client.setLast4SS(rs.getInt("Last4SS"));
+            clientList.add(client);
+        }
+        return clientList;
+    }
+    private static void updateFirstName(String clientID, String FirstName) throws SQLException{
+        String updateStmt =
+                "Begin\n" +
+                        "   UPDATE employees\n" +
+                        "       SET FirstName = '" + FirstName + "'\n" +
+                        "    WHERE ID = " + clientID + ";\n" +
+                        "END;";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
 }
