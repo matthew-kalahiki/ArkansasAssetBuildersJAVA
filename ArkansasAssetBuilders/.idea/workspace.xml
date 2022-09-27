@@ -10,8 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="546b539e-aafc-4a87-a1bc-2c025bbd3c50" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArkansasAssetBuilders.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ArkansasAssetBuilders.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ArkansasAssetBuilders_jar/ArkansasAssetBuilders.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ArkansasAssetBuilders_jar/ArkansasAssetBuilders.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/ClientDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ClientDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SQLite/DB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SQLite/DB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/HelloApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/Launcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +56,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2EoS4JB1cauygYaGfrJciOTPGvZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -54,19 +67,13 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\matth\Desktop\Disco Tray\ArkansasAssetBuildersJAVA\ArkansasAssetBuilders\src" />
@@ -106,7 +113,7 @@
     <configuration name="launcher (1)" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="ArkansasAssetBuilders" />
       <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="WORKING_DIRECTORY" value="C:\Users\astoy\Documents\GitHub\ArkansasAssetBuildersJAVA\ArkansasAssetBuilders" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SCRIPT_NAME" value="launcher.bat" />
       <option name="PARAMETERS" value="" />
@@ -145,6 +152,8 @@
     <list>
       <item itemvalue="Application.Launcher" />
       <item itemvalue="Application.HelloApplication" />
+      <item itemvalue="Batch.launcher" />
+      <item itemvalue="Batch.launcher (1)" />
       <item itemvalue="JAR Application.ArkansasAssetBuilders.jar" />
     </list>
     <recent_temporary>

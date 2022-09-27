@@ -6,12 +6,12 @@ import java.util.ArrayList;
 
 public class DB {
 
-    private static Connection c = null;
+    private static Connection connection = null;
 
     public static void connect(){
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:src/AAB.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:src/AAB.db");
         } catch ( Exception e ) {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             System.exit(0);
@@ -21,8 +21,8 @@ public class DB {
 
     public static void disconnect(){
         try{
-            if(c != null && !c.isClosed()){
-                c.close();
+            if(connection != null && !connection.isClosed()){
+                connection.close();
             }
         }catch(Exception e){
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
@@ -41,7 +41,7 @@ public class DB {
             //c.setAutoCommit(false);
             System.out.println("Opened database successfully");
 
-            stmt = c.createStatement();
+            stmt = connection.createStatement();
             rs = stmt.executeQuery(query);
 
             crs = RowSetProvider.newFactory().createCachedRowSet();
@@ -62,7 +62,7 @@ public class DB {
         Statement stmt = null;
         try{
             connect();
-            stmt = c.createStatement();
+            stmt = connection.createStatement();
             stmt.executeUpdate(sqlStmt);
 
             stmt.close();

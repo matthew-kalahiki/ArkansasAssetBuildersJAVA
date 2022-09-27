@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ArkansasAssetBuilders" target="18" />
+      <module name="ArkansasAssetBuilders" target="19" />
     </bytecodeTargetLevel>
   </component>
 </project>

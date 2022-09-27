@@ -12,9 +12,7 @@ public class ClientDAO {
 
         try{
             ResultSet rs = DB.executeQuery(selectStmt);
-            Client client = getClientFromResultSet(rs);
-
-            return client;
+            return getClientFromResultSet(rs);
         }catch(Exception e){
             System.out.println("Error while searching for " + ID + " : " + e);
             throw e;
