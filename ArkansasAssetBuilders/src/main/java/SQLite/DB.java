@@ -4,10 +4,21 @@ import javax.sql.rowset.*;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * DB Class<br/>
+ * <br/>
+ * Class that represents the local database for the project.<br/>
+ */
 public class DB {
 
     private static Connection connection = null;
 
+    /**
+     * Method for setting up the connection between the program and the database. <br/>
+     * <br/>
+     * Method will attempt to create a connection using the DriverManager's getConnection()
+     * method.<br/>
+     */
     public static void connect(){
         try {
             Class.forName("org.sqlite.JDBC");
@@ -19,6 +30,12 @@ public class DB {
         System.out.println("Opened database successfully");
     }
 
+    /**
+     * Method for closing the connection between the program and the database. <br/>
+     * <br/>
+     * Method checks if the connection is valid and not closed. If so, the close() method
+     * is used to close the connection.
+     */
     public static void disconnect(){
         try{
             if(connection != null && !connection.isClosed()){
@@ -29,6 +46,12 @@ public class DB {
         }
     }
 
+    /**
+     * Runs a query on the database with a given String.
+     * @param query String containing the SQL query to send to the database.
+     * @return ResultSet object, contains rows of data from the query that is
+     * then cached into memory.<br/>
+     */
     public static ResultSet executeQuery(String query){
         Statement stmt = null;
         ResultSet rs = null;
@@ -58,6 +81,10 @@ public class DB {
         return crs;
     }
 
+    /**
+     * Method for updating values in the database with a given SQL statement.
+     * @param sqlStmt String, statement that is carried out to update the database.
+     */
     public static void update(String sqlStmt){
         Statement stmt = null;
         try{

@@ -6,6 +6,7 @@ import SQLite.DB;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 public class ClientDAO {
     public static Client searchClient(String ID) throws SQLException, ClassNotFoundException{
         String selectStmt = "SELECT * From Client WHERE ID = " + ID;
