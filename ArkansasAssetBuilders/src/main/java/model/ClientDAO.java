@@ -49,7 +49,7 @@ public class ClientDAO {
     private static void updateFirstName(String clientID, String FirstName) throws SQLException{
         String updateStmt =
                 "Begin\n" +
-                        "   UPDATE employees\n" +
+                        "   UPDATE Client\n" +
                         "       SET FirstName = '" + FirstName + "'\n" +
                         "    WHERE ID = " + clientID + ";\n" +
                         "END;";

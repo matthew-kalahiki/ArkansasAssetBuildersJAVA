@@ -10,8 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="546b539e-aafc-4a87-a1bc-2c025bbd3c50" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/xerial_sqlite_jdbc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArkansasAssetBuilders.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ArkansasAssetBuilders.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aab/arkansasassetbuilders/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aab/arkansasassetbuilders/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aab/arkansasassetbuilders/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aab/arkansasassetbuilders/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/ClientDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ClientDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/aab/arkansasassetbuilders/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/aab/arkansasassetbuilders/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SQLite/DB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SQLite/DB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/HelloApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +71,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -76,7 +87,7 @@
       <recent name="C:\Users\astoy\Documents\GitHub\ArkansasAssetBuildersJAVA\ArkansasAssetBuilders\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.ArkansasAssetBuilders.jar">
+  <component name="RunManager" selected="Application.HelloApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.aab.arkansasassetbuilders.HelloApplication" />
       <module name="ArkansasAssetBuilders" />
@@ -149,8 +160,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.ArkansasAssetBuilders.jar" />
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="JAR Application.ArkansasAssetBuilders.jar" />
         <item itemvalue="Application.Launcher" />
       </list>
     </recent_temporary>
