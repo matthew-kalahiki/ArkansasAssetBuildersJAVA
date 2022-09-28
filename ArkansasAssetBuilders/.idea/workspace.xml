@@ -56,6 +56,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2EoS4JB1cauygYaGfrJciOTPGvZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -117,7 +120,7 @@
     <configuration name="launcher (1)" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="ArkansasAssetBuilders" />
       <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="WORKING_DIRECTORY" value="C:\Users\astoy\Documents\GitHub\ArkansasAssetBuildersJAVA\ArkansasAssetBuilders" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SCRIPT_NAME" value="launcher.bat" />
       <option name="PARAMETERS" value="" />
@@ -156,6 +159,8 @@
     <list>
       <item itemvalue="Application.Launcher" />
       <item itemvalue="Application.HelloApplication" />
+      <item itemvalue="Batch.launcher" />
+      <item itemvalue="Batch.launcher (1)" />
       <item itemvalue="JAR Application.ArkansasAssetBuilders.jar" />
     </list>
     <recent_temporary>
