@@ -7,7 +7,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
+/**
+ * Client Database Access Object class. <br/>
+ * Methods that facilitate the interactions between the database
+ * and objects of the Client class.
+ */
 public class ClientDAO {
+    /**
+     * Searches for a Client by ID.
+     * @param ID String, ID of the Client.
+     * @return Client with corresponding ID.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     * @throws ClassNotFoundException Client class unable to be found.
+     */
     public static Client searchClient(String ID) throws SQLException, ClassNotFoundException{
         String selectStmt = "SELECT * From Client WHERE ID = " + ID;
 
@@ -19,6 +31,13 @@ public class ClientDAO {
             throw e;
         }
     }
+
+    /**
+     * Get Client from result set after search query.
+     * @param rs ResultSet, contains results from a search query.
+     * @return Client.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
     private static Client getClientFromResultSet(ResultSet rs) throws SQLException{
         Client client = null;
         if(rs.next()){
@@ -31,6 +50,13 @@ public class ClientDAO {
         }
         return client;
     }
+
+    /**
+     * Gets the list of clients from a ResultSet.
+     * @param rs ResultSet containing Clients from a search query.
+     * @return ObservableList of Clients.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
     private static ObservableList<Client> getClientList(ResultSet rs) throws SQLException{
         ObservableList<Client> clientList = FXCollections.observableArrayList();
 
@@ -45,6 +71,13 @@ public class ClientDAO {
         }
         return clientList;
     }
+
+    /**
+     * Update first name of a Client.
+     * @param clientID String, the ID of the Client.
+     * @param FirstName String, name that the first name will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
     private static void updateFirstName(String clientID, String FirstName) throws SQLException{
         String updateStmt =
                 "Begin\n" +

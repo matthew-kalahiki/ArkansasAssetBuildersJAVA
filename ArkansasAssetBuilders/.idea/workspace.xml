@@ -11,8 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="546b539e-aafc-4a87-a1bc-2c025bbd3c50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SQLite/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SQLite/DB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aab/arkansasassetbuilders/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aab/arkansasassetbuilders/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/ClientDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ClientDAO.java" afterDir="false" />
     </list>

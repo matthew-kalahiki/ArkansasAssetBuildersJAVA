@@ -43,6 +43,10 @@ public class Client {
         this.ID.set(ID);
     }
 
+    /**
+     * Method for retrieving Client ID from the database in a IntegerProperty format.<br/>
+     * @return IntegerProperty, the ID of the Client.
+     */
     public IntegerProperty IDProperty(){
         return ID;
     }
@@ -62,6 +66,11 @@ public class Client {
     public void setFirstName(String FirstName){
         this.FirstName.set(FirstName);
     }
+
+    /**
+     * Method for retrieving Client first name from the database in a StringProperty format.<br/>
+     * @return StringProperty, the first name of the Client.
+     */
     public StringProperty firstNameProperty(){
         return FirstName;
     }
@@ -81,6 +90,11 @@ public class Client {
     public void setLastName(String LastName){
         this.LastName.set(LastName);
     }
+
+    /**
+     * Method for retrieving Client last name from the database in a StringProperty format.<br/>
+     * @return StringProperty, the last name of the Client.
+     */
     public StringProperty lastNameProperty(){
         return LastName;
     }
@@ -100,25 +114,35 @@ public class Client {
     public void setDoB(String DoB){
         this.DoB.set(DoB);
     }
+
+    /**
+     * Method for retrieving Client date of birth from the database in a StringProperty format.<br/>
+     * @return StringProperty, the date of birth of the Client.
+     */
     public StringProperty doBProperty(){
         return DoB;
     }
 
     /**
-     * Method for retrieving Client last 4 SS numbers from the database.<br/>
-     * @return int, the last 4 SS numbers of the Client.
+     * Method for retrieving Client last four SS numbers from the database.<br/>
+     * @return int, the last four SS numbers of the Client.
      */
     public int getLast4SS(){
         return Last4SS.get();
     }
 
     /**
-     * Method for setting Client last 4 SS numbers in the database<br/>
-     * @param Last4SS int, The number that the Client last 4 SS numbers will be set to.
+     * Method for setting Client last four SS numbers in the database<br/>
+     * @param Last4SS int, The number that the Client last four SS numbers will be set to.
      */
     public void setLast4SS(int Last4SS){
         this.Last4SS.set(Last4SS);
     }
+
+    /**
+     * Method for retrieving Client last four SS numbers from the database in a IntegerProperty format.<br/>
+     * @return IntegerProperty, the last four SS numbers of the Client.
+     */
     public IntegerProperty last4SSProperty(){
         return Last4SS;
     }
