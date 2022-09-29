@@ -35,7 +35,7 @@ public class ClientDAO {
     /**
      * Get Client from result set after search query.
      * @param rs ResultSet, contains results from a search query.
-     * @return Client.
+     * @return Client object.
      * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
      */
     private static Client getClientFromResultSet(ResultSet rs) throws SQLException{

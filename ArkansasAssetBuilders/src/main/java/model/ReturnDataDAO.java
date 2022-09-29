@@ -6,7 +6,19 @@ import SQLite.DB;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * ReturnData Database Access Object class. <br/>
+ * Methods that facilitate the interactions between the database
+ * and objects of the ReturnData class.
+ */
 public class ReturnDataDAO {
+    /**
+     * Searches for a ReturnData by ID.
+     * @param ID String, ID of the ReturnData.
+     * @return ReturnData with corresponding ID.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     * @throws ClassNotFoundException ReturnData class unable to be found.
+     */
     public static ReturnData searchReturnData(String ID) throws SQLException, ClassNotFoundException{
         String selectStmt = "SELECT * From ReturnData WHERE ID = " + ID;
 
@@ -20,6 +32,13 @@ public class ReturnDataDAO {
             throw e;
         }
     }
+
+    /**
+     * Get ReturnData from result set after search query.
+     * @param rs ResultSet, contains results from a search query.
+     * @return ReturnData object.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
     private static ReturnData getReturnDataFromResultSet(ResultSet rs) throws SQLException{
         ReturnData rd = null;
         if(rs.next()){
@@ -35,6 +54,13 @@ public class ReturnDataDAO {
         }
         return rd;
     }
+
+    /**
+     * Gets the list of ReturnData from a ResultSet.
+     * @param rs ResultSet containing ReturnData objects from a search query.
+     * @return ObservableList of ReturnData objects.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
     private static ObservableList<ReturnData> getReturnDataList(ResultSet rs) throws SQLException{
         ObservableList<ReturnData> returnDataList = FXCollections.observableArrayList();
 
@@ -52,6 +78,13 @@ public class ReturnDataDAO {
         }
         return returnDataList;
     }
+
+    /**
+     * Update Dependents of a ReturnData object.
+     * @param returnDataID String, the ID of the ReturnData object.
+     * @param Dependents String, dependents that the old dependents will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
     private static void updateDependents(String returnDataID, String Dependents) throws SQLException{
         String updateStmt =
                 "Begin\n" +
