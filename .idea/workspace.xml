@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="038a70c3-c11c-4150-9758-1822c8835ee2" name="Changes" comment="" />
+    <list default="true" id="038a70c3-c11c-4150-9758-1822c8835ee2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ArkansasAssetBuilders.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArkansasAssetBuilders/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArkansasAssetBuilders/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ArkansasAssetBuilders/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArkansasAssetBuildersJAVA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ArkansasAssetBuildersJAVA.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "C:/Users/astoy/Documents/GitHub/ArkansasAssetBuildersJAVA",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
