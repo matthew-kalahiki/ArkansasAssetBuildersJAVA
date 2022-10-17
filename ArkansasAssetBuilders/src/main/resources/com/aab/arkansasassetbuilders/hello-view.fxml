@@ -2,18 +2,145 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="com.aab.arkansasassetbuilders.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-   <TextField fx:id="clientID" />
-   <TextArea fx:id="resultArea" prefHeight="200.0" prefWidth="200.0" />
-
-    <Label fx:id="welcomeText" />
-    <Button onAction="#searchClient" text="Hello!" />
-</VBox>
+<StackPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aab.arkansasassetbuilders.HelloController">
+   <children>
+      <BorderPane fx:id="filterMenu" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <bottom>
+            <Button fx:id="filterButton" mnemonicParsing="false" onAction="#filter" text="Filter" BorderPane.alignment="TOP_RIGHT" />
+         </bottom>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" selected="true" text="Name:" />
+                        <TextField fx:id="name" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" selected="true" text="Date of BIrth:" />
+                        <DatePicker fx:id="dob" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" selected="true" text="Last 4 Digits of SSN:" />
+                        <TextField fx:id="l4ss" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="210.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="Tax Year:" />
+                        <ChoiceBox disable="true" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="288.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="Address:" />
+                        <TextField disable="true" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="306.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="ZIP Code:" />
+                        <TextField disable="true" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="318.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="County:" />
+                        <TextField disable="true" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="327.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="State:" />
+                        <TextField disable="true" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="334.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="Federal Return:" />
+                        <TextField disable="true" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="339.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="Total Refund:" />
+                        <TextField disable="true" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="343.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="EITC:" />
+                        <TextField disable="true" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="346.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="CTC:" />
+                        <TextField disable="true" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="349.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="Dependents:" />
+                        <TextField disable="true" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="352.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="Survey Score:" />
+                        <TextField disable="true" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+      <BorderPane fx:id="resultsView" prefHeight="200.0" prefWidth="200.0">
+         <bottom>
+            <Button fx:id="openFilter" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#openFilterMenu" text="Filter" BorderPane.alignment="BOTTOM_RIGHT" />
+         </bottom>
+         <center>
+            <TableView fx:id="resultsTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="clientIDColumn" prefWidth="75.0" text="ClientID" />
+                <TableColumn fx:id="firstNameColumn" prefWidth="75.0" text="First Name" />
+                  <TableColumn fx:id="lastNameColumn" prefWidth="75.0" text="Last Name" />
+                  <TableColumn fx:id="doBColumn" prefWidth="75.0" text="Date of Birth" />
+                  <TableColumn fx:id="last4ssColumn" prefWidth="75.0" text="Last 4 Digits of SSN" />
+              </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+      <BorderPane visible="false">
+         <center>
+            <VBox alignment="CENTER" spacing="20.0">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+               <TextField fx:id="clientID" />
+               <TextArea fx:id="resultArea" prefHeight="200.0" prefWidth="200.0" />
+            
+                      <Label fx:id="welcomeText" />
+                <Button onAction="#searchClient" text="Hello!" />
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

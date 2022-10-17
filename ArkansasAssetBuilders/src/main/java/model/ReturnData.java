@@ -10,8 +10,8 @@ import javafx.beans.property.*;
  * Tax return information is stored in the local database.
  */
 public class ReturnData {
-    private IntegerProperty ID;
-    private IntegerProperty TaxYearID;
+    private StringProperty Client_ID;
+    private IntegerProperty TaxYear;
     private IntegerProperty FederalReturn;
     private IntegerProperty TotalRefund;
     private IntegerProperty EITC;
@@ -23,8 +23,8 @@ public class ReturnData {
      * Constructor for the ReturnData class.
      */
     public ReturnData(){
-        this.ID = new SimpleIntegerProperty();
-        this.TaxYearID = new SimpleIntegerProperty();
+        this.Client_ID = new SimpleStringProperty();
+        this.TaxYear = new SimpleIntegerProperty();
         this.FederalReturn = new SimpleIntegerProperty();
         this.TotalRefund = new SimpleIntegerProperty();
         this.EITC = new SimpleIntegerProperty();
@@ -37,16 +37,16 @@ public class ReturnData {
      * Method for getting the ID of the ReturnData object.
      * @return int, ID of the ReturnData object.
      */
-    public int getID(){
-        return ID.get();
+    public String getClient_ID(){
+        return Client_ID.get();
     }
 
     /**
      * Method for setting the ID of the ReturnData object.
-     * @param ID int, ID that the old ID will be set to.
+     * @param Client_ID int, ID that the old ID will be set to.
      */
-    public void setID(int ID){
-        this.ID.set(ID);
+    public void setClient_ID(String Client_ID){
+        this.Client_ID.set(Client_ID);
     }
 
     /**
@@ -54,24 +54,24 @@ public class ReturnData {
      * IntegerProperty format.<br/>
      * @return IntegerProperty, the ID of the ReturnData.
      */
-    public IntegerProperty IDProperty(){
-        return ID;
+    public StringProperty Client_IDProperty(){
+        return Client_ID;
     }
 
     /**
      * Method for getting the tax year ID of the ReturnData object.
      * @return int, tax year ID of the ReturnData object.
      */
-    public int getTaxYearID(){
-        return TaxYearID.get();
+    public int getTaxYear(){
+        return TaxYear.get();
     }
 
     /**
      * Method for setting the tax year ID of the ReturnData object.
      * @param TaxYearID int, ID that will replace the old tax year ID.
      */
-    public void setTaxYearID(int TaxYearID){
-        this.TaxYearID.set(TaxYearID);
+    public void setTaxYear(int TaxYearID){
+        this.TaxYear.set(TaxYearID);
     }
 
     /**
@@ -79,8 +79,8 @@ public class ReturnData {
      * IntegerProperty format.<br/>
      * @return IntegerProperty, the tax year ID of the ReturnData.
      */
-    public IntegerProperty taxYearIDProperty(){
-        return TaxYearID;
+    public IntegerProperty taxYearProperty(){
+        return TaxYear;
     }
 
     /**

@@ -10,8 +10,8 @@ import javafx.beans.property.*;
  * Demographic information is stored in the local database.
  */
 public class Demographic {
-    private IntegerProperty ID;
-    private IntegerProperty TaxYearID;
+    private StringProperty Client_ID;
+    private IntegerProperty TaxYear;
     private StringProperty Address;
     private IntegerProperty Zip;
     private StringProperty County;
@@ -21,8 +21,8 @@ public class Demographic {
      * Constructor for the Demographic class.
      */
     public Demographic(){
-        this.ID = new SimpleIntegerProperty();
-        this.TaxYearID = new SimpleIntegerProperty();
+        this.Client_ID = new SimpleStringProperty();
+        this.TaxYear = new SimpleIntegerProperty();
         this.Address = new SimpleStringProperty();
         this.Zip = new SimpleIntegerProperty();
         this.County = new SimpleStringProperty();
@@ -33,16 +33,16 @@ public class Demographic {
      * Method for getting the ID of the Demographic object.
      * @return int, ID of the Demographic.
      */
-    public int getID(){
-        return ID.get();
+    public String getClient_ID(){
+        return Client_ID.get();
     }
 
     /**
      * Set the ID of the Demographic object.
-     * @param ID int, ID that the Demographic object will be set to.
+     * @param Client_ID int, ID that the Demographic object will be set to.
      */
-    public void setID(int ID){
-        this.ID.set(ID);
+    public void setID(String Client_ID){
+        this.Client_ID.set(Client_ID);
     }
 
     /**
@@ -50,8 +50,8 @@ public class Demographic {
      * IntegerProperty format.<br/>
      * @return IntegerProperty, the ID of the Demographic.
      */
-    public IntegerProperty IDProperty(){
-        return ID;
+    public StringProperty Client_IDProperty(){
+        return Client_ID;
     }
 
     /**
@@ -59,7 +59,7 @@ public class Demographic {
      * @return int, tax year ID of the Demographic.
      */
     public int getTaxYearID(){
-        return TaxYearID.get();
+        return TaxYear.get();
     }
 
     /**
@@ -67,7 +67,7 @@ public class Demographic {
      * @param TaxYearID, int, ID that the tax year ID will be set to.
      */
     public void setTaxYearID(int TaxYearID){
-        this.TaxYearID.set(TaxYearID);
+        this.TaxYear.set(TaxYearID);
     }
 
     /**
@@ -76,7 +76,7 @@ public class Demographic {
      * @return IntegerProperty, the tax year ID of the Demographic.
      */
     public IntegerProperty taxYearIDProperty(){
-        return TaxYearID;
+        return TaxYear;
     }
 
     /**

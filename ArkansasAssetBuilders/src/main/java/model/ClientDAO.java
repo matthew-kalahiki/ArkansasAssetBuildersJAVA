@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import SQLite.DB;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 
 /**
@@ -13,6 +14,11 @@ import java.sql.SQLException;
  * and objects of the Client class.
  */
 public class ClientDAO {
+
+
+
+    public static final String[] columnNames = {"FirstName", "LastName", "DoB", "Last4SS"};
+
     /**
      * Searches for a Client by ID.
      * @param ID String, ID of the Client.
@@ -42,13 +48,38 @@ public class ClientDAO {
         Client client = null;
         if(rs.next()){
             client = new Client();
-            client.setID(rs.getInt("ID"));
+            client.setID(rs.getString("ID"));
             client.setFirstName(rs.getString("FirstName"));
             client.setLastName(rs.getString("LastName"));
             client.setDoB(rs.getString("DoB"));
             client.setLast4SS(rs.getInt("Last4SS"));
         }
         return client;
+    }
+
+    public static ObservableList<Client> searchAllClients() throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM Client";
+
+        try{
+            ResultSet rsClients = DB.executeQuery(selectStmt);
+            ObservableList<Client> clientList = getClientList(rsClients);
+            return clientList;
+        }catch(SQLException e){
+            System.out.println("SQL select operation has failed:" + e);
+            throw e;
+        }
+    }
+    public static ObservableList<Client> searchClients(String condition) throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM Client " + condition;
+        System.out.println(selectStmt);
+        try{
+            ResultSet rsClients = DB.executeQuery(selectStmt);
+            ObservableList<Client> clientList = getClientList(rsClients);
+            return clientList;
+        }catch(SQLException e){
+            System.out.println("SQL select operation has failed:" + e);
+            throw e;
+        }
     }
 
     /**
@@ -62,7 +93,7 @@ public class ClientDAO {
 
         while(rs.next()){
             Client client = new Client();
-            client.setID(rs.getInt("ID"));
+            client.setID(rs.getString("ID"));
             client.setFirstName(rs.getString("FirstName"));
             client.setLastName(rs.getString("LastName"));
             client.setDoB(rs.getString("DoB"));

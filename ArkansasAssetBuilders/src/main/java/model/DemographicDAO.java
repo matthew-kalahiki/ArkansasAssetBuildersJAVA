@@ -14,13 +14,13 @@ import java.sql.SQLException;
 public class DemographicDAO {
     /**
      * Searches for a Demographic by ID.
-     * @param ID String, ID of the Demographic.
+     * @param Client_ID String, ID of the Demographic.
      * @return Demographic with corresponding ID.
      * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
      * @throws ClassNotFoundException Demographic class unable to be found.
      */
-    public static Demographic searchDemographic(String ID) throws SQLException, ClassNotFoundException{
-        String selectStmt = "SELECT * From Demographic WHERE ID = " + ID;
+    public static Demographic searchDemographic(String Client_ID, String TaxYear) throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * From Demographic WHERE Client_ID = " + Client_ID + " AND WERE Year = " ;
 
         try{
             ResultSet rs = DB.executeQuery(selectStmt);
@@ -28,7 +28,7 @@ public class DemographicDAO {
 
             return dem;
         }catch(Exception e){
-            System.out.println("Error while searching for " + ID + " : " + e);
+            System.out.println("Error while searching for " + Client_ID + " : " + e);
             throw e;
         }
     }
@@ -43,8 +43,8 @@ public class DemographicDAO {
         Demographic dem = null;
         if(rs.next()){
             dem = new Demographic();
-            dem.setID(rs.getInt("ID"));
-            dem.setTaxYearID(rs.getInt("TaxYearID"));
+            dem.setID(rs.getString("Client_ID"));
+            dem.setTaxYearID(rs.getInt("TaxYear"));
             dem.setAddress(rs.getString("Address"));
             dem.setCounty(rs.getString("County"));
             dem.setZip(rs.getInt("Zip"));
@@ -64,8 +64,8 @@ public class DemographicDAO {
 
         while(rs.next()){
             Demographic dem = new Demographic();
-            dem.setID(rs.getInt("ID"));
-            dem.setTaxYearID(rs.getInt("TaxYearID"));
+            dem.setID(rs.getString("Client_ID"));
+            dem.setTaxYearID(rs.getInt("TaxYear"));
             dem.setAddress(rs.getString("Address"));
             dem.setCounty(rs.getString("County"));
             dem.setZip(rs.getInt("Zip"));

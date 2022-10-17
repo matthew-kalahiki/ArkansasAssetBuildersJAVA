@@ -10,7 +10,7 @@ import javafx.beans.property.*;
  * Client information is stored in the local database.
  */
 public class Client {
-    private IntegerProperty ID;
+    private StringProperty ID;
     private StringProperty FirstName;
     private StringProperty LastName;
     private StringProperty DoB;
@@ -20,7 +20,7 @@ public class Client {
      * Constructor for Client class.
      */
     public Client(){
-        this.ID = new SimpleIntegerProperty();
+        this.ID = new SimpleStringProperty();
         this.FirstName = new SimpleStringProperty();
         this.LastName = new SimpleStringProperty();
         this.DoB = new SimpleStringProperty();
@@ -31,7 +31,7 @@ public class Client {
      * Method for retrieving Client ID from the database.<br/>
      * @return int, the ID of the Client.
      */
-    public int getID(){
+    public String getID(){
         return ID.get();
     }
 
@@ -39,7 +39,7 @@ public class Client {
      * Method for setting Client ID in the database<br/>
      * @param ID int, The ID that the Client ID will be set to.
      */
-    public void setID(int ID){
+    public void setID(String ID){
         this.ID.set(ID);
     }
 
@@ -47,7 +47,7 @@ public class Client {
      * Method for retrieving Client ID from the database in a IntegerProperty format.<br/>
      * @return IntegerProperty, the ID of the Client.
      */
-    public IntegerProperty IDProperty(){
+    public StringProperty IDProperty(){
         return ID;
     }
 
