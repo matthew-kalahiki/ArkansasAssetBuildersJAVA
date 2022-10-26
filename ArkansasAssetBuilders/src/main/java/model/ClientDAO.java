@@ -92,4 +92,49 @@ public class ClientDAO {
             throw e;
         }
     }
+
+    private static void updateLastName(String clientID, String LastName) throws SQLException{
+        String updateStmt =
+                "Begin\n" +
+                        "   UPDATE Client\n" +
+                        "       SET FirstName = '" + LastName + "'\n" +
+                        "    WHERE ID = " + clientID + ";\n" +
+                        "END;";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    private static void updateSS(String clientID, String ss) throws SQLException{
+        String updateStmt =
+                "Begin\n" +
+                        "   UPDATE Client\n" +
+                        "       SET FirstName = '" + ss + "'\n" +
+                        "    WHERE ID = " + clientID + ";\n" +
+                        "END;";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    private static void updateDOB(String clientID, String dob) throws SQLException{
+        String updateStmt =
+                "Begin\n" +
+                        "   UPDATE Client\n" +
+                        "       SET FirstName = '" + dob + "'\n" +
+                        "    WHERE ID = " + clientID + ";\n" +
+                        "END;";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
 }
