@@ -47,7 +47,7 @@ public class Client {
      * Method for retrieving Client ID from the database in a IntegerProperty format.<br/>
      * @return IntegerProperty, the ID of the Client.
      */
-    public StringProperty IDProperty(){
+    public StringProperty Client_IDProperty(){
         return ID;
     }
 

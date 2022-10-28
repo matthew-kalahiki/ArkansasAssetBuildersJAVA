@@ -10,27 +10,27 @@ import javafx.beans.property.*;
  * Tax return information is stored in the local database.
  */
 public class ReturnData {
-    private StringProperty Client_ID;
-    private IntegerProperty TaxYear;
     private IntegerProperty FederalReturn;
     private IntegerProperty TotalRefund;
     private IntegerProperty EITC;
     private IntegerProperty CTC;
     private IntegerProperty Dependents;
     private IntegerProperty SurveyScore;
+    private Client client;
+    private TaxYear taxYear;
 
     /**
      * Constructor for the ReturnData class.
      */
     public ReturnData(){
-        this.Client_ID = new SimpleStringProperty();
-        this.TaxYear = new SimpleIntegerProperty();
         this.FederalReturn = new SimpleIntegerProperty();
         this.TotalRefund = new SimpleIntegerProperty();
         this.EITC = new SimpleIntegerProperty();
         this.CTC = new SimpleIntegerProperty();
         this.Dependents = new SimpleIntegerProperty();
         this.SurveyScore = new SimpleIntegerProperty();
+        this.client = new Client();
+        this.taxYear = new TaxYear();
     }
 
     /**
@@ -38,7 +38,7 @@ public class ReturnData {
      * @return int, ID of the ReturnData object.
      */
     public String getClient_ID(){
-        return Client_ID.get();
+        return client.getID();
     }
 
     /**
@@ -46,7 +46,7 @@ public class ReturnData {
      * @param Client_ID int, ID that the old ID will be set to.
      */
     public void setClient_ID(String Client_ID){
-        this.Client_ID.set(Client_ID);
+        client.setID(Client_ID);
     }
 
     /**
@@ -55,7 +55,7 @@ public class ReturnData {
      * @return IntegerProperty, the ID of the ReturnData.
      */
     public StringProperty Client_IDProperty(){
-        return Client_ID;
+        return client.Client_IDProperty();
     }
 
     /**
@@ -63,15 +63,15 @@ public class ReturnData {
      * @return int, tax year ID of the ReturnData object.
      */
     public int getTaxYear(){
-        return TaxYear.get();
+        return taxYear.getTaxYear();
     }
 
     /**
      * Method for setting the tax year ID of the ReturnData object.
-     * @param TaxYearID int, ID that will replace the old tax year ID.
+     * @param TaxYear int, ID that will replace the old tax year ID.
      */
-    public void setTaxYear(int TaxYearID){
-        this.TaxYear.set(TaxYearID);
+    public void setTaxYear(int TaxYear){
+        taxYear.setTaxYear(TaxYear);
     }
 
     /**
@@ -80,7 +80,7 @@ public class ReturnData {
      * @return IntegerProperty, the tax year ID of the ReturnData.
      */
     public IntegerProperty taxYearProperty(){
-        return TaxYear;
+        return taxYear.taxYearProperty();
     }
 
     /**
@@ -236,6 +236,30 @@ public class ReturnData {
     public IntegerProperty surveyScoreProperty(){
         return SurveyScore;
     }
+
+    public String getFirstName(){return client.getFirstName();}
+
+    public void setFirstName(String FirstName){client.setFirstName(FirstName);}
+
+    public StringProperty firstNameProperty(){return client.firstNameProperty();}
+
+    public String getLastName(){return client.getLastName();}
+
+    public void setLastName(String LastName){client.setLastName(LastName);}
+
+    public StringProperty lastNameProperty(){return client.lastNameProperty();}
+
+    public String getDoB(){return client.getDoB();}
+
+    public void setDoB(String DoB){client.setDoB(DoB);}
+
+    public StringProperty doBProperty(){return client.doBProperty();}
+
+    public int getLast4SS(){return client.getLast4SS();}
+
+    public void setLast4SS(int Last4SS){client.setLast4SS(Last4SS);}
+
+    public IntegerProperty last4SSProperty(){return client.last4SSProperty();}
 
 
 }

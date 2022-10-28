@@ -10,8 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="546b539e-aafc-4a87-a1bc-2c025bbd3c50" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AAB.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/AAB.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AAB.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/src/AAB.db-shm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AAB.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/src/AAB.db-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aab/arkansasassetbuilders/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aab/arkansasassetbuilders/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Client.java" afterDir="false" />
@@ -19,12 +20,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Demographic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Demographic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/DemographicDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DemographicDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/ReturnData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ReturnData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ReturnDataDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ReturnDataDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/TaxYear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/TaxYear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/TaxYearDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/TaxYearDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/aab/arkansasassetbuilders/Search-and-filter-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/aab/arkansasassetbuilders/Search-and-filter-screen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/aab/arkansasassetbuilders/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/aab/arkansasassetbuilders/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/Search-and-filter-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/Search-and-filter-screen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aab/arkansasassetbuilders/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

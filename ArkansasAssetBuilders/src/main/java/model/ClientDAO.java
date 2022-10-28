@@ -57,24 +57,24 @@ public class ClientDAO {
         return client;
     }
 
-    public static ObservableList<Client> searchAllClients() throws SQLException, ClassNotFoundException{
+    public static ObservableList<DataObject> searchAllClients() throws SQLException, ClassNotFoundException{
         String selectStmt = "SELECT * FROM Client";
 
         try{
             ResultSet rsClients = DB.executeQuery(selectStmt);
-            ObservableList<Client> clientList = getClientList(rsClients);
+            ObservableList<DataObject> clientList = getClientList(rsClients);
             return clientList;
         }catch(SQLException e){
             System.out.println("SQL select operation has failed:" + e);
             throw e;
         }
     }
-    public static ObservableList<Client> searchClients(String condition) throws SQLException, ClassNotFoundException{
-        String selectStmt = "SELECT * FROM Client " + condition;
+    public static ObservableList<DataObject> searchClients(String condition) throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM Client" + condition;
         System.out.println(selectStmt);
         try{
             ResultSet rsClients = DB.executeQuery(selectStmt);
-            ObservableList<Client> clientList = getClientList(rsClients);
+            ObservableList<DataObject> clientList = getClientList(rsClients);
             return clientList;
         }catch(SQLException e){
             System.out.println("SQL select operation has failed:" + e);
@@ -88,12 +88,12 @@ public class ClientDAO {
      * @return ObservableList of Clients.
      * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
      */
-    private static ObservableList<Client> getClientList(ResultSet rs) throws SQLException{
-        ObservableList<Client> clientList = FXCollections.observableArrayList();
+    private static ObservableList<DataObject> getClientList(ResultSet rs) throws SQLException{
+        ObservableList<DataObject> clientList = FXCollections.observableArrayList();
 
         while(rs.next()){
-            Client client = new Client();
-            client.setID(rs.getString("ID"));
+            DataObject client = new DataObject();
+            client.setClient_ID(rs.getString("ID"));
             client.setFirstName(rs.getString("FirstName"));
             client.setLastName(rs.getString("LastName"));
             client.setDoB(rs.getString("DoB"));
