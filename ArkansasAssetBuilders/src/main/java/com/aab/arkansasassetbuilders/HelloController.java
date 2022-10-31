@@ -464,7 +464,7 @@ public class HelloController {
     @FXML
     private void zipBoxAction(){
         zip.setDisable(!zip.isDisable());
-        zipColumn.setVisible(!zip.isVisible());
+        zipColumn.setVisible(!zipColumn.isVisible());
         if(zipColumn.isVisible()){
             zipColumn.setCellValueFactory(cellData -> cellData.getValue().zipProperty().asObject());
         }else{
