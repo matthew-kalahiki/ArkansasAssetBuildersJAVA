@@ -9,6 +9,13 @@ import java.sql.SQLException;
 
 public class DataBase {
 
+    /**
+     * runs an SQL query selecting data from the Client table with a given condition
+     * @param condition the condition of the WHERE clause of the SQL statement
+     * @return the results of the SQL query as an ObservableList
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public static ObservableList<DataObject> searchClients(String condition) throws SQLException, ClassNotFoundException {
         String selectStmt = "SELECT * FROM Client" + condition;
         System.out.println(selectStmt);
@@ -113,6 +120,15 @@ public class DataBase {
         }
     }
 
+    /**
+     * Translates a result set into an ObservableList of Data Objects
+     * @param rs
+     * @param demographic
+     * @param returnData
+     * @param client
+     * @return
+     * @throws SQLException
+     */
     private static ObservableList<DataObject> getDataObjectList(ResultSet rs, boolean demographic, boolean returnData, boolean client) throws SQLException{
         ObservableList<DataObject> dataObjectList = FXCollections.observableArrayList();
         while(rs.next()){
@@ -140,6 +156,7 @@ public class DataBase {
                 dataObject.setLast4SS(rs.getInt("Last4SS"));
             }
             //This may not be a good way to set TaxYear
+            //
             if(demographic || returnData || !client){
                 dataObject.setTaxYear(rs.getInt("TaxYear"));
             }

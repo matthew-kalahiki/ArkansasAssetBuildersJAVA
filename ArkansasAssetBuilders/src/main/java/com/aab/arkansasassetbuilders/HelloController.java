@@ -129,34 +129,11 @@ public class HelloController {
 
     @FXML
     private void initialize () {
-        /*
-        The setCellValueFactory(...) that we set on the table columns are used to determine
-        which field inside the Employee objects should be used for the particular column.
-        The arrow -> indicates that we're using a Java 8 feature called Lambdas.
-        (Another option would be to use a PropertyValueFactory, but this is not type-safe
-        We're only using StringProperty values for our table columns in this example.
-        When you want to use IntegerProperty or DoubleProperty, the setCellValueFactory(...)
-        must have an additional asObject():
-        */
         clientIDColumn.setCellValueFactory(cellData -> cellData.getValue().Client_IDProperty());
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
         doBColumn.setCellValueFactory(cellData -> cellData.getValue().doBProperty());
         last4ssColumn.setCellValueFactory(cellData -> cellData.getValue().last4SSProperty().asObject());
-        /*
-        taxYearColumn.setCellValueFactory(cellData -> cellData.getValue().taxYearProperty().asObject());
-        addressColumn.setCellValueFactory(cellData -> cellData.getValue().addressProperty());
-        zipColumn.setCellValueFactory(cellData -> cellData.getValue().zipProperty().asObject());
-        countyColumn.setCellValueFactory(cellData -> cellData.getValue().countyProperty());
-        stateColumn.setCellValueFactory(cellData -> cellData.getValue().stateProperty());
-        federalReturnColumn.setCellValueFactory(cellData -> cellData.getValue().federalReturnProperty().asObject());
-        totalRefundColumn.setCellValueFactory(cellData-> cellData.getValue().totalRefundProperty().asObject());
-        eitcColumn.setCellValueFactory(cellData -> cellData.getValue().EITCProperty().asObject());
-        ctcColumn.setCellValueFactory(cellData -> cellData.getValue().CTCProperty().asObject());
-        dependentsColumn.setCellValueFactory(cellData -> cellData.getValue().dependentsProperty().asObject());
-        surveyScoreColumn.setCellValueFactory(cellData -> cellData.getValue().surveyScoreProperty().asObject());
-
-         */
     }
 
     @FXML
@@ -262,41 +239,68 @@ public class HelloController {
         //filterMenu.setDisable(false);
     }
 
+    /**
+     *The method run to filter the conditions on the filter screen; i.e. the filter button method
+     * @param actionEvent
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     *
+     */
     @FXML
     private void filter(ActionEvent actionEvent) throws ClassNotFoundException, SQLException{
+        //hides the filter screen and shows the results screen
         resultsView.setVisible(true);
         filterMenu.setVisible(false);
         try{
+            //condition is the condition, if any, that will be used in the WHERE clause of the SQL statement
             String condition = "";
+
+            //The cols array stores which boxes are checked; i.e. the columns that will be visible and the values that need to be checked
             boolean[] cols = {!name.isDisable(), !dob.isDisable(), !l4ss.isDisable(), !taxYear.isDisable(), !address.isDisable(), !zip.isDisable(), !county.isDisable(), !state.isDisable(), !federalReturn.isDisable(), !totalRefund.isDisable(), !eitc.isDisable(), !ctc.isDisable(), !dependents.isDisable(), !surveyScore.isDisable()};
+            //The conds array stores which filters have values set that need to be included in the SQL condition
             boolean[] conds = {!name.getText().isEmpty(), dob.getValue() != null, !l4ss.getText().isEmpty(), taxYear.getValue() != null, !address.getText().isEmpty(), !zip.getText().isEmpty(), !county.getText().isEmpty(), !state.getText().isEmpty(), !federalReturn.getText().isEmpty(), !totalRefund.getText().isEmpty(), !eitc.getText().isEmpty(), !ctc.getText().isEmpty(), !dependents.getText().isEmpty(), !surveyScore.getText().isEmpty()};
+
+            //The following section of code checks which tables need to be included in the SQL statement
             boolean clientFilter = false;
             boolean demographicFilter = false;
             boolean returnDataFilter = false;
             boolean taxYearFilter = false;
+            //numCols variable keeps track of how many conditions will be in the SQL WHERE clause
             int numCols = 0;
             for(int i = 0; i < conds.length; i++){
+                //if a filter is enabled and has a value, it will be included in the SQL condition
                 if(cols[i] && conds[i]){numCols++;}
+                //the first three items in the cols and conds arrays have to do with the client filter
                 if(i < 3 && cols[i]){
                     clientFilter = true;
                 }
+                //the fourth item is tax year
                 else if(i == 3 && cols[i]){
                     taxYearFilter = true;
                 }
+                //the fifth through seventh items are filters for the Demographic table
                 else if(i > 3 && i < 8 && cols[i]){
                     demographicFilter = true;
-                }else if(i >= 8 && cols[i]){
+                }
+                //the rest of the items relate to the ReturnData table
+                else if(i >= 8 && cols[i]){
                     returnDataFilter = true;
                 }
             }
+
+            //if there aren't any filters to check, there is no need for a WHERE clause in the SQL statement
             if(numCols > 0){
                 condition += " WHERE ";
             }
+            //if filter is enabled and has a value, the value is included in the condition
             if(cols[0] && conds[0]){
+                //the numCols variable is decremented each time a condition is added
                 numCols--;
                 String fn = name.getText().split("\\s+")[0];
                 String ln = name.getText().split("\\s+")[1];
+                //the values of the filter are added to the condition
                 condition += "FirstName = '" + fn + "' AND LastName = '" + ln + "'";
+                //if there is a filter to add to the condition after this one, AND needs to be added to the condition
                 if(numCols > 0){condition += " AND ";}
             }
             if(cols[1] && conds[1]){
@@ -368,6 +372,8 @@ public class HelloController {
                 condition += "SurveyScore = " + surveyScore.getText();
             }
             System.out.println(condition);
+
+            //Different methods will be called for the different combinations of tables that need to be joined
             if(demographicFilter && returnDataFilter && clientFilter){
                 ObservableList<DataObject> clientDemographicReturnDataData = DataBase.searchDemographicsAndReturnDataAndClients(condition);
                 populateData(clientDemographicReturnDataData);
@@ -400,6 +406,8 @@ public class HelloController {
             throw e;
         }
     }
+
+    //The following "BoxAction" methods are the methods ran when one of the checkboxes is clicked in the filter screen
     @FXML
     private void nameBoxAction(){
         name.setDisable(!name.isDisable());
