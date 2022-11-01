@@ -26,86 +26,86 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" selected="true" text="Name:" />
+                        <CheckBox mnemonicParsing="false" onAction="#nameBoxAction" selected="true" text="Name:" />
                         <TextField fx:id="name" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" selected="true" text="Date of BIrth:" />
+                        <CheckBox mnemonicParsing="false" onAction="#dobBoxAction" selected="true" text="Date of BIrth:" />
                         <DatePicker fx:id="dob" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" selected="true" text="Last 4 Digits of SSN:" />
+                        <CheckBox mnemonicParsing="false" onAction="#l4ssBoxAction" selected="true" text="Last 4 Digits of SSN:" />
                         <TextField fx:id="l4ss" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="210.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="Tax Year:" />
-                        <ChoiceBox disable="true" prefWidth="150.0" />
+                        <CheckBox mnemonicParsing="false" onAction="#taxYearBoxAction" text="Tax Year:" />
+                        <ChoiceBox fx:id="taxYear" disable="true" prefWidth="150.0" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="288.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="Address:" />
-                        <TextField disable="true" />
+                        <CheckBox mnemonicParsing="false" onAction="#addressBoxAction" text="Address:" />
+                        <TextField fx:id="address" disable="true" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="306.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="ZIP Code:" />
-                        <TextField disable="true" />
+                        <CheckBox mnemonicParsing="false" onAction="#zipBoxAction" text="ZIP Code:" />
+                        <TextField fx:id="zip" disable="true" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="318.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="County:" />
-                        <TextField disable="true" />
+                        <CheckBox mnemonicParsing="false" onAction="#countyBoxAction" text="County:" />
+                        <TextField fx:id="county" disable="true" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="327.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="State:" />
-                        <TextField disable="true" />
+                        <CheckBox mnemonicParsing="false" onAction="#stateBoxAction" text="State:" />
+                        <TextField fx:id="state" disable="true" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="334.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="Federal Return:" />
-                        <TextField disable="true" />
+                        <CheckBox mnemonicParsing="false" onAction="#federalReturnBoxAction" text="Federal Return:" />
+                        <TextField fx:id="federalReturn" disable="true" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="339.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="Total Refund:" />
-                        <TextField disable="true" />
+                        <CheckBox mnemonicParsing="false" onAction="#totalRefundBoxAction" text="Total Refund:" />
+                        <TextField fx:id="totalRefund" disable="true" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="343.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="EITC:" />
-                        <TextField disable="true" />
+                        <CheckBox mnemonicParsing="false" onAction="#eitcBoxAction" text="EITC:" />
+                        <TextField fx:id="eitc" disable="true" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="346.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="CTC:" />
-                        <TextField disable="true" />
+                        <CheckBox mnemonicParsing="false" onAction="#ctcBoxAction" text="CTC:" />
+                        <TextField fx:id="ctc" disable="true" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="349.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="Dependents:" />
-                        <TextField disable="true" />
+                        <CheckBox mnemonicParsing="false" onAction="#dependentsBoxAction" text="Dependents:" />
+                        <TextField fx:id="dependents" disable="true" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="352.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="Survey Score:" />
-                        <TextField disable="true" />
+                        <CheckBox mnemonicParsing="false" onAction="#surveyScoreBoxAction" text="Survey Score:" />
+                        <TextField fx:id="surveyScore" disable="true" />
                      </children>
                   </HBox>
                </children>
@@ -114,7 +114,10 @@
       </BorderPane>
       <BorderPane fx:id="resultsView" prefHeight="200.0" prefWidth="200.0">
          <bottom>
-            <Button fx:id="openFilter" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#openFilterMenu" text="Filter" BorderPane.alignment="BOTTOM_RIGHT" />
+            <Button fx:id="openFilter" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#openFilterMenu" text="Filter" BorderPane.alignment="BOTTOM_RIGHT">
+               <BorderPane.margin>
+                  <Insets bottom="20.0" right="50.0" />
+               </BorderPane.margin></Button>
          </bottom>
          <center>
             <TableView fx:id="resultsTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -124,7 +127,21 @@
                   <TableColumn fx:id="lastNameColumn" prefWidth="75.0" text="Last Name" />
                   <TableColumn fx:id="doBColumn" prefWidth="75.0" text="Date of Birth" />
                   <TableColumn fx:id="last4ssColumn" prefWidth="75.0" text="Last 4 Digits of SSN" />
+                  <TableColumn fx:id="taxYearColumn" prefWidth="75.0" text="Tax Year" visible="false" />
+                  <TableColumn fx:id="addressColumn" prefWidth="75.0" text="Address" visible="false" />
+                  <TableColumn fx:id="zipColumn" prefWidth="75.0" text="ZIP Code" visible="false" />
+                  <TableColumn fx:id="countyColumn" prefWidth="75.0" text="County" visible="false" />
+                  <TableColumn fx:id="stateColumn" prefWidth="75.0" text="State" visible="false" />
+                  <TableColumn fx:id="federalReturnColumn" prefWidth="75.0" text="Federal Return" visible="false" />
+                  <TableColumn fx:id="totalRefundColumn" prefWidth="75.0" text="Total Refund" visible="false" />
+                  <TableColumn fx:id="eitcColumn" prefWidth="75.0" text="EITC" visible="false" />
+                  <TableColumn fx:id="ctcColumn" prefWidth="75.0" text="CTC" visible="false" />
+                  <TableColumn fx:id="dependentsColumn" prefWidth="75.0" text="Dependents" visible="false" />
+                  <TableColumn fx:id="surveyScoreColumn" prefWidth="75.0" text="Survey Score" visible="false" />
               </columns>
+               <BorderPane.margin>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </BorderPane.margin>
             </TableView>
          </center>
       </BorderPane>
