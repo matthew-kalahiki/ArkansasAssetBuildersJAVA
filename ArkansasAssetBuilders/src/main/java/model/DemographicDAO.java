@@ -14,13 +14,13 @@ import java.sql.SQLException;
 public class DemographicDAO {
     /**
      * Searches for a Demographic by ID.
-     * @param ID String, ID of the Demographic.
+     * @param Client_ID String, ID of the Demographic.
      * @return Demographic with corresponding ID.
      * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
      * @throws ClassNotFoundException Demographic class unable to be found.
      */
-    public static Demographic searchDemographic(String ID) throws SQLException, ClassNotFoundException{
-        String selectStmt = "SELECT * From Demographic WHERE ID = " + ID;
+    public static Demographic searchDemographic(String Client_ID, String TaxYear) throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * From Demographic WHERE Client_ID = " + Client_ID + " AND WERE TaxYear = " ;
 
         try{
             ResultSet rs = DB.executeQuery(selectStmt);
@@ -28,7 +28,59 @@ public class DemographicDAO {
 
             return dem;
         }catch(Exception e){
-            System.out.println("Error while searching for " + ID + " : " + e);
+            System.out.println("Error while searching for " + Client_ID + " : " + e);
+            throw e;
+        }
+    }
+
+    public static ObservableList<Demographic> searchDemographics(String condition) throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM Demographic " + condition;
+        System.out.println(selectStmt);
+        try{
+            ResultSet rsDemographics = DB.executeQuery(selectStmt);
+            ObservableList<Demographic> demographicList = getDemographicList(rsDemographics, false, false);
+            return demographicList;
+        }catch(SQLException e){
+            System.out.println("SQL select operation has failed:" + e);
+            throw e;
+        }
+    }
+
+    public static ObservableList<Demographic> searchDemographicsAndReturnData(String condition) throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM Demographic INNER JOIN ReturnData ON Demographic.TaxYear = ReturnData.TaxYear AND Demographic.Client_ID = ReturnData.Client_ID" + condition;
+        System.out.println(selectStmt);
+        try{
+            ResultSet rsDemographics = DB.executeQuery(selectStmt);
+            ObservableList<Demographic> demographicList = getDemographicList(rsDemographics, true, false);
+            return demographicList;
+        }catch(SQLException e){
+            System.out.println("SQL select operation has failed:" + e);
+            throw e;
+        }
+    }
+
+    public static ObservableList<Demographic> searchDemographicsAndClients(String condition) throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM Demographic INNER JOIN Client ON Demographic.Client_ID = Client.ID" + condition;
+        System.out.println(selectStmt);
+        try{
+            ResultSet rsDemographics = DB.executeQuery(selectStmt);
+            ObservableList<Demographic> demographicList = getDemographicList(rsDemographics, false, true);
+            return demographicList;
+        }catch(SQLException e){
+            System.out.println("SQL select operation has failed:" + e);
+            throw e;
+        }
+    }
+
+    public static ObservableList<Demographic> searchDemographicsAndReturnDataAndClients(String condition) throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM Demographic INNER JOIN ReturnData ON Demographic.TaxYear = ReturnData.TaxYear AND Demographic.Client_ID = ReturnData.Client_ID INNER JOIN Client ON Demographic.Client_ID = Client.ID" + condition;
+        System.out.println(selectStmt);
+        try{
+            ResultSet rsDemographics = DB.executeQuery(selectStmt);
+            ObservableList<Demographic> demographicList = getDemographicList(rsDemographics, true, true);
+            return demographicList;
+        }catch(SQLException e){
+            System.out.println("SQL select operation has failed:" + e);
             throw e;
         }
     }
@@ -43,8 +95,8 @@ public class DemographicDAO {
         Demographic dem = null;
         if(rs.next()){
             dem = new Demographic();
-            dem.setID(rs.getInt("ID"));
-            dem.setTaxYearID(rs.getInt("TaxYearID"));
+            dem.setClient_ID(rs.getString("Client_ID"));
+            dem.setTaxYear(rs.getInt("TaxYear"));
             dem.setAddress(rs.getString("Address"));
             dem.setCounty(rs.getString("County"));
             dem.setZip(rs.getInt("Zip"));
@@ -59,17 +111,31 @@ public class DemographicDAO {
      * @return ObservableList of Demographics.
      * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
      */
-    private static ObservableList<Demographic> getDemographicList(ResultSet rs) throws SQLException{
+    private static ObservableList<Demographic> getDemographicList(ResultSet rs, boolean returnData, boolean client) throws SQLException{
         ObservableList<Demographic> demographicList = FXCollections.observableArrayList();
 
         while(rs.next()){
             Demographic dem = new Demographic();
-            dem.setID(rs.getInt("ID"));
-            dem.setTaxYearID(rs.getInt("TaxYearID"));
+            dem.setClient_ID(rs.getString("Client_ID"));
+            dem.setTaxYear(rs.getInt("TaxYear"));
             dem.setAddress(rs.getString("Address"));
             dem.setCounty(rs.getString("County"));
             dem.setZip(rs.getInt("Zip"));
             dem.setState(rs.getString("State"));
+            if(returnData){
+                dem.setFederalReturn(rs.getInt("FederalReturn"));
+                dem.setTotalRefund(rs.getInt("TotalRefund"));
+                dem.setEITC(rs.getInt("EITC"));
+                dem.setCTC(rs.getInt("CTC"));
+                dem.setDependents(rs.getInt("Dependents"));
+                dem.setSurveyScore(rs.getInt("SurveyScore"));
+            }
+            if(client){
+                dem.setFirstName(rs.getString("FirstName"));
+                dem.setLastName(rs.getString("LastName"));
+                dem.setDoB(rs.getString("DoB"));
+                dem.setLast4SS(rs.getInt("Last4SS"));
+            }
             demographicList.add(dem);
         }
         return demographicList;
