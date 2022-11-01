@@ -37,13 +37,13 @@
             </VBox>
             <TextField layoutX="555.0" layoutY="41.0" promptText="file name(s)" />
             <TableView layoutX="10.0" layoutY="72.0" prefHeight="488.0" prefWidth="483.0">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="65 +" />
-                  <TableColumn prefWidth="75.0" text="Dependents" />
+              <columns>
+                <TableColumn prefWidth="75.0" text="65 +" />
+                <TableColumn prefWidth="75.0" text="Dependents" />
                   <TableColumn prefWidth="75.0" text="File Type" />
                   <TableColumn prefWidth="75.0" text="Returns" />
                   <TableColumn prefWidth="75.0" text="... etc" />
-               </columns>
+              </columns>
             </TableView>
             <TextField layoutX="103.0" layoutY="44.0" promptText="search data" />
             <Text layoutX="10.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File View" wrappingWidth="60.536712646484375" />
