@@ -77,7 +77,7 @@ public class HelloController {
     private TextField surveyScore;
 
     @FXML
-    private TableView resultsTable;
+    private TableView<DataObject> resultsTable;
 
     @FXML
     private TableColumn<DataObject, String> clientIDColumn;
@@ -191,7 +191,7 @@ public class HelloController {
         ObservableList<Client> clientData = FXCollections.observableArrayList();
         clientData.add(client);
         System.out.println(clientData.size());
-        resultsTable.setItems(clientData);
+        //resultsTable.setItems(clientData);
     }
 
     @FXML
@@ -209,6 +209,8 @@ public class HelloController {
         }
     }
 
+
+
     @FXML
     private void populateData(ObservableList<DataObject> dataObjects) throws ClassNotFoundException{
         resultsTable.setItems(dataObjects);
@@ -220,16 +222,18 @@ public class HelloController {
     }
     @FXML
     private void populateDemographics(ObservableList<Demographic> demographicData) throws ClassNotFoundException{
-        resultsTable.setItems(demographicData);
+        //resultsTable.setItems(demographicData);
     }
     @FXML
     private void populateReturnData(ObservableList<ReturnData> returnDataData)throws ClassNotFoundException{
-        resultsTable.setItems(returnDataData);
+        //resultsTable.setItems(returnDataData);
     }
     @FXML
     private void populateYears(ObservableList<TaxYear> taxYearData){
-        resultsTable.setItems(taxYearData);
+        //resultsTable.setItems(taxYearData);
     }
+
+
 
     @FXML
     private void openFilterMenu(){
@@ -398,7 +402,15 @@ public class HelloController {
                 populateData(taxYearData);
             }else {
                 ObservableList<DataObject> clientData = ClientDAO.searchClients(condition);
-                populateClients(clientData);
+                populateData(clientData);
+            }
+            ObservableList<DataObject> d = resultsTable.getItems();
+            for(DataObject dat: d){
+                for(TableColumn col : resultsTable.getColumns()){
+                    if(col.getCellObservableValue(dat) != null) {
+                        System.out.println(col.getCellObservableValue(dat).getValue().toString());
+                    }
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
