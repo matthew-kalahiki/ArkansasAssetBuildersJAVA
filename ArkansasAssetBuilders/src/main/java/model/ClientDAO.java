@@ -109,11 +109,56 @@ public class ClientDAO {
      * @param FirstName String, name that the first name will be changed to.
      * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
      */
-    private static void updateFirstName(String clientID, String FirstName) throws SQLException{
+    public static void updateFirstName(String clientID, String FirstName) throws SQLException{
         String updateStmt =
                 "Begin\n" +
                         "   UPDATE Client\n" +
                         "       SET FirstName = '" + FirstName + "'\n" +
+                        "    WHERE ID = " + clientID + ";\n" +
+                        "END;";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    public static void updateLastName(String clientID, String lastName) throws SQLException{
+        String updateStmt =
+                "Begin\n" +
+                        "   UPDATE Client\n" +
+                        "       SET LastName = '" + lastName + "'\n" +
+                        "    WHERE ID = " + clientID + ";\n" +
+                        "END;";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    public static void updateDOB(String clientID, String dob) throws SQLException{
+        String updateStmt =
+                "Begin\n" +
+                        "   UPDATE Client\n" +
+                        "       SET DoB = '" + dob + "'\n" +
+                        "    WHERE ID = " + clientID + ";\n" +
+                        "END;";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    public static void updateLast4SS(String clientID, String last4SS) throws SQLException{
+        String updateStmt =
+                "Begin\n" +
+                        "   UPDATE Client\n" +
+                        "       SET FirstName = '" + last4SS + "'\n" +
                         "    WHERE ID = " + clientID + ";\n" +
                         "END;";
         try{
