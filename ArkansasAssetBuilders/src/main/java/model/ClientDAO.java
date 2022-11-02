@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import SQLite.DB;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 
 /**
@@ -13,6 +14,11 @@ import java.sql.SQLException;
  * and objects of the Client class.
  */
 public class ClientDAO {
+
+
+
+    public static final String[] columnNames = {"FirstName", "LastName", "DoB", "Last4SS"};
+
     /**
      * Searches for a Client by ID.
      * @param ID String, ID of the Client.
@@ -42,7 +48,7 @@ public class ClientDAO {
         Client client = null;
         if(rs.next()){
             client = new Client();
-            client.setID(rs.getInt("ID"));
+            client.setID(rs.getString("ID"));
             client.setFirstName(rs.getString("FirstName"));
             client.setLastName(rs.getString("LastName"));
             client.setDoB(rs.getString("DoB"));
@@ -51,18 +57,43 @@ public class ClientDAO {
         return client;
     }
 
+    public static ObservableList<DataObject> searchAllClients() throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM Client";
+
+        try{
+            ResultSet rsClients = DB.executeQuery(selectStmt);
+            ObservableList<DataObject> clientList = getClientList(rsClients);
+            return clientList;
+        }catch(SQLException e){
+            System.out.println("SQL select operation has failed:" + e);
+            throw e;
+        }
+    }
+    public static ObservableList<DataObject> searchClients(String condition) throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM Client" + condition;
+        System.out.println(selectStmt);
+        try{
+            ResultSet rsClients = DB.executeQuery(selectStmt);
+            ObservableList<DataObject> clientList = getClientList(rsClients);
+            return clientList;
+        }catch(SQLException e){
+            System.out.println("SQL select operation has failed:" + e);
+            throw e;
+        }
+    }
+
     /**
      * Gets the list of clients from a ResultSet.
      * @param rs ResultSet containing Clients from a search query.
      * @return ObservableList of Clients.
      * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
      */
-    private static ObservableList<Client> getClientList(ResultSet rs) throws SQLException{
-        ObservableList<Client> clientList = FXCollections.observableArrayList();
+    private static ObservableList<DataObject> getClientList(ResultSet rs) throws SQLException{
+        ObservableList<DataObject> clientList = FXCollections.observableArrayList();
 
         while(rs.next()){
-            Client client = new Client();
-            client.setID(rs.getInt("ID"));
+            DataObject client = new DataObject();
+            client.setClient_ID(rs.getString("ID"));
             client.setFirstName(rs.getString("FirstName"));
             client.setLastName(rs.getString("LastName"));
             client.setDoB(rs.getString("DoB"));

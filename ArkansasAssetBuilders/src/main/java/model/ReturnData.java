@@ -10,43 +10,43 @@ import javafx.beans.property.*;
  * Tax return information is stored in the local database.
  */
 public class ReturnData {
-    private IntegerProperty ID;
-    private IntegerProperty TaxYearID;
     private IntegerProperty FederalReturn;
     private IntegerProperty TotalRefund;
     private IntegerProperty EITC;
     private IntegerProperty CTC;
     private IntegerProperty Dependents;
     private IntegerProperty SurveyScore;
+    private Client client;
+    private TaxYear taxYear;
 
     /**
      * Constructor for the ReturnData class.
      */
     public ReturnData(){
-        this.ID = new SimpleIntegerProperty();
-        this.TaxYearID = new SimpleIntegerProperty();
         this.FederalReturn = new SimpleIntegerProperty();
         this.TotalRefund = new SimpleIntegerProperty();
         this.EITC = new SimpleIntegerProperty();
         this.CTC = new SimpleIntegerProperty();
         this.Dependents = new SimpleIntegerProperty();
         this.SurveyScore = new SimpleIntegerProperty();
+        this.client = new Client();
+        this.taxYear = new TaxYear();
     }
 
     /**
      * Method for getting the ID of the ReturnData object.
      * @return int, ID of the ReturnData object.
      */
-    public int getID(){
-        return ID.get();
+    public String getClient_ID(){
+        return client.getID();
     }
 
     /**
      * Method for setting the ID of the ReturnData object.
-     * @param ID int, ID that the old ID will be set to.
+     * @param Client_ID int, ID that the old ID will be set to.
      */
-    public void setID(int ID){
-        this.ID.set(ID);
+    public void setClient_ID(String Client_ID){
+        client.setID(Client_ID);
     }
 
     /**
@@ -54,24 +54,24 @@ public class ReturnData {
      * IntegerProperty format.<br/>
      * @return IntegerProperty, the ID of the ReturnData.
      */
-    public IntegerProperty IDProperty(){
-        return ID;
+    public StringProperty Client_IDProperty(){
+        return client.Client_IDProperty();
     }
 
     /**
      * Method for getting the tax year ID of the ReturnData object.
      * @return int, tax year ID of the ReturnData object.
      */
-    public int getTaxYearID(){
-        return TaxYearID.get();
+    public int getTaxYear(){
+        return taxYear.getTaxYear();
     }
 
     /**
      * Method for setting the tax year ID of the ReturnData object.
-     * @param TaxYearID int, ID that will replace the old tax year ID.
+     * @param TaxYear int, ID that will replace the old tax year ID.
      */
-    public void setTaxYearID(int TaxYearID){
-        this.TaxYearID.set(TaxYearID);
+    public void setTaxYear(int TaxYear){
+        taxYear.setTaxYear(TaxYear);
     }
 
     /**
@@ -79,8 +79,8 @@ public class ReturnData {
      * IntegerProperty format.<br/>
      * @return IntegerProperty, the tax year ID of the ReturnData.
      */
-    public IntegerProperty taxYearIDProperty(){
-        return TaxYearID;
+    public IntegerProperty taxYearProperty(){
+        return taxYear.taxYearProperty();
     }
 
     /**
@@ -236,6 +236,30 @@ public class ReturnData {
     public IntegerProperty surveyScoreProperty(){
         return SurveyScore;
     }
+
+    public String getFirstName(){return client.getFirstName();}
+
+    public void setFirstName(String FirstName){client.setFirstName(FirstName);}
+
+    public StringProperty firstNameProperty(){return client.firstNameProperty();}
+
+    public String getLastName(){return client.getLastName();}
+
+    public void setLastName(String LastName){client.setLastName(LastName);}
+
+    public StringProperty lastNameProperty(){return client.lastNameProperty();}
+
+    public String getDoB(){return client.getDoB();}
+
+    public void setDoB(String DoB){client.setDoB(DoB);}
+
+    public StringProperty doBProperty(){return client.doBProperty();}
+
+    public int getLast4SS(){return client.getLast4SS();}
+
+    public void setLast4SS(int Last4SS){client.setLast4SS(Last4SS);}
+
+    public IntegerProperty last4SSProperty(){return client.last4SSProperty();}
 
 
 }

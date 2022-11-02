@@ -43,8 +43,8 @@ public class ReturnDataDAO {
         ReturnData rd = null;
         if(rs.next()){
             rd = new ReturnData();
-            rd.setID(rs.getInt("ID"));
-            rd.setTaxYearID(rs.getInt("TaxYearID"));
+            rd.setClient_ID(rs.getString("Client_ID"));
+            rd.setTaxYear(rs.getInt("TaxYear"));
             rd.setFederalReturn(rs.getInt("FederalReturn"));
             rd.setTotalRefund(rs.getInt("TotalRefund"));
             rd.setEITC(rs.getInt("EITC"));
@@ -66,8 +66,8 @@ public class ReturnDataDAO {
 
         while(rs.next()){
             ReturnData rd = new ReturnData();
-            rd.setID(rs.getInt("ID"));
-            rd.setTaxYearID(rs.getInt("TaxYearID"));
+            rd.setClient_ID(rs.getString("Client_ID"));
+            rd.setTaxYear(rs.getInt("TaxYear"));
             rd.setFederalReturn(rs.getInt("FederalReturn"));
             rd.setTotalRefund(rs.getInt("TotalRefund"));
             rd.setEITC(rs.getInt("EITC"));
