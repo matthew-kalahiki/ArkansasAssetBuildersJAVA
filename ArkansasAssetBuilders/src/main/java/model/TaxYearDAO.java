@@ -43,8 +43,7 @@ public class TaxYearDAO {
         TaxYear ty = null;
         if(rs.next()){
             ty = new TaxYear();
-            ty.setID(rs.getInt("ID"));
-            ty.setTaxYearID(rs.getInt("TaxYearID"));
+            ty.setTaxYear(rs.getInt("TaxYearID"));
         }
         return ty;
     }
@@ -60,8 +59,7 @@ public class TaxYearDAO {
 
         while(rs.next()){
             TaxYear ty = new TaxYear();
-            ty.setID(rs.getInt("ID"));
-            ty.setTaxYearID(rs.getInt("TaxYearID"));
+            ty.setTaxYear(rs.getInt("TaxYearID"));
             taxYearList.add(ty);
         }
         return taxYearList;

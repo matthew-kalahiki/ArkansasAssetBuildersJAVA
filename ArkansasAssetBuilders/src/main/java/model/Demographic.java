@@ -10,39 +10,41 @@ import javafx.beans.property.*;
  * Demographic information is stored in the local database.
  */
 public class Demographic {
-    private IntegerProperty ID;
-    private IntegerProperty TaxYearID;
     private StringProperty Address;
     private IntegerProperty Zip;
     private StringProperty County;
     private StringProperty State;
+    private Client client;
+    private ReturnData returnData;
+    private TaxYear taxYear;
 
     /**
      * Constructor for the Demographic class.
      */
     public Demographic(){
-        this.ID = new SimpleIntegerProperty();
-        this.TaxYearID = new SimpleIntegerProperty();
         this.Address = new SimpleStringProperty();
         this.Zip = new SimpleIntegerProperty();
         this.County = new SimpleStringProperty();
         this.State = new SimpleStringProperty();
+        this.client = new Client();
+        this.returnData = new ReturnData();
+        this.taxYear = new TaxYear();
     }
 
     /**
      * Method for getting the ID of the Demographic object.
      * @return int, ID of the Demographic.
      */
-    public int getID(){
-        return ID.get();
+    public String getClient_ID(){
+        return client.getID();
     }
 
     /**
      * Set the ID of the Demographic object.
-     * @param ID int, ID that the Demographic object will be set to.
+     * @param Client_ID int, ID that the Demographic object will be set to.
      */
-    public void setID(int ID){
-        this.ID.set(ID);
+    public void setClient_ID(String Client_ID){
+        client.setID(Client_ID);
     }
 
     /**
@@ -50,24 +52,24 @@ public class Demographic {
      * IntegerProperty format.<br/>
      * @return IntegerProperty, the ID of the Demographic.
      */
-    public IntegerProperty IDProperty(){
-        return ID;
+    public StringProperty Client_IDProperty(){
+        return client.Client_IDProperty();
     }
 
     /**
      * Method for getting the tax year ID of the Demographic object.
      * @return int, tax year ID of the Demographic.
      */
-    public int getTaxYearID(){
-        return TaxYearID.get();
+    public int getTaxYear(){
+        return taxYear.getTaxYear();
     }
 
     /**
      * Method for setting the tax year ID of the Demographic object.
-     * @param TaxYearID, int, ID that the tax year ID will be set to.
+     * @param TaxYear, int, ID that the tax year ID will be set to.
      */
-    public void setTaxYearID(int TaxYearID){
-        this.TaxYearID.set(TaxYearID);
+    public void setTaxYear(int TaxYear){
+        taxYear.setTaxYear(TaxYear);
     }
 
     /**
@@ -75,8 +77,8 @@ public class Demographic {
      * in an IntegerProperty format.<br/>
      * @return IntegerProperty, the tax year ID of the Demographic.
      */
-    public IntegerProperty taxYearIDProperty(){
-        return TaxYearID;
+    public IntegerProperty taxYearProperty(){
+        return taxYear.taxYearProperty();
     }
 
     /**
@@ -178,4 +180,65 @@ public class Demographic {
     public StringProperty stateProperty(){
         return State;
     }
+
+    public String getFirstName(){return client.getFirstName();}
+
+    public void setFirstName(String FirstName){client.setFirstName(FirstName);}
+
+    public StringProperty firstNameProperty(){return client.firstNameProperty();}
+
+    public String getLastName(){return client.getLastName();}
+
+    public void setLastName(String LastName){client.setLastName(LastName);}
+
+    public StringProperty lastNameProperty(){return client.lastNameProperty();}
+
+    public String getDoB(){return client.getDoB();}
+
+    public void setDoB(String DoB){client.setDoB(DoB);}
+
+    public StringProperty doBProperty(){return client.doBProperty();}
+
+    public int getLast4SS(){return client.getLast4SS();}
+
+    public void setLast4SS(int Last4SS){client.setLast4SS(Last4SS);}
+
+    public IntegerProperty last4SSProperty(){return client.last4SSProperty();}
+
+    public int getFederalReturn(){return returnData.getFederalReturn();}
+
+    public void setFederalReturn(int FederalReturn){returnData.setFederalReturn(FederalReturn);}
+
+    public IntegerProperty federalReturnProperty(){return returnData.federalReturnProperty();}
+
+    public int getTotalRefund(){return returnData.getTotalRefund();}
+
+    public void setTotalRefund(int TotalRefund){returnData.setTotalRefund(TotalRefund);}
+
+    public IntegerProperty totalRefundProperty(){return returnData.totalRefundProperty();}
+
+    public int getEITC(){return returnData.getEITC();}
+
+    public void setEITC(int EITC){returnData.setEITC(EITC);}
+
+    public IntegerProperty EITCProperty(){return returnData.EITCProperty();}
+
+    public int getCTC(){return returnData.getCTC();}
+
+    public void setCTC(int CTC){returnData.setCTC(CTC);}
+
+    public IntegerProperty CTCProperty(){return returnData.CTCProperty();}
+
+    public int getDependents(){return returnData.getDependents();}
+
+    public void setDependents(int Dependents){returnData.setDependents(Dependents);}
+
+    public IntegerProperty dependentsProperty(){return returnData.dependentsProperty();}
+
+    public int getSurveyScore(){return returnData.getSurveyScore();}
+
+    public void setSurveyScore(int SurveyScore){returnData.setSurveyScore(SurveyScore);}
+
+    public IntegerProperty surveyScoreProperty(){return returnData.surveyScoreProperty();}
+
 }

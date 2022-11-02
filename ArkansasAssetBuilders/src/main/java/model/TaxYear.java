@@ -10,57 +10,30 @@ import javafx.beans.property.*;
  * Tax year information is stored in the local database.
  */
 public class TaxYear {
-    private IntegerProperty ID;
-    private IntegerProperty TaxYearID;
+    private IntegerProperty TaxYear;
 
     /**
      * Constructor for the TaxYear class.
      */
     public TaxYear(){
-        this.ID = new SimpleIntegerProperty();
-        this.TaxYearID = new SimpleIntegerProperty();
-    }
-
-    /**
-     * Method for getting the ID of the TaxYear object.
-     * @return int, ID of the TaxYear object.
-     */
-    public int getID(){
-        return ID.get();
-    }
-
-    /**
-     * Method for setting the ID of the TaxYear object.
-     * @param ID int, the ID that the old ID will be set to.
-     */
-    public void setID(int ID){
-        this.ID.set(ID);
-    }
-
-    /**
-     * Method for retrieving TaxYear ID from the database in an
-     * IntegerProperty format.<br/>
-     * @return IntegerProperty, the ID of the TaxYear.
-     */
-    public IntegerProperty IDProperty(){
-        return ID;
+        this.TaxYear = new SimpleIntegerProperty();
     }
 
     /**
      * Method for getting the tax year ID of the TaxYear object.
      * @return int, tax year ID of the TaxYear object.
      */
-    public int getTaxYearID(){
-        return TaxYearID.get();
+    public int getTaxYear(){
+        return TaxYear.get();
     }
 
     /**
      * Method for setting the tax year ID of the TaxYear object.
-     * @param TaxYearID int, the tax year ID that the old tax year
+     * @param TaxYear int, the tax year ID that the old tax year
      *                  ID will be set to.
      */
-    public void setTaxYearID(int TaxYearID){
-        this.TaxYearID.set(TaxYearID);
+    public void setTaxYear(int TaxYear){
+        this.TaxYear.set(TaxYear);
     }
 
     /**
@@ -68,8 +41,8 @@ public class TaxYear {
      * IntegerProperty format.<br/>
      * @return IntegerProperty, the tax year ID of the TaxYear.
      */
-    public IntegerProperty taxYearIDProperty(){
-        return TaxYearID;
+    public IntegerProperty taxYearProperty(){
+        return TaxYear;
     }
 
 
