@@ -10,6 +10,11 @@ import java.util.HashMap;
 
 public class DataBase {
 
+    /**
+     * Insert a client into the Client table of the database.
+     * @param clientData Properties associated with the client.
+     * @param clientID ID of the client.
+     */
     public static void insertClient(HashMap<String, String> clientData, String clientID) {
         // Grab client data for new or existing client in the table.
         String firstName = clientData.get("First Name");
@@ -17,6 +22,8 @@ public class DataBase {
         int last4SS = clientData.containsKey("Last4SS")
                 ? Integer.parseInt(clientData.get("Last4SS"))
                 : Integer.parseInt(clientData.get("Last 4"));
+
+        // Not all CSVs contain the DoB of a client.
         String dob = "";
         if (clientData.containsKey("DOB") || clientData.containsKey("Date of Birth")) {
             dob = clientData.containsKey("DOB")
@@ -24,23 +31,30 @@ public class DataBase {
                     : clientData.get("Date of Birth");
         }
         // Get the row where the clientID exists in the Client table (if it does exist).
-        try (ResultSet query = DB.executeQuery(String.format("SELECT * FROM Client WHERE ID = %s;", clientID))) {
+        try (ResultSet query = DB.executeQuery(String.format("SELECT * FROM Client WHERE ID = '%s';", clientID))) {
+            // If the client already exists, update the necessary fields.
             if (query.next()){
+                // Reset pointer of the ResultSet (somewhat redundant since there should only be one or no elements
+                // but a good habit nonetheless).
                 query.beforeFirst();
+
+                // Update the fields.
                 ClientDAO.updateFirstName(clientID, firstName);
                 ClientDAO.updateLastName(clientID, lastName);
                 ClientDAO.updateLast4SS(clientID, String.valueOf(last4SS));
                 ClientDAO.updateDOB(clientID, dob);
             }else {
+                // Create an update SQL command to insert a new row into the Client table.
                 String sqlStmt;
                 if (!dob.equals("")){
-                    sqlStmt = String.format("INSERT INTO Client (ID, FirstName, LastName, DoB, Last4SS \n" +
-                            "VALUES (%1$s, %2$s, %3$s, %4$s, %5$d", clientID, firstName, lastName, dob, last4SS);
+                    sqlStmt = String.format("INSERT INTO Client (ID, FirstName, LastName, DoB, Last4SS) \n" +
+                            "VALUES ('%1$s', '%2$s', '%3$s', '%4$s', %5$d);", clientID, firstName, lastName, dob, last4SS);
                 }else{
-                    sqlStmt = String.format("INSERT INTO Client (ID, FirstName, LastName, DoB, Last4SS \n" +
-                            "VALUES ((%1$s, %2$s, %3$s, %4$d", clientID, firstName, lastName, last4SS);
+                    sqlStmt = String.format("INSERT INTO Client (ID, FirstName, LastName, Last4SS) \n" +
+                            "VALUES ('%1$s', '%2$s', '%3$s', %4$d);", clientID, firstName, lastName, last4SS);
                 }
                 try {
+                    // Execute the SQL statement.
                     DB.update(sqlStmt);
                 } catch (Exception e) {
                     System.out.print("Error occurred while UPDATE Operation: " + e);
