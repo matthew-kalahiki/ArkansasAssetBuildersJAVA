@@ -3,6 +3,8 @@ package model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import SQLite.DB;
+import javafx.scene.control.skin.LabeledSkinBase;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -106,16 +108,54 @@ public class ClientDAO {
     /**
      * Update first name of a Client.
      * @param clientID String, the ID of the Client.
-     * @param FirstName String, name that the first name will be changed to.
+     * @param firstName String, name that the first name will be changed to.
      * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
      */
-    private static void updateFirstName(String clientID, String FirstName) throws SQLException{
+    public static void updateFirstName(String clientID, String firstName) throws SQLException{
         String updateStmt =
-                "Begin\n" +
-                        "   UPDATE Client\n" +
-                        "       SET FirstName = '" + FirstName + "'\n" +
-                        "    WHERE ID = " + clientID + ";\n" +
-                        "END;";
+                        "UPDATE Client\n" +
+                        "SET FirstName = '" + firstName + "'\n" +
+                        "WHERE ID = '" + clientID + "';";
+        System.out.println(updateStmt);
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    public static void updateLastName(String clientID, String lastName) throws SQLException{
+        String updateStmt =
+                        "UPDATE Client\n" +
+                        "SET LastName = '" + lastName + "'\n" +
+                        "WHERE ID = '" + clientID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    public static void updateDOB(String clientID, String dob) throws SQLException{
+        String updateStmt =
+                        "UPDATE Client\n" +
+                        "SET DoB = '" + dob + "'\n" +
+                        "WHERE ID = '" + clientID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    public static void updateLast4SS(String clientID, String last4SS) throws SQLException{
+        String updateStmt =
+                        "UPDATE Client\n" +
+                        "SET Last4SS = " + last4SS + "\n" +
+                        "WHERE ID = '" + clientID + "';";
         try{
             DB.update(updateStmt);
         }catch(Exception e){

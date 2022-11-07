@@ -9,9 +9,9 @@ import java.io.*;
 
 public class FileParser {
 
-    List<String> columnNames;
-    Map<String, HashMap<String,String>> data;
-    List<String> fileLines;
+    public List<String> columnNames;
+    public Map<String, HashMap<String,String>> data;
+    public List<String> fileLines;
 
 
     /**
@@ -19,7 +19,7 @@ public class FileParser {
      * @param clientFile File, file that contains the data in CSV format.
      * @throws IOException Exception from wrong file format or some other input issue.
      */
-    FileParser(File clientFile) throws IOException{
+    public FileParser(File clientFile) throws IOException{
         this.data = new HashMap<>();
         this.fileLines = Files.readAllLines(clientFile.toPath(), StandardCharsets.UTF_8);
         this.columnNames = getColumnNames();
