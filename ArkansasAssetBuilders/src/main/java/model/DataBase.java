@@ -6,7 +6,9 @@ import javafx.collections.ObservableList;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class DataBase {
 
@@ -17,18 +19,18 @@ public class DataBase {
      */
     public static void insertClient(HashMap<String, String> clientData, String clientID) {
         // Grab client data for new or existing client in the table.
-        String firstName = clientData.get("First Name");
-        String lastName = clientData.get("Last Name");
-        int last4SS = clientData.containsKey("Last4SS")
-                ? Integer.parseInt(clientData.get("Last4SS"))
-                : Integer.parseInt(clientData.get("Last 4"));
+        String firstName = clientData.get("FIRST NAME");
+        String lastName = clientData.get("LAST NAME");
+        int last4SS = clientData.containsKey("LAST4SS")
+                ? Integer.parseInt(clientData.get("LAST4SS"))
+                : Integer.parseInt(clientData.get("LAST 4"));
 
         // Not all CSVs contain the DoB of a client.
         String dob = "";
-        if (clientData.containsKey("DOB") || clientData.containsKey("Date of Birth")) {
+        if (clientData.containsKey("DOB") || clientData.containsKey("DATE OF BIRTH")) {
             dob = clientData.containsKey("DOB")
                     ? clientData.get("DOB")
-                    : clientData.get("Date of Birth");
+                    : clientData.get("DATE OF BIRTH");
         }
         // Get the row where the clientID exists in the Client table (if it does exist).
         try (ResultSet query = DB.executeQuery(String.format("SELECT * FROM Client WHERE ID = '%s';", clientID))) {
@@ -45,14 +47,74 @@ public class DataBase {
                 ClientDAO.updateDOB(clientID, dob);
             }else {
                 // Create an update SQL command to insert a new row into the Client table.
-                String sqlStmt;
-                if (!dob.equals("")){
-                    sqlStmt = String.format("INSERT INTO Client (ID, FirstName, LastName, DoB, Last4SS) \n" +
-                            "VALUES ('%1$s', '%2$s', '%3$s', '%4$s', %5$d);", clientID, firstName, lastName, dob, last4SS);
-                }else{
-                    sqlStmt = String.format("INSERT INTO Client (ID, FirstName, LastName, Last4SS) \n" +
-                            "VALUES ('%1$s', '%2$s', '%3$s', %4$d);", clientID, firstName, lastName, last4SS);
+                String sqlStmt = String.format("INSERT INTO Client (ID, FirstName, LastName, DoB, Last4SS) \n" +
+                        "VALUES ('%1$s', '%2$s', '%3$s', '%4$s', %5$d);", clientID, firstName, lastName, dob, last4SS);
+                try {
+                    // Execute the SQL statement.
+                    DB.update(sqlStmt);
+                } catch (Exception e) {
+                    System.out.print("Error occurred while UPDATE Operation: " + e);
+                    throw e;
                 }
+            }
+        }catch (Exception e){
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+    }
+
+    public static void insertDemographic(HashMap<String, String> clientData, String clientID){
+        // Grab demographic data for new or existing demographic in the demographic table.
+        // Not guaranteed that each field is in clientData, so must instantiate variables.
+        String taxYear = "";
+        String address = "";
+        String zip = "";
+        String county = "";
+        String state = "";
+        if (clientData.containsKey("CREATEDDATETIME")){
+            // Only want the year created.
+            taxYear = clientData.get("CREATEDDATETIME").substring(0,3);
+        }
+        if (clientData.containsKey("ADDRESS")){
+            address = clientData.get("ADDRESS");
+        }
+        if (clientData.containsKey("ZIP")){
+            zip = clientData.get("ZIP");
+        }
+        if (clientData.containsKey("COUNTY")){
+            county = clientData.get("COUNTY");
+        }
+        if (clientData.containsKey("STATE")){
+            state = clientData.get("STATE");
+        }
+        try (ResultSet query = DB.executeQuery(String.format("SELECT * FROM Demographic WHERE ID = '%s';", clientID))) {
+            // If the demographic already exists, update the necessary fields.
+            if (query.next()){
+                // Reset pointer of the ResultSet (somewhat redundant since there should only be one or no elements
+                // but a good habit nonetheless).
+                query.beforeFirst();
+
+                // Update the fields. Since field in table could have existing data, do not want to
+                // overwrite with a null value.
+                if (!taxYear.equals("")){
+                    DemographicDAO.updateTaxYear(clientID, taxYear);
+                }
+                if (!address.equals("")){
+                    DemographicDAO.updateAddress(clientID, address);
+                }
+                if (!zip.equals("")){
+                    DemographicDAO.updateZip(clientID, zip);
+                }
+                if (!county.equals("")){
+                    DemographicDAO.updateCounty(clientID, county);
+                }
+                if (!state.equals("")){
+                    DemographicDAO.updateState(clientID, state);
+                }
+            }else {
+                // Create an update SQL command to insert a new row into the Client table.
+                String sqlStmt = String.format("INSERT INTO Demographic (ID, TaxYear, Address, Zip, County, State) \n" +
+                        "VALUES ('%1$s', '%2$s', '%3$s', '%4$s', %5$s, %6$s);", clientID, taxYear, address, zip, county, state);
                 try {
                     // Execute the SQL statement.
                     DB.update(sqlStmt);

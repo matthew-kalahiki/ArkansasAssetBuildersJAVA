@@ -2,23 +2,22 @@ package com.aab.arkansasassetbuilders;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.util.Objects;
+import java.io.IOException;
 
-public class searchAndFilterLauncher extends Application {
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
+public class SearchAndFilterLauncher extends Application {
     @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("UploadScreen.fxml")));
-        Scene scene = new Scene(root, 300, 275);
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(SearchAndFilterLauncher.class.getResource("SearchAndFilterScreen.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        //stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
     }
 }
