@@ -34,14 +34,13 @@ class DataBaseTest {
         }
         DB.isTest = false;
     }
-    /*
     @Test
     void insertDemographic(){
         String clientID = "A1234";
         HashMap<String, String> clientProperties = data.get(clientID);
         DB.isTest = true;
         DataBase.insertDemographic(clientProperties, clientID);
-        try (ResultSet query = DB.executeQuery(String.format("SELECT * FROM Demographic WHERE ID = '%s';", clientID))) {
+        try (ResultSet query = DB.executeQuery(String.format("SELECT * FROM Demographic WHERE Client_ID = '%s';", clientID))) {
             assertTrue(query.next());
             query.beforeFirst();
         }catch (Exception e){
@@ -49,7 +48,7 @@ class DataBaseTest {
             System.exit(0);
         }
         DB.isTest = false;
-    }*/
+    }
 
     @Test
     void searchClients() {

@@ -73,7 +73,7 @@ public class DataBase {
         String state = "";
         if (clientData.containsKey("CREATEDDATETIME")){
             // Only want the year created.
-            taxYear = clientData.get("CREATEDDATETIME").substring(0,3);
+            taxYear = clientData.get("CREATEDDATETIME").substring(0,4);
         }
         if (clientData.containsKey("ADDRESS")){
             address = clientData.get("ADDRESS");
@@ -87,7 +87,7 @@ public class DataBase {
         if (clientData.containsKey("STATE")){
             state = clientData.get("STATE");
         }
-        try (ResultSet query = DB.executeQuery(String.format("SELECT * FROM Demographic WHERE ID = '%s';", clientID))) {
+        try (ResultSet query = DB.executeQuery(String.format("SELECT * FROM Demographic WHERE Client_ID = '%s';", clientID))) {
             // If the demographic already exists, update the necessary fields.
             if (query.next()){
                 // Reset pointer of the ResultSet (somewhat redundant since there should only be one or no elements
@@ -113,11 +113,26 @@ public class DataBase {
                 }
             }else {
                 // Create an update SQL command to insert a new row into the Client table.
-                String sqlStmt = String.format("INSERT INTO Demographic (ID, TaxYear, Address, Zip, County, State) \n" +
-                        "VALUES ('%1$s', '%2$s', '%3$s', '%4$s', %5$s, %6$s);", clientID, taxYear, address, zip, county, state);
+                List<String> fields = Arrays.asList("TaxYear", "Address", "Zip", "County", "State");
+                List<String> values = Arrays.asList(taxYear, address, zip, county, state);
+                StringBuilder insertStmt = new StringBuilder("INSERT INTO Demographic (Client_ID");
+                StringBuilder intoStmt = new StringBuilder("VALUES ('" + clientID + "'");
+                for (int index = 0; index < fields.size(); index++){
+                    if (!values.get(index).equals("")){
+                        insertStmt.append(", ").append(fields.get(index));
+                        if (fields.get(index).equals("TaxYear") || fields.get(index).equals("Zip")){
+                            intoStmt.append(", ").append(values.get(index));
+                        }else{
+                            intoStmt.append(", ").append("'").append(values.get(index)).append("'");
+                        }
+                    }
+                }
+                insertStmt.append(") \n");
+                intoStmt.append((");"));
+                System.out.println(insertStmt + intoStmt.toString());
                 try {
                     // Execute the SQL statement.
-                    DB.update(sqlStmt);
+                    DB.update(insertStmt + intoStmt.toString());
                 } catch (Exception e) {
                     System.out.print("Error occurred while UPDATE Operation: " + e);
                     throw e;

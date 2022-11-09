@@ -151,7 +151,7 @@ public class DemographicDAO {
         String updateStmt =
                         "UPDATE Demographic\n" +
                         "SET Address = '" + Address + "'\n" +
-                        "WHERE ID = '" + demographicID + "';";
+                        "WHERE Client_ID = '" + demographicID + "';";
         try{
             DB.update(updateStmt);
         }catch(Exception e){
@@ -164,7 +164,7 @@ public class DemographicDAO {
         String updateStmt =
                         "UPDATE Demographic\n" +
                         "SET Zip = " + zip + "\n" +
-                        "WHERE ID = '" + demographicID + "';";
+                        "WHERE Client_ID = '" + demographicID + "';";
         try{
             DB.update(updateStmt);
         }catch(Exception e){
@@ -177,7 +177,7 @@ public class DemographicDAO {
         String updateStmt =
                         "UPDATE Demographic\n" +
                         "SET County = '" + county + "'\n" +
-                        "WHERE ID = '" + demographicID + "';";
+                        "WHERE Client_ID = '" + demographicID + "';";
         try{
             DB.update(updateStmt);
         }catch(Exception e){
@@ -190,7 +190,7 @@ public class DemographicDAO {
         String updateStmt =
                         "UPDATE Demographic\n" +
                         "SET State = '" + state + "'\n" +
-                        "WHERE ID = '" + demographicID + "';";
+                        "WHERE Client_ID = '" + demographicID + "';";
         try{
             DB.update(updateStmt);
         }catch(Exception e){
@@ -203,7 +203,7 @@ public class DemographicDAO {
         String updateStmt =
                         "UPDATE Demographic\n" +
                         "SET TaxYear = " + taxYear + "\n" +
-                        "WHERE ID = '" + demographicID + "';";
+                        "WHERE Client_ID = '" + demographicID + "';";
         try{
             DB.update(updateStmt);
         }catch(Exception e){
