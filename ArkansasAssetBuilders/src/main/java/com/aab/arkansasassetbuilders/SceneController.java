@@ -15,6 +15,8 @@ import parsing.FileParser;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 
@@ -64,9 +66,12 @@ public class SceneController {
         try{
             if (file.exists()){
                 FileParser parser = new FileParser(file);
-                for (String key: parser.data.keySet()){
-                    DataBase.insertClient(parser.data.get(key), key);
-                    DataBase.insertDemographic(parser.data.get(key), key);
+                Map<String, HashMap<String, String>> data = parser.data;
+                for (String key: data.keySet()){
+                    DataBase.insertClient(data.get(key), key);
+                    DataBase.insertDemographic(data.get(key), key);
+                    DataBase.insertReturnData(data.get(key), key);
+                    DataBase.insertTaxYear(data.get(key));
                 }
             }
         }catch (IOException e){
