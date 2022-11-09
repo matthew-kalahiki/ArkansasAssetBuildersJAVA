@@ -66,6 +66,7 @@ public class SceneController {
                 FileParser parser = new FileParser(file);
                 for (String key: parser.data.keySet()){
                     DataBase.insertClient(parser.data.get(key), key);
+                    DataBase.insertDemographic(parser.data.get(key), key);
                 }
             }
         }catch (IOException e){
