@@ -38,7 +38,7 @@ public class SceneController {
     } // for button to take you to upload screen
 
     public void switchToFilter(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SearchAndFilterScreen.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("HelloScreen.fxml")));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
