@@ -31,9 +31,14 @@ public class FileParser{
      * @param line A row from the data that contains the information for a single client.
      */
     void capitalizeNames(List<String> line){
-        String firstNameUpper = line.get(getColumn("FIRST NAME")).toUpperCase();
+        String firstNameUpper = this.columnNames.contains("FIRST NAME")
+                ? line.get(getColumn("FIRST NAME")).toUpperCase()
+                : "";
+        System.out.println(firstNameUpper);
         String lastNameUpper = line.get(getColumn("LAST NAME")).toUpperCase();
-        line.set(getColumn("FIRST NAME"), firstNameUpper);
+        if (!firstNameUpper.equals("")){
+            line.set(getColumn("FIRST NAME"), firstNameUpper);
+        }
         line.set(getColumn("LAST NAME"), lastNameUpper);
     }
 
@@ -109,7 +114,7 @@ public class FileParser{
                             ? getColumn("DOB")
                             : getColumn("DATE OF BIRTH"));
                 }
-                reformatSS(splitLine, splitLine.contains("L4SSN")
+                reformatSS(splitLine, this.columnNames.contains("L4SSN")
                            ? getColumn("L4SSN")
                            : getColumn("LAST 4"));
                 String clientKey = createKey(splitLine);

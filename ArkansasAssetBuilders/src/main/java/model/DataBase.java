@@ -24,10 +24,14 @@ public class DataBase {
         // Grab client data for new or existing client in the table.
         String firstName = clientData.get("FIRST NAME");
         String lastName = clientData.get("LAST NAME");
-        int last4SS = clientData.containsKey("LAST4SS")
-                ? Integer.parseInt(clientData.get("LAST4SS"))
-                : Integer.parseInt(clientData.get("LAST 4"));
-
+        int last4SS;
+        if (clientData.containsKey("LAST 4")){
+            last4SS = Integer.parseInt(clientData.get("LAST 4"));
+        }else if (clientData.containsKey("LAST4SS")){
+            last4SS = Integer.parseInt(clientData.get("LAST4SS"));
+        } else{
+            last4SS = Integer.parseInt(clientData.get("L4SSN"));
+        }
         // Not all CSVs contain the DoB of a client.
         String dob = "";
         if (clientData.containsKey("DOB") || clientData.containsKey("DATE OF BIRTH")) {
