@@ -8,6 +8,9 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import model.*;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
 
@@ -381,7 +384,6 @@ public class HelloController {
                 ObservableList<DataObject> demographicReturnDataData = DataBase.searchDemographicsAndReturnData(condition);
                 populateData(demographicReturnDataData);
             }else if(demographicFilter && clientFilter){
-                //pickup here
                 ObservableList<DataObject> demographicClientData = DataBase.searchDemographicsAndClients(condition);
                 populateData(demographicClientData);
             }else if(demographicFilter){
@@ -400,10 +402,45 @@ public class HelloController {
                 ObservableList<DataObject> clientData = ClientDAO.searchClients(condition);
                 populateClients(clientData);
             }
+            export();
         } catch (SQLException e) {
             e.printStackTrace();
             resultArea.setText("Error occurred while getting client information from DB.\n" + e);
             throw e;
+        }
+    }
+
+    @FXML
+    private void export(){
+        try {
+            String home = System.getProperty("user.home");
+            File file = new File(home + "\\Downloads\\data_export.csv");
+            FileWriter fw = new FileWriter("C:\\Users\\matth\\Downloads\\data_export.csv");
+            String data = "";
+            ObservableList<TableColumn> columns = resultsTable.getColumns();
+            for (int i = 0; i < columns.size(); i++) {
+                if (columns.get(i).isVisible()) {
+                    data += columns.get(i).getText() + ",";
+
+                }
+            }
+            data = data.substring(0, data.length() - 1);
+            data += "\n";
+            for (Object row : resultsTable.getItems()) {
+                for (int i = 0; i < columns.size(); i++) {
+                    if (columns.get(i).getCellObservableValue(row) != null) {
+                        data += columns.get(i).getCellObservableValue(row).getValue().toString() + ",";
+                        System.out.println(columns.get(i).getCellObservableValue(row).getValue().toString());
+                    }
+                }
+                data = data.substring(0, data.length() - 1);
+                data += "\n";
+            }
+            fw.write(data);
+            fw.close();
+        }catch(IOException e){
+            System.out.println("error!");
+            e.printStackTrace();
         }
     }
 
@@ -424,7 +461,7 @@ public class HelloController {
     @FXML
     private void dobBoxAction(){
         dob.setDisable(!dob.isDisable());
-        doBColumn.setVisible(doBColumn.isVisible());
+        doBColumn.setVisible(!doBColumn.isVisible());
         if(doBColumn.isVisible()){
             doBColumn.setCellValueFactory(cellData -> cellData.getValue().doBProperty());
         }else{
