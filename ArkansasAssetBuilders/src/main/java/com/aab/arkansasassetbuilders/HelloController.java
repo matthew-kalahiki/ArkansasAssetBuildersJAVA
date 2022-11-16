@@ -17,7 +17,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Objects;
 
 public class HelloController {
@@ -140,12 +143,19 @@ public class HelloController {
     private TableColumn<DataObject, Integer> surveyScoreColumn;
 
     @FXML
-    private void initialize () {
+    private void initialize () throws SQLException, ClassNotFoundException {
         clientIDColumn.setCellValueFactory(cellData -> cellData.getValue().Client_IDProperty());
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
         doBColumn.setCellValueFactory(cellData -> cellData.getValue().doBProperty());
         last4ssColumn.setCellValueFactory(cellData -> cellData.getValue().last4SSProperty().asObject());
+
+        ObservableList<String> ty = FXCollections.observableArrayList();
+        ObservableList<DataObject> taxYears = DataBase.searchTaxYears("");
+        for(DataObject d : taxYears){
+            ty.add(Integer.toString(d.getTaxYear()));
+        }
+        taxYear.setItems(ty);
     }
 
     public void switchToUpload(ActionEvent event) throws IOException {
@@ -421,7 +431,6 @@ public class HelloController {
                 ObservableList<DataObject> clientData = ClientDAO.searchClients(condition);
                 populateClients(clientData);
             }
-            export();
         } catch (SQLException e) {
             e.printStackTrace();
             resultArea.setText("Error occurred while getting client information from DB.\n" + e);
@@ -433,8 +442,13 @@ public class HelloController {
     private void export(){
         try {
             String home = System.getProperty("user.home");
-            File file = new File(home + "\\Downloads\\data_export.csv");
-            FileWriter fw = new FileWriter("C:\\Users\\matth\\Downloads\\data_export.csv");
+            Date date = new Date();
+            Timestamp ts = new Timestamp(date.getTime());
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+            String timestamp = formatter.format(ts);
+            String filename = home + "\\Downloads\\data_export" + timestamp + ".csv";
+            File file = new File(filename);
+            FileWriter fw = new FileWriter(file);
             String data = "";
             ObservableList<TableColumn> columns = resultsTable.getColumns();
             for (int i = 0; i < columns.size(); i++) {
