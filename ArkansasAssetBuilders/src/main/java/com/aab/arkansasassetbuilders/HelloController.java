@@ -351,6 +351,8 @@ public class HelloController {
                     condition += "Demographic.";
                 }else if(returnDataFilter){
                     condition += "ReturnData.";
+                }else if(clientFilter){
+                    condition += "Demographic.";
                 }
                 condition += "TaxYear = " + taxYear.getValue().toString();
                 if(numCols > 0){condition += " AND ";}
@@ -424,6 +426,9 @@ public class HelloController {
             }else if(returnDataFilter){
                 ObservableList<DataObject> returnDataData = DataBase.searchReturnData(condition);
                 populateData(returnDataData);
+            }else if(taxYearFilter && clientFilter){
+                ObservableList<DataObject> taxYearClientData = DataBase.searchDemographicsAndReturnDataAndClients(condition);
+                populateData(taxYearClientData);
             }else if(taxYearFilter){
                 ObservableList<DataObject> taxYearData = DataBase.searchTaxYears(condition);
                 populateData(taxYearData);
