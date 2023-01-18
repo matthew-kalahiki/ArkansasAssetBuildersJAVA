@@ -2,7 +2,6 @@ package SQLite;
 
 import javax.sql.rowset.*;
 import java.sql.*;
-import java.util.ArrayList;
 
 /**
  * DB Class<br/>
@@ -12,6 +11,7 @@ import java.util.ArrayList;
 public class DB {
 
     private static Connection connection = null;
+    public static boolean isTest = false;
 
     /**
      * Method for setting up the connection between the program and the database. <br/>
@@ -22,12 +22,27 @@ public class DB {
     public static void connect(){
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = DriverManager.getConnection("jdbc:sqlite:src/AAB.db");
+            if (isTest){
+                connection = DriverManager.getConnection("jdbc:sqlite:ArkansasAssetBuilders/src/test/AABTest.db");
+            }else{
+                connection = DriverManager.getConnection("jdbc:sqlite:ArkansasAssetBuilders/src/AAB.db");
+            }
         } catch ( Exception e ) {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             System.exit(0);
         }
         System.out.println("Opened database successfully");
+    }
+
+    public static void connectTest(){
+        try {
+            Class.forName("org.sqlite.JDBC");
+            connection = DriverManager.getConnection("jdbc:sqlite:ArkansasAssetBuilders/src/test/AABTest.db");
+        } catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        System.out.println("Opened database successfully.");
     }
 
     /**
@@ -44,6 +59,7 @@ public class DB {
         }catch(Exception e){
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
         }
+        System.out.println("Closed database successfully.");
     }
 
     /**
@@ -65,11 +81,10 @@ public class DB {
             System.out.println("Opened database successfully");
 
             stmt = connection.createStatement();
+            System.out.println(query);
             rs = stmt.executeQuery(query);
-
             crs = RowSetProvider.newFactory().createCachedRowSet();
             crs.populate(rs);
-
             rs.close();
             stmt.close();
             disconnect();
@@ -86,7 +101,7 @@ public class DB {
      * @param sqlStmt String, statement that is carried out to update the database.
      */
     public static void update(String sqlStmt){
-        Statement stmt = null;
+        Statement stmt;
         try{
             connect();
             stmt = connection.createStatement();

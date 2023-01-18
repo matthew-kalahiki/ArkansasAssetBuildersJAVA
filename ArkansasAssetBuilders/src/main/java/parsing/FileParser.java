@@ -7,11 +7,11 @@ import java.nio.file.Files;
 import java.util.*;
 import java.io.*;
 
-public class FileParser {
+public class FileParser{
 
-    List<String> columnNames;
-    Map<String, HashMap<String,String>> data;
-    List<String> fileLines;
+    public List<String> columnNames;
+    public Map<String, HashMap<String,String>> data;
+    public List<String> fileLines;
 
 
     /**
@@ -19,7 +19,7 @@ public class FileParser {
      * @param clientFile File, file that contains the data in CSV format.
      * @throws IOException Exception from wrong file format or some other input issue.
      */
-    FileParser(File clientFile) throws IOException{
+    public FileParser(File clientFile) throws IOException{
         this.data = new HashMap<>();
         this.fileLines = Files.readAllLines(clientFile.toPath(), StandardCharsets.UTF_8);
         this.columnNames = getColumnNames();
@@ -31,10 +31,15 @@ public class FileParser {
      * @param line A row from the data that contains the information for a single client.
      */
     void capitalizeNames(List<String> line){
-        String firstNameUpper = line.get(getColumn("First Name")).toUpperCase();
-        String lastNameUpper = line.get(getColumn("Last Name")).toUpperCase();
-        line.set(getColumn("First Name"), firstNameUpper);
-        line.set(getColumn("Last Name"), lastNameUpper);
+        String firstNameUpper = this.columnNames.contains("FIRST NAME")
+                ? line.get(getColumn("FIRST NAME")).toUpperCase()
+                : "";
+        System.out.println(firstNameUpper);
+        String lastNameUpper = line.get(getColumn("LAST NAME")).toUpperCase();
+        if (!firstNameUpper.equals("")){
+            line.set(getColumn("FIRST NAME"), firstNameUpper);
+        }
+        line.set(getColumn("LAST NAME"), lastNameUpper);
     }
 
     /**
@@ -43,11 +48,11 @@ public class FileParser {
      * @return String that is the ID for the client.
      */
     String createKey(List<String> line){
-        int lastNameColumn = getColumn("Last Name");
+        int lastNameColumn = getColumn("LAST NAME");
         int ssColumn = this.columnNames.contains("L4SSN")
                 ? getColumn("L4SSN")
-                : getColumn("Last 4");
-        return line.get(lastNameColumn) + line.get(ssColumn);
+                : getColumn("LAST 4");
+        return line.get(lastNameColumn).replaceAll(" ", "") + line.get(ssColumn);
     }
 
     /**
@@ -67,6 +72,7 @@ public class FileParser {
         List<String> columnNames = Arrays.asList(this.fileLines.get(0).split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"));
         columnNames.replaceAll(String::trim);
         columnNames.replaceAll(s -> s.replaceAll("[^\\w\\s]", ""));
+        columnNames.replaceAll(String::toUpperCase);
         return columnNames;
     }
 
@@ -103,14 +109,14 @@ public class FileParser {
                 List<String> splitLine = removeCommas(this.fileLines.get(line));
                 splitLine.replaceAll(String::trim);
                 capitalizeNames(splitLine);
-                if (this.columnNames.contains("DOB") || this.columnNames.contains("Date of Birth")) {
+                if (this.columnNames.contains("DOB") || this.columnNames.contains("DATE OF BIRTH")) {
                     reformatDOB(splitLine, splitLine.contains("DOB")
                             ? getColumn("DOB")
-                            : getColumn("Date of Birth"));
+                            : getColumn("DATE OF BIRTH"));
                 }
-                reformatSS(splitLine, splitLine.contains("L4SSN")
+                reformatSS(splitLine, this.columnNames.contains("L4SSN")
                            ? getColumn("L4SSN")
-                           : getColumn("Last 4"));
+                           : getColumn("LAST 4"));
                 String clientKey = createKey(splitLine);
                 this.data.put(clientKey, new HashMap<>());
                 for (int column = 0; column < splitLine.size(); column++){
