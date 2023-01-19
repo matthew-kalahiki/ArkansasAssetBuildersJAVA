@@ -17,67 +17,67 @@ public class client{
 		this.DoB = new SimpleStringProperty();
 		this.efin = new SimpleStringProperty();
 	}
-	public String getId(){ return id.get();}
+	public String getId(){return id.get();}
 
-	public void setId(String id){this.idset(id);}
+	public void setId(String id){this.id.set(id);}
 
-	public StringProperty IdProperty(){return c;}
-
-
-	public String getSidn(){ return sidn.get();}
-
-	public void setSidn(String sidn){this.sidnset(sidn);}
-
-	public StringProperty SidnProperty(){return c;}
+	public StringProperty IdProperty(){return id;}
 
 
-	public String getL4SSN(){ return L4SSN.get();}
+	public String getSidn(){return sidn.get();}
 
-	public void setL4SSN(String L4SSN){this.L4SSNset(L4SSN);}
+	public void setSidn(String sidn){this.sidn.set(sidn);}
 
-	public StringProperty L4SSNProperty(){return c;}
-
-
-	public String getFirst(){ return first_name.get();}
-
-	public void setFirst(String first_name){this.first_nameset(first_name);}
-
-	public StringProperty FirstProperty(){return c;}
+	public StringProperty SidnProperty(){return sidn;}
 
 
-	public String getFirstName(){ return first_name.get();}
+	public String getL4SSN(){return L4SSN.get();}
 
-	public void setFirstName(String first_name){this.first_nameset(first_name);}
+	public void setL4SSN(String L4SSN){this.L4SSN.set(L4SSN);}
 
-	public StringProperty FirstNameProperty(){return c;}
-
-
-	public String getLast(){ return last_name.get();}
-
-	public void setLast(String last_name){this.last_nameset(last_name);}
-
-	public StringProperty LastProperty(){return c;}
+	public StringProperty L4SSNProperty(){return L4SSN;}
 
 
-	public String getLastName(){ return last_name.get();}
+	public String getFirst(){return first_name.get();}
 
-	public void setLastName(String last_name){this.last_nameset(last_name);}
+	public void setFirst(String first_name){this.first_name.set(first_name);}
 
-	public StringProperty LastNameProperty(){return c;}
-
-
-	public String getDoB(){ return DoB.get();}
-
-	public void setDoB(String DoB){this.DoBset(DoB);}
-
-	public StringProperty DoBProperty(){return c;}
+	public StringProperty FirstProperty(){return first_name;}
 
 
-	public String getEfin(){ return efin.get();}
+	public String getFirstName(){return first_name.get();}
 
-	public void setEfin(String efin){this.efinset(efin);}
+	public void setFirstName(String first_name){this.first_name.set(first_name);}
 
-	public StringProperty EfinProperty(){return c;}
+	public StringProperty FirstNameProperty(){return first_name;}
+
+
+	public String getLast(){return last_name.get();}
+
+	public void setLast(String last_name){this.last_name.set(last_name);}
+
+	public StringProperty LastProperty(){return last_name;}
+
+
+	public String getLastName(){return last_name.get();}
+
+	public void setLastName(String last_name){this.last_name.set(last_name);}
+
+	public StringProperty LastNameProperty(){return last_name;}
+
+
+	public String getDoB(){return DoB.get();}
+
+	public void setDoB(String DoB){this.DoB.set(DoB);}
+
+	public StringProperty DoBProperty(){return DoB;}
+
+
+	public String getEfin(){return efin.get();}
+
+	public void setEfin(String efin){this.efin.set(efin);}
+
+	public StringProperty EfinProperty(){return efin;}
 
 
 }
