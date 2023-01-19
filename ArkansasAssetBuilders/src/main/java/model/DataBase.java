@@ -12,6 +12,10 @@ import java.util.List;
 
 public class DataBase {
 
+    /*
+     * CLIENT FUNCTIONS
+     */
+
     /**
      * Insert a client into the Client table of the database.
      * Inserts a client if the client associated with the clientID
@@ -48,10 +52,10 @@ public class DataBase {
                 query.beforeFirst();
 
                 // Update the fields.
-                ClientDAO.updateFirstName(clientID, firstName);
-                ClientDAO.updateLastName(clientID, lastName);
-                ClientDAO.updateLast4SS(clientID, String.valueOf(last4SS));
-                ClientDAO.updateDOB(clientID, dob);
+                updateFirstName(clientID, firstName);
+                updateLastName(clientID, lastName);
+                updateLast4SS(clientID, String.valueOf(last4SS));
+                updateDOB(clientID, dob);
             }else {
                 // Create an update SQL command to insert a new row into the Client table.
                 String sqlStmt = String.format("INSERT INTO Client (ID, FirstName, LastName, DoB, Last4SS) \n" +
@@ -70,6 +74,87 @@ public class DataBase {
         }
     }
 
+    /**
+     * Update first name of a Client.
+     * @param clientID String, the ID of the Client.
+     * @param firstName String, name that the first name will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    private static void updateFirstName(String clientID, String firstName) throws SQLException{
+        String updateStmt =
+                "UPDATE Client\n" +
+                        "SET FirstName = '" + firstName + "'\n" +
+                        "WHERE ID = '" + clientID + "';";
+        System.out.println(updateStmt);
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    /**
+     * Update last name of a Client.
+     * @param clientID String, the ID of the Client.
+     * @param lastName String, name that the last name will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    private static void updateLastName(String clientID, String lastName) throws SQLException{
+        String updateStmt =
+                "UPDATE Client\n" +
+                        "SET LastName = '" + lastName + "'\n" +
+                        "WHERE ID = '" + clientID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    /**
+     * Update Date of Birth of a Client.
+     * @param clientID String, the ID of the Client.
+     * @param dob String, date that the date of birth will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    private static void updateDOB(String clientID, String dob) throws SQLException{
+        String updateStmt =
+                "UPDATE Client\n" +
+                        "SET DoB = '" + dob + "'\n" +
+                        "WHERE ID = '" + clientID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    /**
+     * Update Last4SS of a Client.
+     * @param clientID String, the ID of the Client.
+     * @param last4SS String, number that the last 4 SS numbers will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    private static void updateLast4SS(String clientID, String last4SS) throws SQLException{
+        String updateStmt =
+                "UPDATE Client\n" +
+                        "SET Last4SS = " + last4SS + "\n" +
+                        "WHERE ID = '" + clientID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+
+    /*
+    DEMOGRAPHIC FUNCTIONS
+     */
     /**
      * Insert a demographic into the Demographic table of the database.
      * Inserts a demographic if the demographic associated with the clientID
@@ -112,19 +197,19 @@ public class DataBase {
                 // Update the fields. Since field in table could have existing data, do not want to
                 // overwrite with a null value.
                 if (!taxYear.equals("")){
-                    DemographicDAO.updateTaxYear(clientID, taxYear);
+                    updateDemoTaxYear(clientID, taxYear);
                 }
                 if (!address.equals("")){
-                    DemographicDAO.updateAddress(clientID, address);
+                    updateAddress(clientID, address);
                 }
                 if (!zip.equals("")){
-                    DemographicDAO.updateZip(clientID, zip);
+                    updateZip(clientID, zip);
                 }
                 if (!county.equals("")){
-                    DemographicDAO.updateCounty(clientID, county);
+                    updateCounty(clientID, county);
                 }
                 if (!state.equals("")){
-                    DemographicDAO.updateState(clientID, state);
+                    updateState(clientID, state);
                 }
             }else {
                 // Create an update SQL command to insert a new row into the Client table.
@@ -158,6 +243,107 @@ public class DataBase {
             System.exit(0);
         }
     }
+
+    /**
+     * Update Address of a Demographic.
+     * @param demographicID String, the ID of the Demographic.
+     * @param address String, address that the old address will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    public static void updateAddress(String demographicID, String address) throws SQLException{
+        String updateStmt =
+                "UPDATE Demographic\n" +
+                        "SET Address = '" + address + "'\n" +
+                        "WHERE Client_ID = '" + demographicID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    /**
+     * Update Zip code of a Demographic.
+     * @param demographicID String, the ID of the Demographic.
+     * @param zip String, zip that the old zip will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    public static void updateZip(String demographicID, String zip) throws SQLException{
+        String updateStmt =
+                "UPDATE Demographic\n" +
+                        "SET Zip = " + zip + "\n" +
+                        "WHERE Client_ID = '" + demographicID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    /**
+     * Update County of a Demographic.
+     * @param demographicID String, the ID of the Demographic.
+     * @param county String, county that the old county will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    public static void updateCounty(String demographicID, String county) throws SQLException{
+        String updateStmt =
+                "UPDATE Demographic\n" +
+                        "SET County = '" + county + "'\n" +
+                        "WHERE Client_ID = '" + demographicID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    /**
+     * Update State of a Demographic.
+     * @param demographicID String, the ID of the Demographic.
+     * @param state String, state that the old state will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    public static void updateState(String demographicID, String state) throws SQLException{
+        String updateStmt =
+                "UPDATE Demographic\n" +
+                        "SET State = '" + state + "'\n" +
+                        "WHERE Client_ID = '" + demographicID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    /**
+     * Update Tax Year of a Demographic.
+     * @param demographicID String, the ID of the Demographic.
+     * @param taxYear String, year that the old tax year will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    public static void updateDemoTaxYear(String demographicID, String taxYear) throws SQLException{
+        String updateStmt =
+                "UPDATE Demographic\n" +
+                        "SET TaxYear = " + taxYear + "\n" +
+                        "WHERE Client_ID = '" + demographicID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+
+
+    /*
+    RETURN DATA FUNCTIONS
+     */
 
     /**
      * Insert a return into the Return table of the database.
@@ -209,25 +395,25 @@ public class DataBase {
                 // Update the fields. Since field in table could have existing data, do not want to
                 // overwrite with a null value.
                 if (!taxYear.equals("")){
-                    ReturnDataDAO.updateTaxYear(clientID, taxYear);
+                    updateReturnTaxYear(clientID, taxYear);
                 }
                 if (!federalReturn.equals("")){
-                    ReturnDataDAO.updateFederalReturn(clientID, federalReturn);
+                    updateFederalReturn(clientID, federalReturn);
                 }
                 if (!totalRefund.equals("")){
-                    ReturnDataDAO.updateTotalRefund(clientID, federalReturn);
+                    updateTotalRefund(clientID, federalReturn);
                 }
                 if (!EITC.equals("")){
-                    ReturnDataDAO.updateEITC(clientID, EITC);
+                    updateEITC(clientID, EITC);
                 }
                 if (!CTC.equals("")){
-                    ReturnDataDAO.updateCTC(clientID, CTC);
+                    updateCTC(clientID, CTC);
                 }
                 if (!dependents.equals("")){
-                    ReturnDataDAO.updateDependents(clientID, dependents);
+                    updateDependents(clientID, dependents);
                 }
                 if (!surveyScore.equals("")){
-                    ReturnDataDAO.updateSurveyScore(clientID, surveyScore);
+                    updateSurveyScore(clientID, surveyScore);
                 }
             }else {
                 // Create an update SQL command to insert a new row into the Client table.
@@ -260,6 +446,143 @@ public class DataBase {
         }
     }
 
+    /**
+     * Update Tax Year of a ReturnData object.
+     * @param returnDataID String, the ID of the ReturnData object.
+     * @param taxYear String, tax year that the old tax year will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    public static void updateReturnTaxYear(String returnDataID, String taxYear) throws SQLException{
+        String updateStmt =
+                "UPDATE ReturnData\n" +
+                        "SET TaxYear = " + taxYear + "\n" +
+                        "WHERE Client_ID = '" + returnDataID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    /**
+     * Update Federal Return of a ReturnData object.
+     * @param returnDataID String, the ID of the ReturnData object.
+     * @param federalReturn String, federal return that the old federal return will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    public static void updateFederalReturn(String returnDataID, String federalReturn) throws SQLException{
+        String updateStmt =
+                "UPDATE ReturnData\n" +
+                        "SET FederalReturn = " + federalReturn + "\n" +
+                        "WHERE Client_ID = '" + returnDataID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    /**
+     * Update Total Refund of a ReturnData object.
+     * @param returnDataID String, the ID of the ReturnData object.
+     * @param totalRefund String, refund that the old total refund will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    public static void updateTotalRefund(String returnDataID, String totalRefund) throws SQLException{
+        String updateStmt =
+                "UPDATE ReturnData\n" +
+                        "SET TotalRefund = " + totalRefund + "\n" +
+                        "WHERE Client_ID = '" + returnDataID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    /**
+     * Update EITC of a ReturnData object.
+     * @param returnDataID String, the ID of the ReturnData object.
+     * @param EITC String, EITC that the old EITC will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    public static void updateEITC(String returnDataID, String EITC) throws SQLException{
+        String updateStmt =
+                "UPDATE ReturnData\n" +
+                        "SET EITC = " + EITC + "\n" +
+                        "WHERE Client_ID = '" + returnDataID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    /**
+     * Update CTC of a ReturnData object.
+     * @param returnDataID String, the ID of the ReturnData object.
+     * @param CTC String, CTC that the old CTC will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    public static void updateCTC(String returnDataID, String CTC) throws SQLException{
+        String updateStmt =
+                "UPDATE ReturnData\n" +
+                        "SET CTC = " + CTC + "\n" +
+                        "WHERE Client_ID = '" + returnDataID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    /**
+     * Update Dependents of a ReturnData object.
+     * @param returnDataID String, the ID of the ReturnData object.
+     * @param dependents String, number of dependents that the old dependents will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    public static void updateDependents(String returnDataID, String dependents) throws SQLException{
+        String updateStmt =
+                "UPDATE ReturnData\n" +
+                        "SET Dependents = " + dependents + "\n" +
+                        "WHERE Client_ID = '" + returnDataID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    /**
+     * Update Survey Score of a ReturnData object.
+     * @param returnDataID String, the ID of the ReturnData object.
+     * @param surveyScore String, score that the old survey score will be changed to.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     */
+    public static void updateSurveyScore(String returnDataID, String surveyScore) throws SQLException{
+        String updateStmt =
+                "UPDATE ReturnData\n" +
+                        "SET SurveyScore = " + surveyScore + "\n" +
+                        "WHERE Client_ID = '" + returnDataID + "';";
+        try{
+            DB.update(updateStmt);
+        }catch(Exception e){
+            System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+
+    /*
+    TAX YEAR FUNCTIONS
+     */
 
     public static void insertTaxYear(HashMap<String, String> clientData){
         String taxYear = "";
@@ -337,6 +660,38 @@ public class DataBase {
         }
         return dataObjectList;
 
+    }
+
+    /**
+     * Searches for a Client by ID.
+     * @param ID String, ID of the Client.
+     * @return Client with corresponding ID.
+     * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
+     * @throws ClassNotFoundException Client class unable to be found.
+     */
+    public static OldClient searchClient(String ID) throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * From Client WHERE ID = " + ID;
+
+        try{
+            ResultSet rs = DB.executeQuery(selectStmt);
+            return getClientFromResultSet(rs);
+        }catch(Exception e){
+            System.out.println("Error while searching for " + ID + " : " + e);
+            throw e;
+        }
+    }
+
+    private static OldClient getClientFromResultSet(ResultSet rs) throws SQLException{
+        OldClient client = null;
+        if(rs.next()){
+            client = new OldClient();
+            client.setID(rs.getString("ID"));
+            client.setFirstName(rs.getString("FirstName"));
+            client.setLastName(rs.getString("LastName"));
+            client.setDoB(rs.getString("DoB"));
+            client.setLast4SS(rs.getInt("Last4SS"));
+        }
+        return client;
     }
 
     /**

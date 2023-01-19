@@ -1,149 +1,82 @@
 package model;
-
 import javafx.beans.property.*;
-
-/**
- * Client class
- * <br/>
- * <br/>
- * Client that utilizes Arkansas Asset Builder's Services.
- * Client information is stored in the local database.
- */
 public class Client {
-    private StringProperty ID;
-    private StringProperty FirstName;
-    private StringProperty LastName;
-    private StringProperty DoB;
-    private IntegerProperty Last4SS;
+	private StringProperty id;
+	private StringProperty sidn;
+	private StringProperty L4SSN;
+	private StringProperty first_name;
+	private StringProperty last_name;
+	private StringProperty DoB;
+	private StringProperty efin;
+	public Client(){
+		this.id = new SimpleStringProperty();
+		this.sidn = new SimpleStringProperty();
+		this.L4SSN = new SimpleStringProperty();
+		this.first_name = new SimpleStringProperty();
+		this.last_name = new SimpleStringProperty();
+		this.DoB = new SimpleStringProperty();
+		this.efin = new SimpleStringProperty();
+	}
+	public String getId(){ return id.get();}
 
-    /**
-     * Constructor for Client class.
-     */
-    public Client(){
-        this.ID = new SimpleStringProperty();
-        this.FirstName = new SimpleStringProperty();
-        this.LastName = new SimpleStringProperty();
-        this.DoB = new SimpleStringProperty();
-        this.Last4SS = new SimpleIntegerProperty();
-    }
+	public void setId(String id){this.id.set(id);}
 
-    /**
-     * Method for retrieving Client ID from the database.<br/>
-     * @return int, the ID of the Client.
-     */
-    public String getID(){
-        return ID.get();
-    }
+	public StringProperty IdProperty(){return c;}
 
-    /**
-     * Method for setting Client ID in the database<br/>
-     * @param ID int, The ID that the Client ID will be set to.
-     */
-    public void setID(String ID){
-        this.ID.set(ID);
-    }
+	public String getSidn(){ return sidn.get();}
 
-    /**
-     * Method for retrieving Client ID from the database in a IntegerProperty format.<br/>
-     * @return IntegerProperty, the ID of the Client.
-     */
-    public StringProperty Client_IDProperty(){
-        return ID;
-    }
+	public void setSidn(String sidn){this.sidn.set(sidn);}
 
-    /**
-     * Method for retrieving Client first name from the database.<br/>
-     * @return String, the first name of the Client.
-     */
-    public String getFirstName(){
-        return FirstName.get();
-    }
+	public StringProperty SidnProperty(){return c;}
 
-    /**
-     * Method for setting Client first name in the database<br/>
-     * @param FirstName String, The name that the Client first name will be set to.
-     */
-    public void setFirstName(String FirstName){
-        this.FirstName.set(FirstName);
-    }
 
-    /**
-     * Method for retrieving Client first name from the database in a StringProperty format.<br/>
-     * @return StringProperty, the first name of the Client.
-     */
-    public StringProperty firstNameProperty(){
-        return FirstName;
-    }
+	public String getL4SSN(){ return L4SSN.get();}
 
-    /**
-     * Method for retrieving Client last name from the database.<br/>
-     * @return String, the last name of the Client.
-     */
-    public String getLastName(){
-        return LastName.get();
-    }
+	public void setL4SSN(String L4SSN){this.L4SSN.set(L4SSN);}
 
-    /**
-     * Method for setting Client last name in the database<br/>
-     * @param LastName String, The name that the Client last name will be set to.
-     */
-    public void setLastName(String LastName){
-        this.LastName.set(LastName);
-    }
+	public StringProperty L4SSNProperty(){return c;}
 
-    /**
-     * Method for retrieving Client last name from the database in a StringProperty format.<br/>
-     * @return StringProperty, the last name of the Client.
-     */
-    public StringProperty lastNameProperty(){
-        return LastName;
-    }
 
-    /**
-     * Method for retrieving Client date of birth from the database.<br/>
-     * @return String, the date of birth of the Client.
-     */
-    public String getDoB(){
-        return DoB.get();
-    }
+	public String getFirst(){ return first_name.get();}
 
-    /**
-     * Method for setting Client date of birth in the database<br/>
-     * @param DoB String, The date that the Client date of birth will be set to.
-     */
-    public void setDoB(String DoB){
-        this.DoB.set(DoB);
-    }
+	public void setFirst(String first_name){this.first_name.set(first_name);}
 
-    /**
-     * Method for retrieving Client date of birth from the database in a StringProperty format.<br/>
-     * @return StringProperty, the date of birth of the Client.
-     */
-    public StringProperty doBProperty(){
-        return DoB;
-    }
+	public StringProperty FirstProperty(){return c;}
 
-    /**
-     * Method for retrieving Client last four SS numbers from the database.<br/>
-     * @return int, the last four SS numbers of the Client.
-     */
-    public int getLast4SS(){
-        return Last4SS.get();
-    }
 
-    /**
-     * Method for setting Client last four SS numbers in the database<br/>
-     * @param Last4SS int, The number that the Client last four SS numbers will be set to.
-     */
-    public void setLast4SS(int Last4SS){
-        this.Last4SS.set(Last4SS);
-    }
+	public String getFirstName(){ return first_name.get();}
 
-    /**
-     * Method for retrieving Client last four SS numbers from the database in a IntegerProperty format.<br/>
-     * @return IntegerProperty, the last four SS numbers of the Client.
-     */
-    public IntegerProperty last4SSProperty(){
-        return Last4SS;
-    }
+	public void setFirstName(String first_name){this.first_name.set(first_name);}
+
+	public StringProperty FirstNameProperty(){return c;}
+
+
+	public String getLast(){ return last_name.get();}
+
+	public void setLast(String last_name){this.last_name.set(last_name);}
+
+	public StringProperty LastProperty(){return c;}
+
+
+	public String getLastName(){ return last_name.get();}
+
+	public void setLastName(String last_name){this.last_name.set(last_name);}
+
+	public StringProperty LastNameProperty(){return c;}
+
+
+	public String getDoB(){ return DoB.get();}
+
+	public void setDoB(String DoB){this.DoB.set(DoB);}
+
+	public StringProperty DoBProperty(){return c;}
+
+
+	public String getEfin(){ return efin.get();}
+
+	public void setEfin(String efin){this.efin.set(efin);}
+
+	public StringProperty EfinProperty(){return c;}
+
+
 }

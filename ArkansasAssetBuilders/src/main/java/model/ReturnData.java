@@ -16,7 +16,7 @@ public class ReturnData {
     private IntegerProperty CTC;
     private IntegerProperty Dependents;
     private IntegerProperty SurveyScore;
-    private Client client;
+    private OldClient client;
     private TaxYear taxYear;
 
     /**
@@ -29,7 +29,7 @@ public class ReturnData {
         this.CTC = new SimpleIntegerProperty();
         this.Dependents = new SimpleIntegerProperty();
         this.SurveyScore = new SimpleIntegerProperty();
-        this.client = new Client();
+        this.client = new OldClient();
         this.taxYear = new TaxYear();
     }
 

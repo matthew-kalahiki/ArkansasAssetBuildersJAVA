@@ -169,7 +169,7 @@ public class HelloController {
     @FXML
     private void searchClient(ActionEvent actionEvent) throws ClassNotFoundException, SQLException{
         try{
-            Client client = ClientDAO.searchClient(clientID.getText());
+            OldClient client = DataBase.searchClient(clientID.getText());
             populateAndShowClient(client);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -207,7 +207,7 @@ public class HelloController {
                 condition += "Last4SS = " + l4ss.getText();
                 //if(numCols > 0){condition += " AND ";}
             }
-            ObservableList<DataObject> clientData = ClientDAO.searchClients(condition);
+            ObservableList<DataObject> clientData = DataBase.searchClients(condition);
             populateClients(clientData);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -217,20 +217,20 @@ public class HelloController {
     }
 
     @FXML
-    private void populateClient(Client client) throws ClassNotFoundException{
-        ObservableList<Client> clientData = FXCollections.observableArrayList();
+    private void populateClient(OldClient client) throws ClassNotFoundException{
+        ObservableList<OldClient> clientData = FXCollections.observableArrayList();
         clientData.add(client);
         System.out.println(clientData.size());
         resultsTable.setItems(clientData);
     }
 
     @FXML
-    private void setClientInfoToTextArea(Client client){
+    private void setClientInfoToTextArea(OldClient client){
         resultArea.setText("First Name: " + client.getFirstName() + "\n" + "Last Name: " + client.getLastName());
     }
 
     @FXML
-    private void populateAndShowClient(Client client) throws ClassNotFoundException{
+    private void populateAndShowClient(OldClient client) throws ClassNotFoundException{
         if(client != null){
             populateClient(client);
             setClientInfoToTextArea(client);
@@ -433,7 +433,7 @@ public class HelloController {
                 ObservableList<DataObject> taxYearData = DataBase.searchTaxYears(condition);
                 populateData(taxYearData);
             }else {
-                ObservableList<DataObject> clientData = ClientDAO.searchClients(condition);
+                ObservableList<DataObject> clientData = DataBase.searchClients(condition);
                 populateClients(clientData);
             }
         } catch (SQLException e) {
