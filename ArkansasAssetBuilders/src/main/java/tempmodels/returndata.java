@@ -91,690 +91,690 @@ public class returndata{
 		this.state_tax_liability = new SimpleDoubleProperty();
 		this.a_amount_taxpayer_is_planning_to_save = new SimpleDoubleProperty();
 	}
-	public String getClient(){ return client_id.get();}
+	public String getClient(){return client_id.get();}
 
-	public void setClient(String client_id){this.client_idset(client_id);}
+	public void setClient(String client_id){this.client_id.set(client_id);}
 
-	public StringProperty ClientProperty(){return c;}
+	public StringProperty ClientProperty(){return client_id;}
 
 
-	public String getClientId(){ return client_id.get();}
+	public String getClientId(){return client_id.get();}
 
-	public void setClientId(String client_id){this.client_idset(client_id);}
+	public void setClientId(String client_id){this.client_id.set(client_id);}
 
-	public StringProperty ClientIdProperty(){return c;}
+	public StringProperty ClientIdProperty(){return client_id;}
 
 
-	public double getTax(){ return tax_year.get();}
+	public double getTax(){return tax_year.get();}
 
-	public void setTax(double tax_year){this.tax_yearset(tax_year);}
+	public void setTax(double tax_year){this.tax_year.set(tax_year);}
 
-	public DoubleProperty TaxProperty(){return c;}
+	public DoubleProperty TaxProperty(){return tax_year;}
 
 
-	public double getTaxYear(){ return tax_year.get();}
+	public double getTaxYear(){return tax_year.get();}
 
-	public void setTaxYear(double tax_year){this.tax_yearset(tax_year);}
+	public void setTaxYear(double tax_year){this.tax_year.set(tax_year);}
 
-	public DoubleProperty TaxYearProperty(){return c;}
+	public DoubleProperty TaxYearProperty(){return tax_year;}
 
 
-	public bool getFederal(){ return federal.get();}
+	public bool getFederal(){return federal.get();}
 
-	public void setFederal(bool federal){this.federalset(federal);}
+	public void setFederal(bool federal){this.federal.set(federal);}
 
-	public BooleanProperty FederalProperty(){return c;}
+	public BooleanProperty FederalProperty(){return federal;}
 
 
-	public String getAccepted(){ return accepted_data.get();}
+	public String getAccepted(){return accepted_data.get();}
 
-	public void setAccepted(String accepted_data){this.accepted_dataset(accepted_data);}
+	public void setAccepted(String accepted_data){this.accepted_data.set(accepted_data);}
 
-	public StringProperty AcceptedProperty(){return c;}
+	public StringProperty AcceptedProperty(){return accepted_data;}
 
 
-	public String getAcceptedData(){ return accepted_data.get();}
+	public String getAcceptedData(){return accepted_data.get();}
 
-	public void setAcceptedData(String accepted_data){this.accepted_dataset(accepted_data);}
+	public void setAcceptedData(String accepted_data){this.accepted_data.set(accepted_data);}
 
-	public StringProperty AcceptedDataProperty(){return c;}
+	public StringProperty AcceptedDataProperty(){return accepted_data;}
 
 
-	public String getReturn(){ return return_type.get();}
+	public String getReturn(){return return_type.get();}
 
-	public void setReturn(String return_type){this.return_typeset(return_type);}
+	public void setReturn(String return_type){this.return_type.set(return_type);}
 
-	public StringProperty ReturnProperty(){return c;}
+	public StringProperty ReturnProperty(){return return_type;}
 
 
-	public String getReturnType(){ return return_type.get();}
+	public String getReturnType(){return return_type.get();}
 
-	public void setReturnType(String return_type){this.return_typeset(return_type);}
+	public void setReturnType(String return_type){this.return_type.set(return_type);}
 
-	public StringProperty ReturnTypeProperty(){return c;}
+	public StringProperty ReturnTypeProperty(){return return_type;}
 
 
-	public String getFiling(){ return filing_status.get();}
+	public String getFiling(){return filing_status.get();}
 
-	public void setFiling(String filing_status){this.filing_statusset(filing_status);}
+	public void setFiling(String filing_status){this.filing_status.set(filing_status);}
 
-	public StringProperty FilingProperty(){return c;}
+	public StringProperty FilingProperty(){return filing_status;}
 
 
-	public String getFilingStatus(){ return filing_status.get();}
+	public String getFilingStatus(){return filing_status.get();}
 
-	public void setFilingStatus(String filing_status){this.filing_statusset(filing_status);}
+	public void setFilingStatus(String filing_status){this.filing_status.set(filing_status);}
 
-	public StringProperty FilingStatusProperty(){return c;}
+	public StringProperty FilingStatusProperty(){return filing_status;}
 
 
-	public double getTotal(){ return total_irs_exemptions.get();}
+	public double getTotal(){return total_irs_exemptions.get();}
 
-	public void setTotal(double total_irs_exemptions){this.total_irs_exemptionsset(total_irs_exemptions);}
+	public void setTotal(double total_irs_exemptions){this.total_irs_exemptions.set(total_irs_exemptions);}
 
-	public DoubleProperty TotalProperty(){return c;}
+	public DoubleProperty TotalProperty(){return total_irs_exemptions;}
 
 
-	public double getTotalIrs(){ return total_irs_exemptions.get();}
+	public double getTotalIrs(){return total_irs_exemptions.get();}
 
-	public void setTotalIrs(double total_irs_exemptions){this.total_irs_exemptionsset(total_irs_exemptions);}
+	public void setTotalIrs(double total_irs_exemptions){this.total_irs_exemptions.set(total_irs_exemptions);}
 
-	public DoubleProperty TotalIrsProperty(){return c;}
+	public DoubleProperty TotalIrsProperty(){return total_irs_exemptions;}
 
 
-	public double getTotalIrsExemptions(){ return total_irs_exemptions.get();}
+	public double getTotalIrsExemptions(){return total_irs_exemptions.get();}
 
-	public void setTotalIrsExemptions(double total_irs_exemptions){this.total_irs_exemptionsset(total_irs_exemptions);}
+	public void setTotalIrsExemptions(double total_irs_exemptions){this.total_irs_exemptions.set(total_irs_exemptions);}
 
-	public DoubleProperty TotalIrsExemptionsProperty(){return c;}
+	public DoubleProperty TotalIrsExemptionsProperty(){return total_irs_exemptions;}
 
 
-	public double getRefund(){ return refund.get();}
+	public double getRefund(){return refund.get();}
 
-	public void setRefund(double refund){this.refundset(refund);}
+	public void setRefund(double refund){this.refund.set(refund);}
 
-	public DoubleProperty RefundProperty(){return c;}
+	public DoubleProperty RefundProperty(){return refund;}
 
 
-	public bool getPaper(){ return paper_state.get();}
+	public bool getPaper(){return paper_state.get();}
 
-	public void setPaper(bool paper_state){this.paper_stateset(paper_state);}
+	public void setPaper(bool paper_state){this.paper_state.set(paper_state);}
 
-	public BooleanProperty PaperProperty(){return c;}
+	public BooleanProperty PaperProperty(){return paper_state;}
 
 
-	public bool getPaperState(){ return paper_state.get();}
+	public bool getPaperState(){return paper_state.get();}
 
-	public void setPaperState(bool paper_state){this.paper_stateset(paper_state);}
+	public void setPaperState(bool paper_state){this.paper_state.set(paper_state);}
 
-	public BooleanProperty PaperStateProperty(){return c;}
+	public BooleanProperty PaperStateProperty(){return paper_state;}
 
 
-	public bool getPaper(){ return paper_fed.get();}
+	public bool getPaper(){return paper_fed.get();}
 
-	public void setPaper(bool paper_fed){this.paper_fedset(paper_fed);}
+	public void setPaper(bool paper_fed){this.paper_fed.set(paper_fed);}
 
-	public BooleanProperty PaperProperty(){return c;}
+	public BooleanProperty PaperProperty(){return paper_fed;}
 
 
-	public bool getPaperFed(){ return paper_fed.get();}
+	public bool getPaperFed(){return paper_fed.get();}
 
-	public void setPaperFed(bool paper_fed){this.paper_fedset(paper_fed);}
+	public void setPaperFed(bool paper_fed){this.paper_fed.set(paper_fed);}
 
-	public BooleanProperty PaperFedProperty(){return c;}
+	public BooleanProperty PaperFedProperty(){return paper_fed;}
 
 
-	public bool getRequesting(){ return requesting_dd.get();}
+	public bool getRequesting(){return requesting_dd.get();}
 
-	public void setRequesting(bool requesting_dd){this.requesting_ddset(requesting_dd);}
+	public void setRequesting(bool requesting_dd){this.requesting_dd.set(requesting_dd);}
 
-	public BooleanProperty RequestingProperty(){return c;}
+	public BooleanProperty RequestingProperty(){return requesting_dd;}
 
 
-	public bool getRequestingDd(){ return requesting_dd.get();}
+	public bool getRequestingDd(){return requesting_dd.get();}
 
-	public void setRequestingDd(bool requesting_dd){this.requesting_ddset(requesting_dd);}
+	public void setRequestingDd(bool requesting_dd){this.requesting_dd.set(requesting_dd);}
 
-	public BooleanProperty RequestingDdProperty(){return c;}
+	public BooleanProperty RequestingDdProperty(){return requesting_dd;}
 
 
-	public double getAgi(){ return agi.get();}
+	public double getAgi(){return agi.get();}
 
-	public void setAgi(double agi){this.agiset(agi);}
+	public void setAgi(double agi){this.agi.set(agi);}
 
-	public DoubleProperty AgiProperty(){return c;}
+	public DoubleProperty AgiProperty(){return agi;}
 
 
-	public String getCreated(){ return created_date.get();}
+	public String getCreated(){return created_date.get();}
 
-	public void setCreated(String created_date){this.created_dateset(created_date);}
+	public void setCreated(String created_date){this.created_date.set(created_date);}
 
-	public StringProperty CreatedProperty(){return c;}
+	public StringProperty CreatedProperty(){return created_date;}
 
 
-	public String getCreatedDate(){ return created_date.get();}
+	public String getCreatedDate(){return created_date.get();}
 
-	public void setCreatedDate(String created_date){this.created_dateset(created_date);}
+	public void setCreatedDate(String created_date){this.created_date.set(created_date);}
 
-	public StringProperty CreatedDateProperty(){return c;}
+	public StringProperty CreatedDateProperty(){return created_date;}
 
 
-	public double getAddctc(){ return addctc.get();}
+	public double getAddctc(){return addctc.get();}
 
-	public void setAddctc(double addctc){this.addctcset(addctc);}
+	public void setAddctc(double addctc){this.addctc.set(addctc);}
 
-	public DoubleProperty AddctcProperty(){return c;}
+	public DoubleProperty AddctcProperty(){return addctc;}
 
 
-	public String getPound(){ return pound_savings_bonds.get();}
+	public String getPound(){return pound_savings_bonds.get();}
 
-	public void setPound(String pound_savings_bonds){this.pound_savings_bondsset(pound_savings_bonds);}
+	public void setPound(String pound_savings_bonds){this.pound_savings_bonds.set(pound_savings_bonds);}
 
-	public StringProperty PoundProperty(){return c;}
+	public StringProperty PoundProperty(){return pound_savings_bonds;}
 
 
-	public String getPoundSavings(){ return pound_savings_bonds.get();}
+	public String getPoundSavings(){return pound_savings_bonds.get();}
 
-	public void setPoundSavings(String pound_savings_bonds){this.pound_savings_bondsset(pound_savings_bonds);}
+	public void setPoundSavings(String pound_savings_bonds){this.pound_savings_bonds.set(pound_savings_bonds);}
 
-	public StringProperty PoundSavingsProperty(){return c;}
+	public StringProperty PoundSavingsProperty(){return pound_savings_bonds;}
 
 
-	public String getPoundSavingsBonds(){ return pound_savings_bonds.get();}
+	public String getPoundSavingsBonds(){return pound_savings_bonds.get();}
 
-	public void setPoundSavingsBonds(String pound_savings_bonds){this.pound_savings_bondsset(pound_savings_bonds);}
+	public void setPoundSavingsBonds(String pound_savings_bonds){this.pound_savings_bonds.set(pound_savings_bonds);}
 
-	public StringProperty PoundSavingsBondsProperty(){return c;}
+	public StringProperty PoundSavingsBondsProperty(){return pound_savings_bonds;}
 
 
-	public String getSavings(){ return savings_bonds.get();}
+	public String getSavings(){return savings_bonds.get();}
 
-	public void setSavings(String savings_bonds){this.savings_bondsset(savings_bonds);}
+	public void setSavings(String savings_bonds){this.savings_bonds.set(savings_bonds);}
 
-	public StringProperty SavingsProperty(){return c;}
+	public StringProperty SavingsProperty(){return savings_bonds;}
 
 
-	public String getSavingsBonds(){ return savings_bonds.get();}
+	public String getSavingsBonds(){return savings_bonds.get();}
 
-	public void setSavingsBonds(String savings_bonds){this.savings_bondsset(savings_bonds);}
+	public void setSavingsBonds(String savings_bonds){this.savings_bonds.set(savings_bonds);}
 
-	public StringProperty SavingsBondsProperty(){return c;}
+	public StringProperty SavingsBondsProperty(){return savings_bonds;}
 
 
-	public double getEic(){ return eic.get();}
+	public double getEic(){return eic.get();}
 
-	public void setEic(double eic){this.eicset(eic);}
+	public void setEic(double eic){this.eic.set(eic);}
 
-	public DoubleProperty EicProperty(){return c;}
+	public DoubleProperty EicProperty(){return eic;}
 
 
-	public double getChild(){ return child_tax_credit.get();}
+	public double getChild(){return child_tax_credit.get();}
 
-	public void setChild(double child_tax_credit){this.child_tax_creditset(child_tax_credit);}
+	public void setChild(double child_tax_credit){this.child_tax_credit.set(child_tax_credit);}
 
-	public DoubleProperty ChildProperty(){return c;}
+	public DoubleProperty ChildProperty(){return child_tax_credit;}
 
 
-	public double getChildTax(){ return child_tax_credit.get();}
+	public double getChildTax(){return child_tax_credit.get();}
 
-	public void setChildTax(double child_tax_credit){this.child_tax_creditset(child_tax_credit);}
+	public void setChildTax(double child_tax_credit){this.child_tax_credit.set(child_tax_credit);}
 
-	public DoubleProperty ChildTaxProperty(){return c;}
+	public DoubleProperty ChildTaxProperty(){return child_tax_credit;}
 
 
-	public double getChildTaxCredit(){ return child_tax_credit.get();}
+	public double getChildTaxCredit(){return child_tax_credit.get();}
 
-	public void setChildTaxCredit(double child_tax_credit){this.child_tax_creditset(child_tax_credit);}
+	public void setChildTaxCredit(double child_tax_credit){this.child_tax_credit.set(child_tax_credit);}
 
-	public DoubleProperty ChildTaxCreditProperty(){return c;}
+	public DoubleProperty ChildTaxCreditProperty(){return child_tax_credit;}
 
 
-	public double getEducation(){ return education_tax_credit.get();}
+	public double getEducation(){return education_tax_credit.get();}
 
-	public void setEducation(double education_tax_credit){this.education_tax_creditset(education_tax_credit);}
+	public void setEducation(double education_tax_credit){this.education_tax_credit.set(education_tax_credit);}
 
-	public DoubleProperty EducationProperty(){return c;}
+	public DoubleProperty EducationProperty(){return education_tax_credit;}
 
 
-	public double getEducationTax(){ return education_tax_credit.get();}
+	public double getEducationTax(){return education_tax_credit.get();}
 
-	public void setEducationTax(double education_tax_credit){this.education_tax_creditset(education_tax_credit);}
+	public void setEducationTax(double education_tax_credit){this.education_tax_credit.set(education_tax_credit);}
 
-	public DoubleProperty EducationTaxProperty(){return c;}
+	public DoubleProperty EducationTaxProperty(){return education_tax_credit;}
 
 
-	public double getEducationTaxCredit(){ return education_tax_credit.get();}
+	public double getEducationTaxCredit(){return education_tax_credit.get();}
 
-	public void setEducationTaxCredit(double education_tax_credit){this.education_tax_creditset(education_tax_credit);}
+	public void setEducationTaxCredit(double education_tax_credit){this.education_tax_credit.set(education_tax_credit);}
 
-	public DoubleProperty EducationTaxCreditProperty(){return c;}
+	public DoubleProperty EducationTaxCreditProperty(){return education_tax_credit;}
 
 
-	public double getElderly(){ return elderly_credit.get();}
+	public double getElderly(){return elderly_credit.get();}
 
-	public void setElderly(double elderly_credit){this.elderly_creditset(elderly_credit);}
+	public void setElderly(double elderly_credit){this.elderly_credit.set(elderly_credit);}
 
-	public DoubleProperty ElderlyProperty(){return c;}
+	public DoubleProperty ElderlyProperty(){return elderly_credit;}
 
 
-	public double getElderlyCredit(){ return elderly_credit.get();}
+	public double getElderlyCredit(){return elderly_credit.get();}
 
-	public void setElderlyCredit(double elderly_credit){this.elderly_creditset(elderly_credit);}
+	public void setElderlyCredit(double elderly_credit){this.elderly_credit.set(elderly_credit);}
 
-	public DoubleProperty ElderlyCreditProperty(){return c;}
+	public DoubleProperty ElderlyCreditProperty(){return elderly_credit;}
 
 
-	public double getTotal(){ return total_resp_payment.get();}
+	public double getTotal(){return total_resp_payment.get();}
 
-	public void setTotal(double total_resp_payment){this.total_resp_paymentset(total_resp_payment);}
+	public void setTotal(double total_resp_payment){this.total_resp_payment.set(total_resp_payment);}
 
-	public DoubleProperty TotalProperty(){return c;}
+	public DoubleProperty TotalProperty(){return total_resp_payment;}
 
 
-	public double getTotalResp(){ return total_resp_payment.get();}
+	public double getTotalResp(){return total_resp_payment.get();}
 
-	public void setTotalResp(double total_resp_payment){this.total_resp_paymentset(total_resp_payment);}
+	public void setTotalResp(double total_resp_payment){this.total_resp_payment.set(total_resp_payment);}
 
-	public DoubleProperty TotalRespProperty(){return c;}
+	public DoubleProperty TotalRespProperty(){return total_resp_payment;}
 
 
-	public double getTotalRespPayment(){ return total_resp_payment.get();}
+	public double getTotalRespPayment(){return total_resp_payment.get();}
 
-	public void setTotalRespPayment(double total_resp_payment){this.total_resp_paymentset(total_resp_payment);}
+	public void setTotalRespPayment(double total_resp_payment){this.total_resp_payment.set(total_resp_payment);}
 
-	public DoubleProperty TotalRespPaymentProperty(){return c;}
+	public DoubleProperty TotalRespPaymentProperty(){return total_resp_payment;}
 
 
-	public double getTotal(){ return total_advptc_repayment.get();}
+	public double getTotal(){return total_advptc_repayment.get();}
 
-	public void setTotal(double total_advptc_repayment){this.total_advptc_repaymentset(total_advptc_repayment);}
+	public void setTotal(double total_advptc_repayment){this.total_advptc_repayment.set(total_advptc_repayment);}
 
-	public DoubleProperty TotalProperty(){return c;}
+	public DoubleProperty TotalProperty(){return total_advptc_repayment;}
 
 
-	public double getTotalAdvptc(){ return total_advptc_repayment.get();}
+	public double getTotalAdvptc(){return total_advptc_repayment.get();}
 
-	public void setTotalAdvptc(double total_advptc_repayment){this.total_advptc_repaymentset(total_advptc_repayment);}
+	public void setTotalAdvptc(double total_advptc_repayment){this.total_advptc_repayment.set(total_advptc_repayment);}
 
-	public DoubleProperty TotalAdvptcProperty(){return c;}
+	public DoubleProperty TotalAdvptcProperty(){return total_advptc_repayment;}
 
 
-	public double getTotalAdvptcRepayment(){ return total_advptc_repayment.get();}
+	public double getTotalAdvptcRepayment(){return total_advptc_repayment.get();}
 
-	public void setTotalAdvptcRepayment(double total_advptc_repayment){this.total_advptc_repaymentset(total_advptc_repayment);}
+	public void setTotalAdvptcRepayment(double total_advptc_repayment){this.total_advptc_repayment.set(total_advptc_repayment);}
 
-	public DoubleProperty TotalAdvptcRepaymentProperty(){return c;}
+	public DoubleProperty TotalAdvptcRepaymentProperty(){return total_advptc_repayment;}
 
 
-	public double getAverage(){ return average_advptc_payment.get();}
+	public double getAverage(){return average_advptc_payment.get();}
 
-	public void setAverage(double average_advptc_payment){this.average_advptc_paymentset(average_advptc_payment);}
+	public void setAverage(double average_advptc_payment){this.average_advptc_payment.set(average_advptc_payment);}
 
-	public DoubleProperty AverageProperty(){return c;}
+	public DoubleProperty AverageProperty(){return average_advptc_payment;}
 
 
-	public double getAverageAdvptc(){ return average_advptc_payment.get();}
+	public double getAverageAdvptc(){return average_advptc_payment.get();}
 
-	public void setAverageAdvptc(double average_advptc_payment){this.average_advptc_paymentset(average_advptc_payment);}
+	public void setAverageAdvptc(double average_advptc_payment){this.average_advptc_payment.set(average_advptc_payment);}
 
-	public DoubleProperty AverageAdvptcProperty(){return c;}
+	public DoubleProperty AverageAdvptcProperty(){return average_advptc_payment;}
 
 
-	public double getAverageAdvptcPayment(){ return average_advptc_payment.get();}
+	public double getAverageAdvptcPayment(){return average_advptc_payment.get();}
 
-	public void setAverageAdvptcPayment(double average_advptc_payment){this.average_advptc_paymentset(average_advptc_payment);}
+	public void setAverageAdvptcPayment(double average_advptc_payment){this.average_advptc_payment.set(average_advptc_payment);}
 
-	public DoubleProperty AverageAdvptcPaymentProperty(){return c;}
+	public DoubleProperty AverageAdvptcPaymentProperty(){return average_advptc_payment;}
 
 
-	public double getTotal(){ return total_ptc.get();}
+	public double getTotal(){return total_ptc.get();}
 
-	public void setTotal(double total_ptc){this.total_ptcset(total_ptc);}
+	public void setTotal(double total_ptc){this.total_ptc.set(total_ptc);}
 
-	public DoubleProperty TotalProperty(){return c;}
+	public DoubleProperty TotalProperty(){return total_ptc;}
 
 
-	public double getTotalPtc(){ return total_ptc.get();}
+	public double getTotalPtc(){return total_ptc.get();}
 
-	public void setTotalPtc(double total_ptc){this.total_ptcset(total_ptc);}
+	public void setTotalPtc(double total_ptc){this.total_ptc.set(total_ptc);}
 
-	public DoubleProperty TotalPtcProperty(){return c;}
+	public DoubleProperty TotalPtcProperty(){return total_ptc;}
 
 
-	public double getBalance(){ return balance_due.get();}
+	public double getBalance(){return balance_due.get();}
 
-	public void setBalance(double balance_due){this.balance_dueset(balance_due);}
+	public void setBalance(double balance_due){this.balance_due.set(balance_due);}
 
-	public DoubleProperty BalanceProperty(){return c;}
+	public DoubleProperty BalanceProperty(){return balance_due;}
 
 
-	public double getBalanceDue(){ return balance_due.get();}
+	public double getBalanceDue(){return balance_due.get();}
 
-	public void setBalanceDue(double balance_due){this.balance_dueset(balance_due);}
+	public void setBalanceDue(double balance_due){this.balance_due.set(balance_due);}
 
-	public DoubleProperty BalanceDueProperty(){return c;}
+	public DoubleProperty BalanceDueProperty(){return balance_due;}
 
 
-	public bool getItin(){ return itin.get();}
+	public bool getItin(){return itin.get();}
 
-	public void setItin(bool itin){this.itinset(itin);}
+	public void setItin(bool itin){this.itin.set(itin);}
 
-	public BooleanProperty ItinProperty(){return c;}
+	public BooleanProperty ItinProperty(){return itin;}
 
 
-	public bool getExemption(){ return exemption_7.get();}
+	public bool getExemption(){return exemption_7.get();}
 
-	public void setExemption(bool exemption_7){this.exemption_7set(exemption_7);}
+	public void setExemption(bool exemption_7){this.exemption_7.set(exemption_7);}
 
-	public BooleanProperty ExemptionProperty(){return c;}
+	public BooleanProperty ExemptionProperty(){return exemption_7;}
 
 
-	public bool getExemption7(){ return exemption_7.get();}
+	public bool getExemption7(){return exemption_7.get();}
 
-	public void setExemption7(bool exemption_7){this.exemption_7set(exemption_7);}
+	public void setExemption7(bool exemption_7){this.exemption_7.set(exemption_7);}
 
-	public BooleanProperty Exemption7Property(){return c;}
+	public BooleanProperty Exemption7Property(){return exemption_7;}
 
 
-	public bool getFull(){ return full_year_coverage.get();}
+	public bool getFull(){return full_year_coverage.get();}
 
-	public void setFull(bool full_year_coverage){this.full_year_coverageset(full_year_coverage);}
+	public void setFull(bool full_year_coverage){this.full_year_coverage.set(full_year_coverage);}
 
-	public BooleanProperty FullProperty(){return c;}
+	public BooleanProperty FullProperty(){return full_year_coverage;}
 
 
-	public bool getFullYear(){ return full_year_coverage.get();}
+	public bool getFullYear(){return full_year_coverage.get();}
 
-	public void setFullYear(bool full_year_coverage){this.full_year_coverageset(full_year_coverage);}
+	public void setFullYear(bool full_year_coverage){this.full_year_coverage.set(full_year_coverage);}
 
-	public BooleanProperty FullYearProperty(){return c;}
+	public BooleanProperty FullYearProperty(){return full_year_coverage;}
 
 
-	public bool getFullYearCoverage(){ return full_year_coverage.get();}
+	public bool getFullYearCoverage(){return full_year_coverage.get();}
 
-	public void setFullYearCoverage(bool full_year_coverage){this.full_year_coverageset(full_year_coverage);}
+	public void setFullYearCoverage(bool full_year_coverage){this.full_year_coverage.set(full_year_coverage);}
 
-	public BooleanProperty FullYearCoverageProperty(){return c;}
+	public BooleanProperty FullYearCoverageProperty(){return full_year_coverage;}
 
 
-	public bool getForm8888(){ return form8888.get();}
+	public bool getForm8888(){return form8888.get();}
 
-	public void setForm8888(bool form8888){this.form8888set(form8888);}
+	public void setForm8888(bool form8888){this.form8888.set(form8888);}
 
-	public BooleanProperty Form8888Property(){return c;}
+	public BooleanProperty Form8888Property(){return form8888;}
 
 
-	public bool getSchedule(){ return schedule_a.get();}
+	public bool getSchedule(){return schedule_a.get();}
 
-	public void setSchedule(bool schedule_a){this.schedule_aset(schedule_a);}
+	public void setSchedule(bool schedule_a){this.schedule_a.set(schedule_a);}
 
-	public BooleanProperty ScheduleProperty(){return c;}
+	public BooleanProperty ScheduleProperty(){return schedule_a;}
 
 
-	public bool getScheduleA(){ return schedule_a.get();}
+	public bool getScheduleA(){return schedule_a.get();}
 
-	public void setScheduleA(bool schedule_a){this.schedule_aset(schedule_a);}
+	public void setScheduleA(bool schedule_a){this.schedule_a.set(schedule_a);}
 
-	public BooleanProperty ScheduleAProperty(){return c;}
+	public BooleanProperty ScheduleAProperty(){return schedule_a;}
 
 
-	public bool getSchedule(){ return schedule_b.get();}
+	public bool getSchedule(){return schedule_b.get();}
 
-	public void setSchedule(bool schedule_b){this.schedule_bset(schedule_b);}
+	public void setSchedule(bool schedule_b){this.schedule_b.set(schedule_b);}
 
-	public BooleanProperty ScheduleProperty(){return c;}
+	public BooleanProperty ScheduleProperty(){return schedule_b;}
 
 
-	public bool getScheduleB(){ return schedule_b.get();}
+	public bool getScheduleB(){return schedule_b.get();}
 
-	public void setScheduleB(bool schedule_b){this.schedule_bset(schedule_b);}
+	public void setScheduleB(bool schedule_b){this.schedule_b.set(schedule_b);}
 
-	public BooleanProperty ScheduleBProperty(){return c;}
+	public BooleanProperty ScheduleBProperty(){return schedule_b;}
 
 
-	public bool getSchedule(){ return schedule_c.get();}
+	public bool getSchedule(){return schedule_c.get();}
 
-	public void setSchedule(bool schedule_c){this.schedule_cset(schedule_c);}
+	public void setSchedule(bool schedule_c){this.schedule_c.set(schedule_c);}
 
-	public BooleanProperty ScheduleProperty(){return c;}
+	public BooleanProperty ScheduleProperty(){return schedule_c;}
 
 
-	public bool getScheduleC(){ return schedule_c.get();}
+	public bool getScheduleC(){return schedule_c.get();}
 
-	public void setScheduleC(bool schedule_c){this.schedule_cset(schedule_c);}
+	public void setScheduleC(bool schedule_c){this.schedule_c.set(schedule_c);}
 
-	public BooleanProperty ScheduleCProperty(){return c;}
+	public BooleanProperty ScheduleCProperty(){return schedule_c;}
 
 
-	public bool getSchedule(){ return schedule_c_ez.get();}
+	public bool getSchedule(){return schedule_c_ez.get();}
 
-	public void setSchedule(bool schedule_c_ez){this.schedule_c_ezset(schedule_c_ez);}
+	public void setSchedule(bool schedule_c_ez){this.schedule_c_ez.set(schedule_c_ez);}
 
-	public BooleanProperty ScheduleProperty(){return c;}
+	public BooleanProperty ScheduleProperty(){return schedule_c_ez;}
 
 
-	public bool getScheduleC(){ return schedule_c_ez.get();}
+	public bool getScheduleC(){return schedule_c_ez.get();}
 
-	public void setScheduleC(bool schedule_c_ez){this.schedule_c_ezset(schedule_c_ez);}
+	public void setScheduleC(bool schedule_c_ez){this.schedule_c_ez.set(schedule_c_ez);}
 
-	public BooleanProperty ScheduleCProperty(){return c;}
+	public BooleanProperty ScheduleCProperty(){return schedule_c_ez;}
 
 
-	public bool getScheduleCEz(){ return schedule_c_ez.get();}
+	public bool getScheduleCEz(){return schedule_c_ez.get();}
 
-	public void setScheduleCEz(bool schedule_c_ez){this.schedule_c_ezset(schedule_c_ez);}
+	public void setScheduleCEz(bool schedule_c_ez){this.schedule_c_ez.set(schedule_c_ez);}
 
-	public BooleanProperty ScheduleCEzProperty(){return c;}
+	public BooleanProperty ScheduleCEzProperty(){return schedule_c_ez;}
 
 
-	public bool getSchedule(){ return schedule_d.get();}
+	public bool getSchedule(){return schedule_d.get();}
 
-	public void setSchedule(bool schedule_d){this.schedule_dset(schedule_d);}
+	public void setSchedule(bool schedule_d){this.schedule_d.set(schedule_d);}
 
-	public BooleanProperty ScheduleProperty(){return c;}
+	public BooleanProperty ScheduleProperty(){return schedule_d;}
 
 
-	public bool getScheduleD(){ return schedule_d.get();}
+	public bool getScheduleD(){return schedule_d.get();}
 
-	public void setScheduleD(bool schedule_d){this.schedule_dset(schedule_d);}
+	public void setScheduleD(bool schedule_d){this.schedule_d.set(schedule_d);}
 
-	public BooleanProperty ScheduleDProperty(){return c;}
+	public BooleanProperty ScheduleDProperty(){return schedule_d;}
 
 
-	public bool getSchedule(){ return schedule_e.get();}
+	public bool getSchedule(){return schedule_e.get();}
 
-	public void setSchedule(bool schedule_e){this.schedule_eset(schedule_e);}
+	public void setSchedule(bool schedule_e){this.schedule_e.set(schedule_e);}
 
-	public BooleanProperty ScheduleProperty(){return c;}
+	public BooleanProperty ScheduleProperty(){return schedule_e;}
 
 
-	public bool getScheduleE(){ return schedule_e.get();}
+	public bool getScheduleE(){return schedule_e.get();}
 
-	public void setScheduleE(bool schedule_e){this.schedule_eset(schedule_e);}
+	public void setScheduleE(bool schedule_e){this.schedule_e.set(schedule_e);}
 
-	public BooleanProperty ScheduleEProperty(){return c;}
+	public BooleanProperty ScheduleEProperty(){return schedule_e;}
 
 
-	public bool getSchedule(){ return schedule_f.get();}
+	public bool getSchedule(){return schedule_f.get();}
 
-	public void setSchedule(bool schedule_f){this.schedule_fset(schedule_f);}
+	public void setSchedule(bool schedule_f){this.schedule_f.set(schedule_f);}
 
-	public BooleanProperty ScheduleProperty(){return c;}
+	public BooleanProperty ScheduleProperty(){return schedule_f;}
 
 
-	public bool getScheduleF(){ return schedule_f.get();}
+	public bool getScheduleF(){return schedule_f.get();}
 
-	public void setScheduleF(bool schedule_f){this.schedule_fset(schedule_f);}
+	public void setScheduleF(bool schedule_f){this.schedule_f.set(schedule_f);}
 
-	public BooleanProperty ScheduleFProperty(){return c;}
+	public BooleanProperty ScheduleFProperty(){return schedule_f;}
 
 
-	public bool getSchedule(){ return schedule_h.get();}
+	public bool getSchedule(){return schedule_h.get();}
 
-	public void setSchedule(bool schedule_h){this.schedule_hset(schedule_h);}
+	public void setSchedule(bool schedule_h){this.schedule_h.set(schedule_h);}
 
-	public BooleanProperty ScheduleProperty(){return c;}
+	public BooleanProperty ScheduleProperty(){return schedule_h;}
 
 
-	public bool getScheduleH(){ return schedule_h.get();}
+	public bool getScheduleH(){return schedule_h.get();}
 
-	public void setScheduleH(bool schedule_h){this.schedule_hset(schedule_h);}
+	public void setScheduleH(bool schedule_h){this.schedule_h.set(schedule_h);}
 
-	public BooleanProperty ScheduleHProperty(){return c;}
+	public BooleanProperty ScheduleHProperty(){return schedule_h;}
 
 
-	public bool getSchedule(){ return schedule_r.get();}
+	public bool getSchedule(){return schedule_r.get();}
 
-	public void setSchedule(bool schedule_r){this.schedule_rset(schedule_r);}
+	public void setSchedule(bool schedule_r){this.schedule_r.set(schedule_r);}
 
-	public BooleanProperty ScheduleProperty(){return c;}
+	public BooleanProperty ScheduleProperty(){return schedule_r;}
 
 
-	public bool getScheduleR(){ return schedule_r.get();}
+	public bool getScheduleR(){return schedule_r.get();}
 
-	public void setScheduleR(bool schedule_r){this.schedule_rset(schedule_r);}
+	public void setScheduleR(bool schedule_r){this.schedule_r.set(schedule_r);}
 
-	public BooleanProperty ScheduleRProperty(){return c;}
+	public BooleanProperty ScheduleRProperty(){return schedule_r;}
 
 
-	public bool getSchedule(){ return schedule_set_p.get();}
+	public bool getSchedule(){return schedule_set_p.get();}
 
-	public void setSchedule(bool schedule_set_p){this.schedule_set_pset(schedule_set_p);}
+	public void setSchedule(bool schedule_set_p){this.schedule_set_p.set(schedule_set_p);}
 
-	public BooleanProperty ScheduleProperty(){return c;}
+	public BooleanProperty ScheduleProperty(){return schedule_set_p;}
 
 
-	public bool getScheduleSet(){ return schedule_set_p.get();}
+	public bool getScheduleSet(){return schedule_set_p.get();}
 
-	public void setScheduleSet(bool schedule_set_p){this.schedule_set_pset(schedule_set_p);}
+	public void setScheduleSet(bool schedule_set_p){this.schedule_set_p.set(schedule_set_p);}
 
-	public BooleanProperty ScheduleSetProperty(){return c;}
+	public BooleanProperty ScheduleSetProperty(){return schedule_set_p;}
 
 
-	public bool getScheduleSetP(){ return schedule_set_p.get();}
+	public bool getScheduleSetP(){return schedule_set_p.get();}
 
-	public void setScheduleSetP(bool schedule_set_p){this.schedule_set_pset(schedule_set_p);}
+	public void setScheduleSetP(bool schedule_set_p){this.schedule_set_p.set(schedule_set_p);}
 
-	public BooleanProperty ScheduleSetPProperty(){return c;}
+	public BooleanProperty ScheduleSetPProperty(){return schedule_set_p;}
 
 
-	public bool getSchedule(){ return schedule_ses_p.get();}
+	public bool getSchedule(){return schedule_ses_p.get();}
 
-	public void setSchedule(bool schedule_ses_p){this.schedule_ses_pset(schedule_ses_p);}
+	public void setSchedule(bool schedule_ses_p){this.schedule_ses_p.set(schedule_ses_p);}
 
-	public BooleanProperty ScheduleProperty(){return c;}
+	public BooleanProperty ScheduleProperty(){return schedule_ses_p;}
 
 
-	public bool getScheduleSes(){ return schedule_ses_p.get();}
+	public bool getScheduleSes(){return schedule_ses_p.get();}
 
-	public void setScheduleSes(bool schedule_ses_p){this.schedule_ses_pset(schedule_ses_p);}
+	public void setScheduleSes(bool schedule_ses_p){this.schedule_ses_p.set(schedule_ses_p);}
 
-	public BooleanProperty ScheduleSesProperty(){return c;}
+	public BooleanProperty ScheduleSesProperty(){return schedule_ses_p;}
 
 
-	public bool getScheduleSesP(){ return schedule_ses_p.get();}
+	public bool getScheduleSesP(){return schedule_ses_p.get();}
 
-	public void setScheduleSesP(bool schedule_ses_p){this.schedule_ses_pset(schedule_ses_p);}
+	public void setScheduleSesP(bool schedule_ses_p){this.schedule_ses_p.set(schedule_ses_p);}
 
-	public BooleanProperty ScheduleSesPProperty(){return c;}
+	public BooleanProperty ScheduleSesPProperty(){return schedule_ses_p;}
 
 
-	public String getAgency(){ return agency_id.get();}
+	public String getAgency(){return agency_id.get();}
 
-	public void setAgency(String agency_id){this.agency_idset(agency_id);}
+	public void setAgency(String agency_id){this.agency_id.set(agency_id);}
 
-	public StringProperty AgencyProperty(){return c;}
+	public StringProperty AgencyProperty(){return agency_id;}
 
 
-	public String getAgencyId(){ return agency_id.get();}
+	public String getAgencyId(){return agency_id.get();}
 
-	public void setAgencyId(String agency_id){this.agency_idset(agency_id);}
+	public void setAgencyId(String agency_id){this.agency_id.set(agency_id);}
 
-	public StringProperty AgencyIdProperty(){return c;}
+	public StringProperty AgencyIdProperty(){return agency_id;}
 
 
-	public double getState(){ return state_withholding.get();}
+	public double getState(){return state_withholding.get();}
 
-	public void setState(double state_withholding){this.state_withholdingset(state_withholding);}
+	public void setState(double state_withholding){this.state_withholding.set(state_withholding);}
 
-	public DoubleProperty StateProperty(){return c;}
+	public DoubleProperty StateProperty(){return state_withholding;}
 
 
-	public double getStateWithholding(){ return state_withholding.get();}
+	public double getStateWithholding(){return state_withholding.get();}
 
-	public void setStateWithholding(double state_withholding){this.state_withholdingset(state_withholding);}
+	public void setStateWithholding(double state_withholding){this.state_withholding.set(state_withholding);}
 
-	public DoubleProperty StateWithholdingProperty(){return c;}
+	public DoubleProperty StateWithholdingProperty(){return state_withholding;}
 
 
-	public double getState(){ return state_tax_liability.get();}
+	public double getState(){return state_tax_liability.get();}
 
-	public void setState(double state_tax_liability){this.state_tax_liabilityset(state_tax_liability);}
+	public void setState(double state_tax_liability){this.state_tax_liability.set(state_tax_liability);}
 
-	public DoubleProperty StateProperty(){return c;}
+	public DoubleProperty StateProperty(){return state_tax_liability;}
 
 
-	public double getStateTax(){ return state_tax_liability.get();}
+	public double getStateTax(){return state_tax_liability.get();}
 
-	public void setStateTax(double state_tax_liability){this.state_tax_liabilityset(state_tax_liability);}
+	public void setStateTax(double state_tax_liability){this.state_tax_liability.set(state_tax_liability);}
 
-	public DoubleProperty StateTaxProperty(){return c;}
+	public DoubleProperty StateTaxProperty(){return state_tax_liability;}
 
 
-	public double getStateTaxLiability(){ return state_tax_liability.get();}
+	public double getStateTaxLiability(){return state_tax_liability.get();}
 
-	public void setStateTaxLiability(double state_tax_liability){this.state_tax_liabilityset(state_tax_liability);}
+	public void setStateTaxLiability(double state_tax_liability){this.state_tax_liability.set(state_tax_liability);}
 
-	public DoubleProperty StateTaxLiabilityProperty(){return c;}
+	public DoubleProperty StateTaxLiabilityProperty(){return state_tax_liability;}
 
 
-	public double getA(){ return a_amount_taxpayer_is_planning_to_save.get();}
+	public double getA(){return a_amount_taxpayer_is_planning_to_save.get();}
 
-	public void setA(double a_amount_taxpayer_is_planning_to_save){this.a_amount_taxpayer_is_planning_to_saveset(a_amount_taxpayer_is_planning_to_save);}
+	public void setA(double a_amount_taxpayer_is_planning_to_save){this.a_amount_taxpayer_is_planning_to_save.set(a_amount_taxpayer_is_planning_to_save);}
 
-	public DoubleProperty AProperty(){return c;}
+	public DoubleProperty AProperty(){return a_amount_taxpayer_is_planning_to_save;}
 
 
-	public double getAAmount(){ return a_amount_taxpayer_is_planning_to_save.get();}
+	public double getAAmount(){return a_amount_taxpayer_is_planning_to_save.get();}
 
-	public void setAAmount(double a_amount_taxpayer_is_planning_to_save){this.a_amount_taxpayer_is_planning_to_saveset(a_amount_taxpayer_is_planning_to_save);}
+	public void setAAmount(double a_amount_taxpayer_is_planning_to_save){this.a_amount_taxpayer_is_planning_to_save.set(a_amount_taxpayer_is_planning_to_save);}
 
-	public DoubleProperty AAmountProperty(){return c;}
+	public DoubleProperty AAmountProperty(){return a_amount_taxpayer_is_planning_to_save;}
 
 
-	public double getAAmountTaxpayer(){ return a_amount_taxpayer_is_planning_to_save.get();}
+	public double getAAmountTaxpayer(){return a_amount_taxpayer_is_planning_to_save.get();}
 
-	public void setAAmountTaxpayer(double a_amount_taxpayer_is_planning_to_save){this.a_amount_taxpayer_is_planning_to_saveset(a_amount_taxpayer_is_planning_to_save);}
+	public void setAAmountTaxpayer(double a_amount_taxpayer_is_planning_to_save){this.a_amount_taxpayer_is_planning_to_save.set(a_amount_taxpayer_is_planning_to_save);}
 
-	public DoubleProperty AAmountTaxpayerProperty(){return c;}
+	public DoubleProperty AAmountTaxpayerProperty(){return a_amount_taxpayer_is_planning_to_save;}
 
 
-	public double getAAmountTaxpayerIs(){ return a_amount_taxpayer_is_planning_to_save.get();}
+	public double getAAmountTaxpayerIs(){return a_amount_taxpayer_is_planning_to_save.get();}
 
-	public void setAAmountTaxpayerIs(double a_amount_taxpayer_is_planning_to_save){this.a_amount_taxpayer_is_planning_to_saveset(a_amount_taxpayer_is_planning_to_save);}
+	public void setAAmountTaxpayerIs(double a_amount_taxpayer_is_planning_to_save){this.a_amount_taxpayer_is_planning_to_save.set(a_amount_taxpayer_is_planning_to_save);}
 
-	public DoubleProperty AAmountTaxpayerIsProperty(){return c;}
+	public DoubleProperty AAmountTaxpayerIsProperty(){return a_amount_taxpayer_is_planning_to_save;}
 
 
-	public double getAAmountTaxpayerIsPlanning(){ return a_amount_taxpayer_is_planning_to_save.get();}
+	public double getAAmountTaxpayerIsPlanning(){return a_amount_taxpayer_is_planning_to_save.get();}
 
-	public void setAAmountTaxpayerIsPlanning(double a_amount_taxpayer_is_planning_to_save){this.a_amount_taxpayer_is_planning_to_saveset(a_amount_taxpayer_is_planning_to_save);}
+	public void setAAmountTaxpayerIsPlanning(double a_amount_taxpayer_is_planning_to_save){this.a_amount_taxpayer_is_planning_to_save.set(a_amount_taxpayer_is_planning_to_save);}
 
-	public DoubleProperty AAmountTaxpayerIsPlanningProperty(){return c;}
+	public DoubleProperty AAmountTaxpayerIsPlanningProperty(){return a_amount_taxpayer_is_planning_to_save;}
 
 
-	public double getAAmountTaxpayerIsPlanningTo(){ return a_amount_taxpayer_is_planning_to_save.get();}
+	public double getAAmountTaxpayerIsPlanningTo(){return a_amount_taxpayer_is_planning_to_save.get();}
 
-	public void setAAmountTaxpayerIsPlanningTo(double a_amount_taxpayer_is_planning_to_save){this.a_amount_taxpayer_is_planning_to_saveset(a_amount_taxpayer_is_planning_to_save);}
+	public void setAAmountTaxpayerIsPlanningTo(double a_amount_taxpayer_is_planning_to_save){this.a_amount_taxpayer_is_planning_to_save.set(a_amount_taxpayer_is_planning_to_save);}
 
-	public DoubleProperty AAmountTaxpayerIsPlanningToProperty(){return c;}
+	public DoubleProperty AAmountTaxpayerIsPlanningToProperty(){return a_amount_taxpayer_is_planning_to_save;}
 
 
-	public double getAAmountTaxpayerIsPlanningToSave(){ return a_amount_taxpayer_is_planning_to_save.get();}
+	public double getAAmountTaxpayerIsPlanningToSave(){return a_amount_taxpayer_is_planning_to_save.get();}
 
-	public void setAAmountTaxpayerIsPlanningToSave(double a_amount_taxpayer_is_planning_to_save){this.a_amount_taxpayer_is_planning_to_saveset(a_amount_taxpayer_is_planning_to_save);}
+	public void setAAmountTaxpayerIsPlanningToSave(double a_amount_taxpayer_is_planning_to_save){this.a_amount_taxpayer_is_planning_to_save.set(a_amount_taxpayer_is_planning_to_save);}
 
-	public DoubleProperty AAmountTaxpayerIsPlanningToSaveProperty(){return c;}
+	public DoubleProperty AAmountTaxpayerIsPlanningToSaveProperty(){return a_amount_taxpayer_is_planning_to_save;}
 
 
 }

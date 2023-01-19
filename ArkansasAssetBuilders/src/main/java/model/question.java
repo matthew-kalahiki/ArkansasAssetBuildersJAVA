@@ -67,676 +67,676 @@ public class question{
 		this.persons_age_6_to_18 = new SimpleDoubleProperty();
 		this.persons_age_65_plus = new SimpleDoubleProperty();
 	}
-	public String getClient(){ return client_id.get();}
+	public String getClient(){return client_id.get();}
 
-	public void setClient(String client_id){this.client_idset(client_id);}
+	public void setClient(String client_id){this.client_id.set(client_id);}
 
-	public StringProperty ClientProperty(){return c;}
+	public StringProperty ClientProperty(){return client_id;}
 
 
-	public String getClientId(){ return client_id.get();}
+	public String getClientId(){return client_id.get();}
 
-	public void setClientId(String client_id){this.client_idset(client_id);}
+	public void setClientId(String client_id){this.client_id.set(client_id);}
 
-	public StringProperty ClientIdProperty(){return c;}
+	public StringProperty ClientIdProperty(){return client_id;}
 
 
-	public double getTax(){ return tax_year.get();}
+	public double getTax(){return tax_year.get();}
 
-	public void setTax(double tax_year){this.tax_yearset(tax_year);}
+	public void setTax(double tax_year){this.tax_year.set(tax_year);}
 
-	public DoubleProperty TaxProperty(){return c;}
+	public DoubleProperty TaxProperty(){return tax_year;}
 
 
-	public double getTaxYear(){ return tax_year.get();}
+	public double getTaxYear(){return tax_year.get();}
 
-	public void setTaxYear(double tax_year){this.tax_yearset(tax_year);}
+	public void setTaxYear(double tax_year){this.tax_year.set(tax_year);}
 
-	public DoubleProperty TaxYearProperty(){return c;}
+	public DoubleProperty TaxYearProperty(){return tax_year;}
 
 
-	public bool getConsent(){ return consent_to_disclose_tax_return.get();}
+	public bool getConsent(){return consent_to_disclose_tax_return.get();}
 
-	public void setConsent(bool consent_to_disclose_tax_return){this.consent_to_disclose_tax_returnset(consent_to_disclose_tax_return);}
+	public void setConsent(bool consent_to_disclose_tax_return){this.consent_to_disclose_tax_return.set(consent_to_disclose_tax_return);}
 
-	public BooleanProperty ConsentProperty(){return c;}
+	public BooleanProperty ConsentProperty(){return consent_to_disclose_tax_return;}
 
 
-	public bool getConsentTo(){ return consent_to_disclose_tax_return.get();}
+	public bool getConsentTo(){return consent_to_disclose_tax_return.get();}
 
-	public void setConsentTo(bool consent_to_disclose_tax_return){this.consent_to_disclose_tax_returnset(consent_to_disclose_tax_return);}
+	public void setConsentTo(bool consent_to_disclose_tax_return){this.consent_to_disclose_tax_return.set(consent_to_disclose_tax_return);}
 
-	public BooleanProperty ConsentToProperty(){return c;}
+	public BooleanProperty ConsentToProperty(){return consent_to_disclose_tax_return;}
 
 
-	public bool getConsentToDisclose(){ return consent_to_disclose_tax_return.get();}
+	public bool getConsentToDisclose(){return consent_to_disclose_tax_return.get();}
 
-	public void setConsentToDisclose(bool consent_to_disclose_tax_return){this.consent_to_disclose_tax_returnset(consent_to_disclose_tax_return);}
+	public void setConsentToDisclose(bool consent_to_disclose_tax_return){this.consent_to_disclose_tax_return.set(consent_to_disclose_tax_return);}
 
-	public BooleanProperty ConsentToDiscloseProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseProperty(){return consent_to_disclose_tax_return;}
 
 
-	public bool getConsentToDiscloseTax(){ return consent_to_disclose_tax_return.get();}
+	public bool getConsentToDiscloseTax(){return consent_to_disclose_tax_return.get();}
 
-	public void setConsentToDiscloseTax(bool consent_to_disclose_tax_return){this.consent_to_disclose_tax_returnset(consent_to_disclose_tax_return);}
+	public void setConsentToDiscloseTax(bool consent_to_disclose_tax_return){this.consent_to_disclose_tax_return.set(consent_to_disclose_tax_return);}
 
-	public BooleanProperty ConsentToDiscloseTaxProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxProperty(){return consent_to_disclose_tax_return;}
 
 
-	public bool getConsentToDiscloseTaxReturn(){ return consent_to_disclose_tax_return.get();}
+	public bool getConsentToDiscloseTaxReturn(){return consent_to_disclose_tax_return.get();}
 
-	public void setConsentToDiscloseTaxReturn(bool consent_to_disclose_tax_return){this.consent_to_disclose_tax_returnset(consent_to_disclose_tax_return);}
+	public void setConsentToDiscloseTaxReturn(bool consent_to_disclose_tax_return){this.consent_to_disclose_tax_return.set(consent_to_disclose_tax_return);}
 
-	public BooleanProperty ConsentToDiscloseTaxReturnProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxReturnProperty(){return consent_to_disclose_tax_return;}
 
 
-	public bool getConsent(){ return consent_to_disclose_taxpayer_d.get();}
+	public bool getConsent(){return consent_to_disclose_taxpayer_d.get();}
 
-	public void setConsent(bool consent_to_disclose_taxpayer_d){this.consent_to_disclose_taxpayer_dset(consent_to_disclose_taxpayer_d);}
+	public void setConsent(bool consent_to_disclose_taxpayer_d){this.consent_to_disclose_taxpayer_d.set(consent_to_disclose_taxpayer_d);}
 
-	public BooleanProperty ConsentProperty(){return c;}
+	public BooleanProperty ConsentProperty(){return consent_to_disclose_taxpayer_d;}
 
 
-	public bool getConsentTo(){ return consent_to_disclose_taxpayer_d.get();}
+	public bool getConsentTo(){return consent_to_disclose_taxpayer_d.get();}
 
-	public void setConsentTo(bool consent_to_disclose_taxpayer_d){this.consent_to_disclose_taxpayer_dset(consent_to_disclose_taxpayer_d);}
+	public void setConsentTo(bool consent_to_disclose_taxpayer_d){this.consent_to_disclose_taxpayer_d.set(consent_to_disclose_taxpayer_d);}
 
-	public BooleanProperty ConsentToProperty(){return c;}
+	public BooleanProperty ConsentToProperty(){return consent_to_disclose_taxpayer_d;}
 
 
-	public bool getConsentToDisclose(){ return consent_to_disclose_taxpayer_d.get();}
+	public bool getConsentToDisclose(){return consent_to_disclose_taxpayer_d.get();}
 
-	public void setConsentToDisclose(bool consent_to_disclose_taxpayer_d){this.consent_to_disclose_taxpayer_dset(consent_to_disclose_taxpayer_d);}
+	public void setConsentToDisclose(bool consent_to_disclose_taxpayer_d){this.consent_to_disclose_taxpayer_d.set(consent_to_disclose_taxpayer_d);}
 
-	public BooleanProperty ConsentToDiscloseProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseProperty(){return consent_to_disclose_taxpayer_d;}
 
 
-	public bool getConsentToDiscloseTaxpayer(){ return consent_to_disclose_taxpayer_d.get();}
+	public bool getConsentToDiscloseTaxpayer(){return consent_to_disclose_taxpayer_d.get();}
 
-	public void setConsentToDiscloseTaxpayer(bool consent_to_disclose_taxpayer_d){this.consent_to_disclose_taxpayer_dset(consent_to_disclose_taxpayer_d);}
+	public void setConsentToDiscloseTaxpayer(bool consent_to_disclose_taxpayer_d){this.consent_to_disclose_taxpayer_d.set(consent_to_disclose_taxpayer_d);}
 
-	public BooleanProperty ConsentToDiscloseTaxpayerProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxpayerProperty(){return consent_to_disclose_taxpayer_d;}
 
 
-	public bool getConsentToDiscloseTaxpayerD(){ return consent_to_disclose_taxpayer_d.get();}
+	public bool getConsentToDiscloseTaxpayerD(){return consent_to_disclose_taxpayer_d.get();}
 
-	public void setConsentToDiscloseTaxpayerD(bool consent_to_disclose_taxpayer_d){this.consent_to_disclose_taxpayer_dset(consent_to_disclose_taxpayer_d);}
+	public void setConsentToDiscloseTaxpayerD(bool consent_to_disclose_taxpayer_d){this.consent_to_disclose_taxpayer_d.set(consent_to_disclose_taxpayer_d);}
 
-	public BooleanProperty ConsentToDiscloseTaxpayerDProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxpayerDProperty(){return consent_to_disclose_taxpayer_d;}
 
 
-	public bool getConsent(){ return consent_to_use_taxpayer_data.get();}
+	public bool getConsent(){return consent_to_use_taxpayer_data.get();}
 
-	public void setConsent(bool consent_to_use_taxpayer_data){this.consent_to_use_taxpayer_dataset(consent_to_use_taxpayer_data);}
+	public void setConsent(bool consent_to_use_taxpayer_data){this.consent_to_use_taxpayer_data.set(consent_to_use_taxpayer_data);}
 
-	public BooleanProperty ConsentProperty(){return c;}
+	public BooleanProperty ConsentProperty(){return consent_to_use_taxpayer_data;}
 
 
-	public bool getConsentTo(){ return consent_to_use_taxpayer_data.get();}
+	public bool getConsentTo(){return consent_to_use_taxpayer_data.get();}
 
-	public void setConsentTo(bool consent_to_use_taxpayer_data){this.consent_to_use_taxpayer_dataset(consent_to_use_taxpayer_data);}
+	public void setConsentTo(bool consent_to_use_taxpayer_data){this.consent_to_use_taxpayer_data.set(consent_to_use_taxpayer_data);}
 
-	public BooleanProperty ConsentToProperty(){return c;}
+	public BooleanProperty ConsentToProperty(){return consent_to_use_taxpayer_data;}
 
 
-	public bool getConsentToUse(){ return consent_to_use_taxpayer_data.get();}
+	public bool getConsentToUse(){return consent_to_use_taxpayer_data.get();}
 
-	public void setConsentToUse(bool consent_to_use_taxpayer_data){this.consent_to_use_taxpayer_dataset(consent_to_use_taxpayer_data);}
+	public void setConsentToUse(bool consent_to_use_taxpayer_data){this.consent_to_use_taxpayer_data.set(consent_to_use_taxpayer_data);}
 
-	public BooleanProperty ConsentToUseProperty(){return c;}
+	public BooleanProperty ConsentToUseProperty(){return consent_to_use_taxpayer_data;}
 
 
-	public bool getConsentToUseTaxpayer(){ return consent_to_use_taxpayer_data.get();}
+	public bool getConsentToUseTaxpayer(){return consent_to_use_taxpayer_data.get();}
 
-	public void setConsentToUseTaxpayer(bool consent_to_use_taxpayer_data){this.consent_to_use_taxpayer_dataset(consent_to_use_taxpayer_data);}
+	public void setConsentToUseTaxpayer(bool consent_to_use_taxpayer_data){this.consent_to_use_taxpayer_data.set(consent_to_use_taxpayer_data);}
 
-	public BooleanProperty ConsentToUseTaxpayerProperty(){return c;}
+	public BooleanProperty ConsentToUseTaxpayerProperty(){return consent_to_use_taxpayer_data;}
 
 
-	public bool getConsentToUseTaxpayerData(){ return consent_to_use_taxpayer_data.get();}
+	public bool getConsentToUseTaxpayerData(){return consent_to_use_taxpayer_data.get();}
 
-	public void setConsentToUseTaxpayerData(bool consent_to_use_taxpayer_data){this.consent_to_use_taxpayer_dataset(consent_to_use_taxpayer_data);}
+	public void setConsentToUseTaxpayerData(bool consent_to_use_taxpayer_data){this.consent_to_use_taxpayer_data.set(consent_to_use_taxpayer_data);}
 
-	public BooleanProperty ConsentToUseTaxpayerDataProperty(){return c;}
+	public BooleanProperty ConsentToUseTaxpayerDataProperty(){return consent_to_use_taxpayer_data;}
 
 
-	public bool getConsent(){ return consent_to_disclose_tax_return_1.get();}
+	public bool getConsent(){return consent_to_disclose_tax_return_1.get();}
 
-	public void setConsent(bool consent_to_disclose_tax_return_1){this.consent_to_disclose_tax_return_1set(consent_to_disclose_tax_return_1);}
+	public void setConsent(bool consent_to_disclose_tax_return_1){this.consent_to_disclose_tax_return_1.set(consent_to_disclose_tax_return_1);}
 
-	public BooleanProperty ConsentProperty(){return c;}
+	public BooleanProperty ConsentProperty(){return consent_to_disclose_tax_return_1;}
 
 
-	public bool getConsentTo(){ return consent_to_disclose_tax_return_1.get();}
+	public bool getConsentTo(){return consent_to_disclose_tax_return_1.get();}
 
-	public void setConsentTo(bool consent_to_disclose_tax_return_1){this.consent_to_disclose_tax_return_1set(consent_to_disclose_tax_return_1);}
+	public void setConsentTo(bool consent_to_disclose_tax_return_1){this.consent_to_disclose_tax_return_1.set(consent_to_disclose_tax_return_1);}
 
-	public BooleanProperty ConsentToProperty(){return c;}
+	public BooleanProperty ConsentToProperty(){return consent_to_disclose_tax_return_1;}
 
 
-	public bool getConsentToDisclose(){ return consent_to_disclose_tax_return_1.get();}
+	public bool getConsentToDisclose(){return consent_to_disclose_tax_return_1.get();}
 
-	public void setConsentToDisclose(bool consent_to_disclose_tax_return_1){this.consent_to_disclose_tax_return_1set(consent_to_disclose_tax_return_1);}
+	public void setConsentToDisclose(bool consent_to_disclose_tax_return_1){this.consent_to_disclose_tax_return_1.set(consent_to_disclose_tax_return_1);}
 
-	public BooleanProperty ConsentToDiscloseProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseProperty(){return consent_to_disclose_tax_return_1;}
 
 
-	public bool getConsentToDiscloseTax(){ return consent_to_disclose_tax_return_1.get();}
+	public bool getConsentToDiscloseTax(){return consent_to_disclose_tax_return_1.get();}
 
-	public void setConsentToDiscloseTax(bool consent_to_disclose_tax_return_1){this.consent_to_disclose_tax_return_1set(consent_to_disclose_tax_return_1);}
+	public void setConsentToDiscloseTax(bool consent_to_disclose_tax_return_1){this.consent_to_disclose_tax_return_1.set(consent_to_disclose_tax_return_1);}
 
-	public BooleanProperty ConsentToDiscloseTaxProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxProperty(){return consent_to_disclose_tax_return_1;}
 
 
-	public bool getConsentToDiscloseTaxReturn(){ return consent_to_disclose_tax_return_1.get();}
+	public bool getConsentToDiscloseTaxReturn(){return consent_to_disclose_tax_return_1.get();}
 
-	public void setConsentToDiscloseTaxReturn(bool consent_to_disclose_tax_return_1){this.consent_to_disclose_tax_return_1set(consent_to_disclose_tax_return_1);}
+	public void setConsentToDiscloseTaxReturn(bool consent_to_disclose_tax_return_1){this.consent_to_disclose_tax_return_1.set(consent_to_disclose_tax_return_1);}
 
-	public BooleanProperty ConsentToDiscloseTaxReturnProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxReturnProperty(){return consent_to_disclose_tax_return_1;}
 
 
-	public bool getConsentToDiscloseTaxReturn1(){ return consent_to_disclose_tax_return_1.get();}
+	public bool getConsentToDiscloseTaxReturn1(){return consent_to_disclose_tax_return_1.get();}
 
-	public void setConsentToDiscloseTaxReturn1(bool consent_to_disclose_tax_return_1){this.consent_to_disclose_tax_return_1set(consent_to_disclose_tax_return_1);}
+	public void setConsentToDiscloseTaxReturn1(bool consent_to_disclose_tax_return_1){this.consent_to_disclose_tax_return_1.set(consent_to_disclose_tax_return_1);}
 
-	public BooleanProperty ConsentToDiscloseTaxReturn1Property(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxReturn1Property(){return consent_to_disclose_tax_return_1;}
 
 
-	public bool getConsent(){ return consent_to_disclose_tax_return_2.get();}
+	public bool getConsent(){return consent_to_disclose_tax_return_2.get();}
 
-	public void setConsent(bool consent_to_disclose_tax_return_2){this.consent_to_disclose_tax_return_2set(consent_to_disclose_tax_return_2);}
+	public void setConsent(bool consent_to_disclose_tax_return_2){this.consent_to_disclose_tax_return_2.set(consent_to_disclose_tax_return_2);}
 
-	public BooleanProperty ConsentProperty(){return c;}
+	public BooleanProperty ConsentProperty(){return consent_to_disclose_tax_return_2;}
 
 
-	public bool getConsentTo(){ return consent_to_disclose_tax_return_2.get();}
+	public bool getConsentTo(){return consent_to_disclose_tax_return_2.get();}
 
-	public void setConsentTo(bool consent_to_disclose_tax_return_2){this.consent_to_disclose_tax_return_2set(consent_to_disclose_tax_return_2);}
+	public void setConsentTo(bool consent_to_disclose_tax_return_2){this.consent_to_disclose_tax_return_2.set(consent_to_disclose_tax_return_2);}
 
-	public BooleanProperty ConsentToProperty(){return c;}
+	public BooleanProperty ConsentToProperty(){return consent_to_disclose_tax_return_2;}
 
 
-	public bool getConsentToDisclose(){ return consent_to_disclose_tax_return_2.get();}
+	public bool getConsentToDisclose(){return consent_to_disclose_tax_return_2.get();}
 
-	public void setConsentToDisclose(bool consent_to_disclose_tax_return_2){this.consent_to_disclose_tax_return_2set(consent_to_disclose_tax_return_2);}
+	public void setConsentToDisclose(bool consent_to_disclose_tax_return_2){this.consent_to_disclose_tax_return_2.set(consent_to_disclose_tax_return_2);}
 
-	public BooleanProperty ConsentToDiscloseProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseProperty(){return consent_to_disclose_tax_return_2;}
 
 
-	public bool getConsentToDiscloseTax(){ return consent_to_disclose_tax_return_2.get();}
+	public bool getConsentToDiscloseTax(){return consent_to_disclose_tax_return_2.get();}
 
-	public void setConsentToDiscloseTax(bool consent_to_disclose_tax_return_2){this.consent_to_disclose_tax_return_2set(consent_to_disclose_tax_return_2);}
+	public void setConsentToDiscloseTax(bool consent_to_disclose_tax_return_2){this.consent_to_disclose_tax_return_2.set(consent_to_disclose_tax_return_2);}
 
-	public BooleanProperty ConsentToDiscloseTaxProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxProperty(){return consent_to_disclose_tax_return_2;}
 
 
-	public bool getConsentToDiscloseTaxReturn(){ return consent_to_disclose_tax_return_2.get();}
+	public bool getConsentToDiscloseTaxReturn(){return consent_to_disclose_tax_return_2.get();}
 
-	public void setConsentToDiscloseTaxReturn(bool consent_to_disclose_tax_return_2){this.consent_to_disclose_tax_return_2set(consent_to_disclose_tax_return_2);}
+	public void setConsentToDiscloseTaxReturn(bool consent_to_disclose_tax_return_2){this.consent_to_disclose_tax_return_2.set(consent_to_disclose_tax_return_2);}
 
-	public BooleanProperty ConsentToDiscloseTaxReturnProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxReturnProperty(){return consent_to_disclose_tax_return_2;}
 
 
-	public bool getConsentToDiscloseTaxReturn2(){ return consent_to_disclose_tax_return_2.get();}
+	public bool getConsentToDiscloseTaxReturn2(){return consent_to_disclose_tax_return_2.get();}
 
-	public void setConsentToDiscloseTaxReturn2(bool consent_to_disclose_tax_return_2){this.consent_to_disclose_tax_return_2set(consent_to_disclose_tax_return_2);}
+	public void setConsentToDiscloseTaxReturn2(bool consent_to_disclose_tax_return_2){this.consent_to_disclose_tax_return_2.set(consent_to_disclose_tax_return_2);}
 
-	public BooleanProperty ConsentToDiscloseTaxReturn2Property(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxReturn2Property(){return consent_to_disclose_tax_return_2;}
 
 
-	public bool getConsent(){ return consent_to_disclose_tax_return_3.get();}
+	public bool getConsent(){return consent_to_disclose_tax_return_3.get();}
 
-	public void setConsent(bool consent_to_disclose_tax_return_3){this.consent_to_disclose_tax_return_3set(consent_to_disclose_tax_return_3);}
+	public void setConsent(bool consent_to_disclose_tax_return_3){this.consent_to_disclose_tax_return_3.set(consent_to_disclose_tax_return_3);}
 
-	public BooleanProperty ConsentProperty(){return c;}
+	public BooleanProperty ConsentProperty(){return consent_to_disclose_tax_return_3;}
 
 
-	public bool getConsentTo(){ return consent_to_disclose_tax_return_3.get();}
+	public bool getConsentTo(){return consent_to_disclose_tax_return_3.get();}
 
-	public void setConsentTo(bool consent_to_disclose_tax_return_3){this.consent_to_disclose_tax_return_3set(consent_to_disclose_tax_return_3);}
+	public void setConsentTo(bool consent_to_disclose_tax_return_3){this.consent_to_disclose_tax_return_3.set(consent_to_disclose_tax_return_3);}
 
-	public BooleanProperty ConsentToProperty(){return c;}
+	public BooleanProperty ConsentToProperty(){return consent_to_disclose_tax_return_3;}
 
 
-	public bool getConsentToDisclose(){ return consent_to_disclose_tax_return_3.get();}
+	public bool getConsentToDisclose(){return consent_to_disclose_tax_return_3.get();}
 
-	public void setConsentToDisclose(bool consent_to_disclose_tax_return_3){this.consent_to_disclose_tax_return_3set(consent_to_disclose_tax_return_3);}
+	public void setConsentToDisclose(bool consent_to_disclose_tax_return_3){this.consent_to_disclose_tax_return_3.set(consent_to_disclose_tax_return_3);}
 
-	public BooleanProperty ConsentToDiscloseProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseProperty(){return consent_to_disclose_tax_return_3;}
 
 
-	public bool getConsentToDiscloseTax(){ return consent_to_disclose_tax_return_3.get();}
+	public bool getConsentToDiscloseTax(){return consent_to_disclose_tax_return_3.get();}
 
-	public void setConsentToDiscloseTax(bool consent_to_disclose_tax_return_3){this.consent_to_disclose_tax_return_3set(consent_to_disclose_tax_return_3);}
+	public void setConsentToDiscloseTax(bool consent_to_disclose_tax_return_3){this.consent_to_disclose_tax_return_3.set(consent_to_disclose_tax_return_3);}
 
-	public BooleanProperty ConsentToDiscloseTaxProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxProperty(){return consent_to_disclose_tax_return_3;}
 
 
-	public bool getConsentToDiscloseTaxReturn(){ return consent_to_disclose_tax_return_3.get();}
+	public bool getConsentToDiscloseTaxReturn(){return consent_to_disclose_tax_return_3.get();}
 
-	public void setConsentToDiscloseTaxReturn(bool consent_to_disclose_tax_return_3){this.consent_to_disclose_tax_return_3set(consent_to_disclose_tax_return_3);}
+	public void setConsentToDiscloseTaxReturn(bool consent_to_disclose_tax_return_3){this.consent_to_disclose_tax_return_3.set(consent_to_disclose_tax_return_3);}
 
-	public BooleanProperty ConsentToDiscloseTaxReturnProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxReturnProperty(){return consent_to_disclose_tax_return_3;}
 
 
-	public bool getConsentToDiscloseTaxReturn3(){ return consent_to_disclose_tax_return_3.get();}
+	public bool getConsentToDiscloseTaxReturn3(){return consent_to_disclose_tax_return_3.get();}
 
-	public void setConsentToDiscloseTaxReturn3(bool consent_to_disclose_tax_return_3){this.consent_to_disclose_tax_return_3set(consent_to_disclose_tax_return_3);}
+	public void setConsentToDiscloseTaxReturn3(bool consent_to_disclose_tax_return_3){this.consent_to_disclose_tax_return_3.set(consent_to_disclose_tax_return_3);}
 
-	public BooleanProperty ConsentToDiscloseTaxReturn3Property(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxReturn3Property(){return consent_to_disclose_tax_return_3;}
 
 
-	public bool getConsent(){ return consent_to_disclose_tax_return_4.get();}
+	public bool getConsent(){return consent_to_disclose_tax_return_4.get();}
 
-	public void setConsent(bool consent_to_disclose_tax_return_4){this.consent_to_disclose_tax_return_4set(consent_to_disclose_tax_return_4);}
+	public void setConsent(bool consent_to_disclose_tax_return_4){this.consent_to_disclose_tax_return_4.set(consent_to_disclose_tax_return_4);}
 
-	public BooleanProperty ConsentProperty(){return c;}
+	public BooleanProperty ConsentProperty(){return consent_to_disclose_tax_return_4;}
 
 
-	public bool getConsentTo(){ return consent_to_disclose_tax_return_4.get();}
+	public bool getConsentTo(){return consent_to_disclose_tax_return_4.get();}
 
-	public void setConsentTo(bool consent_to_disclose_tax_return_4){this.consent_to_disclose_tax_return_4set(consent_to_disclose_tax_return_4);}
+	public void setConsentTo(bool consent_to_disclose_tax_return_4){this.consent_to_disclose_tax_return_4.set(consent_to_disclose_tax_return_4);}
 
-	public BooleanProperty ConsentToProperty(){return c;}
+	public BooleanProperty ConsentToProperty(){return consent_to_disclose_tax_return_4;}
 
 
-	public bool getConsentToDisclose(){ return consent_to_disclose_tax_return_4.get();}
+	public bool getConsentToDisclose(){return consent_to_disclose_tax_return_4.get();}
 
-	public void setConsentToDisclose(bool consent_to_disclose_tax_return_4){this.consent_to_disclose_tax_return_4set(consent_to_disclose_tax_return_4);}
+	public void setConsentToDisclose(bool consent_to_disclose_tax_return_4){this.consent_to_disclose_tax_return_4.set(consent_to_disclose_tax_return_4);}
 
-	public BooleanProperty ConsentToDiscloseProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseProperty(){return consent_to_disclose_tax_return_4;}
 
 
-	public bool getConsentToDiscloseTax(){ return consent_to_disclose_tax_return_4.get();}
+	public bool getConsentToDiscloseTax(){return consent_to_disclose_tax_return_4.get();}
 
-	public void setConsentToDiscloseTax(bool consent_to_disclose_tax_return_4){this.consent_to_disclose_tax_return_4set(consent_to_disclose_tax_return_4);}
+	public void setConsentToDiscloseTax(bool consent_to_disclose_tax_return_4){this.consent_to_disclose_tax_return_4.set(consent_to_disclose_tax_return_4);}
 
-	public BooleanProperty ConsentToDiscloseTaxProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxProperty(){return consent_to_disclose_tax_return_4;}
 
 
-	public bool getConsentToDiscloseTaxReturn(){ return consent_to_disclose_tax_return_4.get();}
+	public bool getConsentToDiscloseTaxReturn(){return consent_to_disclose_tax_return_4.get();}
 
-	public void setConsentToDiscloseTaxReturn(bool consent_to_disclose_tax_return_4){this.consent_to_disclose_tax_return_4set(consent_to_disclose_tax_return_4);}
+	public void setConsentToDiscloseTaxReturn(bool consent_to_disclose_tax_return_4){this.consent_to_disclose_tax_return_4.set(consent_to_disclose_tax_return_4);}
 
-	public BooleanProperty ConsentToDiscloseTaxReturnProperty(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxReturnProperty(){return consent_to_disclose_tax_return_4;}
 
 
-	public bool getConsentToDiscloseTaxReturn4(){ return consent_to_disclose_tax_return_4.get();}
+	public bool getConsentToDiscloseTaxReturn4(){return consent_to_disclose_tax_return_4.get();}
 
-	public void setConsentToDiscloseTaxReturn4(bool consent_to_disclose_tax_return_4){this.consent_to_disclose_tax_return_4set(consent_to_disclose_tax_return_4);}
+	public void setConsentToDiscloseTaxReturn4(bool consent_to_disclose_tax_return_4){this.consent_to_disclose_tax_return_4.set(consent_to_disclose_tax_return_4);}
 
-	public BooleanProperty ConsentToDiscloseTaxReturn4Property(){return c;}
+	public BooleanProperty ConsentToDiscloseTaxReturn4Property(){return consent_to_disclose_tax_return_4;}
 
 
-	public String getQuestions(){ return questions_1.get();}
+	public String getQuestions(){return questions_1.get();}
 
-	public void setQuestions(String questions_1){this.questions_1set(questions_1);}
+	public void setQuestions(String questions_1){this.questions_1.set(questions_1);}
 
-	public StringProperty QuestionsProperty(){return c;}
+	public StringProperty QuestionsProperty(){return questions_1;}
 
 
-	public String getQuestions1(){ return questions_1.get();}
+	public String getQuestions1(){return questions_1.get();}
 
-	public void setQuestions1(String questions_1){this.questions_1set(questions_1);}
+	public void setQuestions1(String questions_1){this.questions_1.set(questions_1);}
 
-	public StringProperty Questions1Property(){return c;}
+	public StringProperty Questions1Property(){return questions_1;}
 
 
-	public String getQuestions(){ return questions_2.get();}
+	public String getQuestions(){return questions_2.get();}
 
-	public void setQuestions(String questions_2){this.questions_2set(questions_2);}
+	public void setQuestions(String questions_2){this.questions_2.set(questions_2);}
 
-	public StringProperty QuestionsProperty(){return c;}
+	public StringProperty QuestionsProperty(){return questions_2;}
 
 
-	public String getQuestions2(){ return questions_2.get();}
+	public String getQuestions2(){return questions_2.get();}
 
-	public void setQuestions2(String questions_2){this.questions_2set(questions_2);}
+	public void setQuestions2(String questions_2){this.questions_2.set(questions_2);}
 
-	public StringProperty Questions2Property(){return c;}
+	public StringProperty Questions2Property(){return questions_2;}
 
 
-	public String getQuestions(){ return questions_3.get();}
+	public String getQuestions(){return questions_3.get();}
 
-	public void setQuestions(String questions_3){this.questions_3set(questions_3);}
+	public void setQuestions(String questions_3){this.questions_3.set(questions_3);}
 
-	public StringProperty QuestionsProperty(){return c;}
+	public StringProperty QuestionsProperty(){return questions_3;}
 
 
-	public String getQuestions3(){ return questions_3.get();}
+	public String getQuestions3(){return questions_3.get();}
 
-	public void setQuestions3(String questions_3){this.questions_3set(questions_3);}
+	public void setQuestions3(String questions_3){this.questions_3.set(questions_3);}
 
-	public StringProperty Questions3Property(){return c;}
+	public StringProperty Questions3Property(){return questions_3;}
 
 
-	public String getQuestions(){ return questions_4.get();}
+	public String getQuestions(){return questions_4.get();}
 
-	public void setQuestions(String questions_4){this.questions_4set(questions_4);}
+	public void setQuestions(String questions_4){this.questions_4.set(questions_4);}
 
-	public StringProperty QuestionsProperty(){return c;}
+	public StringProperty QuestionsProperty(){return questions_4;}
 
 
-	public String getQuestions4(){ return questions_4.get();}
+	public String getQuestions4(){return questions_4.get();}
 
-	public void setQuestions4(String questions_4){this.questions_4set(questions_4);}
+	public void setQuestions4(String questions_4){this.questions_4.set(questions_4);}
 
-	public StringProperty Questions4Property(){return c;}
+	public StringProperty Questions4Property(){return questions_4;}
 
 
-	public String getQuestions(){ return questions_5.get();}
+	public String getQuestions(){return questions_5.get();}
 
-	public void setQuestions(String questions_5){this.questions_5set(questions_5);}
+	public void setQuestions(String questions_5){this.questions_5.set(questions_5);}
 
-	public StringProperty QuestionsProperty(){return c;}
+	public StringProperty QuestionsProperty(){return questions_5;}
 
 
-	public String getQuestions5(){ return questions_5.get();}
+	public String getQuestions5(){return questions_5.get();}
 
-	public void setQuestions5(String questions_5){this.questions_5set(questions_5);}
+	public void setQuestions5(String questions_5){this.questions_5.set(questions_5);}
 
-	public StringProperty Questions5Property(){return c;}
+	public StringProperty Questions5Property(){return questions_5;}
 
 
-	public String getQuestions(){ return questions_6.get();}
+	public String getQuestions(){return questions_6.get();}
 
-	public void setQuestions(String questions_6){this.questions_6set(questions_6);}
+	public void setQuestions(String questions_6){this.questions_6.set(questions_6);}
 
-	public StringProperty QuestionsProperty(){return c;}
+	public StringProperty QuestionsProperty(){return questions_6;}
 
 
-	public String getQuestions6(){ return questions_6.get();}
+	public String getQuestions6(){return questions_6.get();}
 
-	public void setQuestions6(String questions_6){this.questions_6set(questions_6);}
+	public void setQuestions6(String questions_6){this.questions_6.set(questions_6);}
 
-	public StringProperty Questions6Property(){return c;}
+	public StringProperty Questions6Property(){return questions_6;}
 
 
-	public String getQuestions(){ return questions_7.get();}
+	public String getQuestions(){return questions_7.get();}
 
-	public void setQuestions(String questions_7){this.questions_7set(questions_7);}
+	public void setQuestions(String questions_7){this.questions_7.set(questions_7);}
 
-	public StringProperty QuestionsProperty(){return c;}
+	public StringProperty QuestionsProperty(){return questions_7;}
 
 
-	public String getQuestions7(){ return questions_7.get();}
+	public String getQuestions7(){return questions_7.get();}
 
-	public void setQuestions7(String questions_7){this.questions_7set(questions_7);}
+	public void setQuestions7(String questions_7){this.questions_7.set(questions_7);}
 
-	public StringProperty Questions7Property(){return c;}
+	public StringProperty Questions7Property(){return questions_7;}
 
 
-	public String getQuestions(){ return questions_8.get();}
+	public String getQuestions(){return questions_8.get();}
 
-	public void setQuestions(String questions_8){this.questions_8set(questions_8);}
+	public void setQuestions(String questions_8){this.questions_8.set(questions_8);}
 
-	public StringProperty QuestionsProperty(){return c;}
+	public StringProperty QuestionsProperty(){return questions_8;}
 
 
-	public String getQuestions8(){ return questions_8.get();}
+	public String getQuestions8(){return questions_8.get();}
 
-	public void setQuestions8(String questions_8){this.questions_8set(questions_8);}
+	public void setQuestions8(String questions_8){this.questions_8.set(questions_8);}
 
-	public StringProperty Questions8Property(){return c;}
+	public StringProperty Questions8Property(){return questions_8;}
 
 
-	public String getQuestions(){ return questions_9.get();}
+	public String getQuestions(){return questions_9.get();}
 
-	public void setQuestions(String questions_9){this.questions_9set(questions_9);}
+	public void setQuestions(String questions_9){this.questions_9.set(questions_9);}
 
-	public StringProperty QuestionsProperty(){return c;}
+	public StringProperty QuestionsProperty(){return questions_9;}
 
 
-	public String getQuestions9(){ return questions_9.get();}
+	public String getQuestions9(){return questions_9.get();}
 
-	public void setQuestions9(String questions_9){this.questions_9set(questions_9);}
+	public void setQuestions9(String questions_9){this.questions_9.set(questions_9);}
 
-	public StringProperty Questions9Property(){return c;}
+	public StringProperty Questions9Property(){return questions_9;}
 
 
-	public String getQuestion(){ return question_a.get();}
+	public String getQuestion(){return question_a.get();}
 
-	public void setQuestion(String question_a){this.question_aset(question_a);}
+	public void setQuestion(String question_a){this.question_a.set(question_a);}
 
-	public StringProperty QuestionProperty(){return c;}
+	public StringProperty QuestionProperty(){return question_a;}
 
 
-	public String getQuestionA(){ return question_a.get();}
+	public String getQuestionA(){return question_a.get();}
 
-	public void setQuestionA(String question_a){this.question_aset(question_a);}
+	public void setQuestionA(String question_a){this.question_a.set(question_a);}
 
-	public StringProperty QuestionAProperty(){return c;}
+	public StringProperty QuestionAProperty(){return question_a;}
 
 
-	public String getQuestion(){ return question_b.get();}
+	public String getQuestion(){return question_b.get();}
 
-	public void setQuestion(String question_b){this.question_bset(question_b);}
+	public void setQuestion(String question_b){this.question_b.set(question_b);}
 
-	public StringProperty QuestionProperty(){return c;}
+	public StringProperty QuestionProperty(){return question_b;}
 
 
-	public String getQuestionB(){ return question_b.get();}
+	public String getQuestionB(){return question_b.get();}
 
-	public void setQuestionB(String question_b){this.question_bset(question_b);}
+	public void setQuestionB(String question_b){this.question_b.set(question_b);}
 
-	public StringProperty QuestionBProperty(){return c;}
+	public StringProperty QuestionBProperty(){return question_b;}
 
 
-	public String getQuestion(){ return question_c.get();}
+	public String getQuestion(){return question_c.get();}
 
-	public void setQuestion(String question_c){this.question_cset(question_c);}
+	public void setQuestion(String question_c){this.question_c.set(question_c);}
 
-	public StringProperty QuestionProperty(){return c;}
+	public StringProperty QuestionProperty(){return question_c;}
 
 
-	public String getQuestionC(){ return question_c.get();}
+	public String getQuestionC(){return question_c.get();}
 
-	public void setQuestionC(String question_c){this.question_cset(question_c);}
+	public void setQuestionC(String question_c){this.question_c.set(question_c);}
 
-	public StringProperty QuestionCProperty(){return c;}
+	public StringProperty QuestionCProperty(){return question_c;}
 
 
-	public String getQuestion(){ return question_d.get();}
+	public String getQuestion(){return question_d.get();}
 
-	public void setQuestion(String question_d){this.question_dset(question_d);}
+	public void setQuestion(String question_d){this.question_d.set(question_d);}
 
-	public StringProperty QuestionProperty(){return c;}
+	public StringProperty QuestionProperty(){return question_d;}
 
 
-	public String getQuestionD(){ return question_d.get();}
+	public String getQuestionD(){return question_d.get();}
 
-	public void setQuestionD(String question_d){this.question_dset(question_d);}
+	public void setQuestionD(String question_d){this.question_d.set(question_d);}
 
-	public StringProperty QuestionDProperty(){return c;}
+	public StringProperty QuestionDProperty(){return question_d;}
 
 
-	public String getQuestion(){ return question_e.get();}
+	public String getQuestion(){return question_e.get();}
 
-	public void setQuestion(String question_e){this.question_eset(question_e);}
+	public void setQuestion(String question_e){this.question_e.set(question_e);}
 
-	public StringProperty QuestionProperty(){return c;}
+	public StringProperty QuestionProperty(){return question_e;}
 
 
-	public String getQuestionE(){ return question_e.get();}
+	public String getQuestionE(){return question_e.get();}
 
-	public void setQuestionE(String question_e){this.question_eset(question_e);}
+	public void setQuestionE(String question_e){this.question_e.set(question_e);}
 
-	public StringProperty QuestionEProperty(){return c;}
+	public StringProperty QuestionEProperty(){return question_e;}
 
 
-	public String getQuestion(){ return question_f.get();}
+	public String getQuestion(){return question_f.get();}
 
-	public void setQuestion(String question_f){this.question_fset(question_f);}
+	public void setQuestion(String question_f){this.question_f.set(question_f);}
 
-	public StringProperty QuestionProperty(){return c;}
+	public StringProperty QuestionProperty(){return question_f;}
 
 
-	public String getQuestionF(){ return question_f.get();}
+	public String getQuestionF(){return question_f.get();}
 
-	public void setQuestionF(String question_f){this.question_fset(question_f);}
+	public void setQuestionF(String question_f){this.question_f.set(question_f);}
 
-	public StringProperty QuestionFProperty(){return c;}
+	public StringProperty QuestionFProperty(){return question_f;}
 
 
-	public String getQuestion(){ return question_g.get();}
+	public String getQuestion(){return question_g.get();}
 
-	public void setQuestion(String question_g){this.question_gset(question_g);}
+	public void setQuestion(String question_g){this.question_g.set(question_g);}
 
-	public StringProperty QuestionProperty(){return c;}
+	public StringProperty QuestionProperty(){return question_g;}
 
 
-	public String getQuestionG(){ return question_g.get();}
+	public String getQuestionG(){return question_g.get();}
 
-	public void setQuestionG(String question_g){this.question_gset(question_g);}
+	public void setQuestionG(String question_g){this.question_g.set(question_g);}
 
-	public StringProperty QuestionGProperty(){return c;}
+	public StringProperty QuestionGProperty(){return question_g;}
 
 
-	public String getQuestion(){ return question_h.get();}
+	public String getQuestion(){return question_h.get();}
 
-	public void setQuestion(String question_h){this.question_hset(question_h);}
+	public void setQuestion(String question_h){this.question_h.set(question_h);}
 
-	public StringProperty QuestionProperty(){return c;}
+	public StringProperty QuestionProperty(){return question_h;}
 
 
-	public String getQuestionH(){ return question_h.get();}
+	public String getQuestionH(){return question_h.get();}
 
-	public void setQuestionH(String question_h){this.question_hset(question_h);}
+	public void setQuestionH(String question_h){this.question_h.set(question_h);}
 
-	public StringProperty QuestionHProperty(){return c;}
+	public StringProperty QuestionHProperty(){return question_h;}
 
 
-	public String getQuestion(){ return question_i.get();}
+	public String getQuestion(){return question_i.get();}
 
-	public void setQuestion(String question_i){this.question_iset(question_i);}
+	public void setQuestion(String question_i){this.question_i.set(question_i);}
 
-	public StringProperty QuestionProperty(){return c;}
+	public StringProperty QuestionProperty(){return question_i;}
 
 
-	public String getQuestionI(){ return question_i.get();}
+	public String getQuestionI(){return question_i.get();}
 
-	public void setQuestionI(String question_i){this.question_iset(question_i);}
+	public void setQuestionI(String question_i){this.question_i.set(question_i);}
 
-	public StringProperty QuestionIProperty(){return c;}
+	public StringProperty QuestionIProperty(){return question_i;}
 
 
-	public String getQuestion(){ return question_j.get();}
+	public String getQuestion(){return question_j.get();}
 
-	public void setQuestion(String question_j){this.question_jset(question_j);}
+	public void setQuestion(String question_j){this.question_j.set(question_j);}
 
-	public StringProperty QuestionProperty(){return c;}
+	public StringProperty QuestionProperty(){return question_j;}
 
 
-	public String getQuestionJ(){ return question_j.get();}
+	public String getQuestionJ(){return question_j.get();}
 
-	public void setQuestionJ(String question_j){this.question_jset(question_j);}
+	public void setQuestionJ(String question_j){this.question_j.set(question_j);}
 
-	public StringProperty QuestionJProperty(){return c;}
+	public StringProperty QuestionJProperty(){return question_j;}
 
 
-	public String getQuestion(){ return question_k.get();}
+	public String getQuestion(){return question_k.get();}
 
-	public void setQuestion(String question_k){this.question_kset(question_k);}
+	public void setQuestion(String question_k){this.question_k.set(question_k);}
 
-	public StringProperty QuestionProperty(){return c;}
+	public StringProperty QuestionProperty(){return question_k;}
 
 
-	public String getQuestionK(){ return question_k.get();}
+	public String getQuestionK(){return question_k.get();}
 
-	public void setQuestionK(String question_k){this.question_kset(question_k);}
+	public void setQuestionK(String question_k){this.question_k.set(question_k);}
 
-	public StringProperty QuestionKProperty(){return c;}
+	public StringProperty QuestionKProperty(){return question_k;}
 
 
-	public double getPersons(){ return persons_5_and_under.get();}
+	public double getPersons(){return persons_5_and_under.get();}
 
-	public void setPersons(double persons_5_and_under){this.persons_5_and_underset(persons_5_and_under);}
+	public void setPersons(double persons_5_and_under){this.persons_5_and_under.set(persons_5_and_under);}
 
-	public DoubleProperty PersonsProperty(){return c;}
+	public DoubleProperty PersonsProperty(){return persons_5_and_under;}
 
 
-	public double getPersons5(){ return persons_5_and_under.get();}
+	public double getPersons5(){return persons_5_and_under.get();}
 
-	public void setPersons5(double persons_5_and_under){this.persons_5_and_underset(persons_5_and_under);}
+	public void setPersons5(double persons_5_and_under){this.persons_5_and_under.set(persons_5_and_under);}
 
-	public DoubleProperty Persons5Property(){return c;}
+	public DoubleProperty Persons5Property(){return persons_5_and_under;}
 
 
-	public double getPersons5And(){ return persons_5_and_under.get();}
+	public double getPersons5And(){return persons_5_and_under.get();}
 
-	public void setPersons5And(double persons_5_and_under){this.persons_5_and_underset(persons_5_and_under);}
+	public void setPersons5And(double persons_5_and_under){this.persons_5_and_under.set(persons_5_and_under);}
 
-	public DoubleProperty Persons5AndProperty(){return c;}
+	public DoubleProperty Persons5AndProperty(){return persons_5_and_under;}
 
 
-	public double getPersons5AndUnder(){ return persons_5_and_under.get();}
+	public double getPersons5AndUnder(){return persons_5_and_under.get();}
 
-	public void setPersons5AndUnder(double persons_5_and_under){this.persons_5_and_underset(persons_5_and_under);}
+	public void setPersons5AndUnder(double persons_5_and_under){this.persons_5_and_under.set(persons_5_and_under);}
 
-	public DoubleProperty Persons5AndUnderProperty(){return c;}
+	public DoubleProperty Persons5AndUnderProperty(){return persons_5_and_under;}
 
 
-	public double getPersons(){ return persons_age_6_to_18.get();}
+	public double getPersons(){return persons_age_6_to_18.get();}
 
-	public void setPersons(double persons_age_6_to_18){this.persons_age_6_to_18set(persons_age_6_to_18);}
+	public void setPersons(double persons_age_6_to_18){this.persons_age_6_to_18.set(persons_age_6_to_18);}
 
-	public DoubleProperty PersonsProperty(){return c;}
+	public DoubleProperty PersonsProperty(){return persons_age_6_to_18;}
 
 
-	public double getPersonsAge(){ return persons_age_6_to_18.get();}
+	public double getPersonsAge(){return persons_age_6_to_18.get();}
 
-	public void setPersonsAge(double persons_age_6_to_18){this.persons_age_6_to_18set(persons_age_6_to_18);}
+	public void setPersonsAge(double persons_age_6_to_18){this.persons_age_6_to_18.set(persons_age_6_to_18);}
 
-	public DoubleProperty PersonsAgeProperty(){return c;}
+	public DoubleProperty PersonsAgeProperty(){return persons_age_6_to_18;}
 
 
-	public double getPersonsAge6(){ return persons_age_6_to_18.get();}
+	public double getPersonsAge6(){return persons_age_6_to_18.get();}
 
-	public void setPersonsAge6(double persons_age_6_to_18){this.persons_age_6_to_18set(persons_age_6_to_18);}
+	public void setPersonsAge6(double persons_age_6_to_18){this.persons_age_6_to_18.set(persons_age_6_to_18);}
 
-	public DoubleProperty PersonsAge6Property(){return c;}
+	public DoubleProperty PersonsAge6Property(){return persons_age_6_to_18;}
 
 
-	public double getPersonsAge6To(){ return persons_age_6_to_18.get();}
+	public double getPersonsAge6To(){return persons_age_6_to_18.get();}
 
-	public void setPersonsAge6To(double persons_age_6_to_18){this.persons_age_6_to_18set(persons_age_6_to_18);}
+	public void setPersonsAge6To(double persons_age_6_to_18){this.persons_age_6_to_18.set(persons_age_6_to_18);}
 
-	public DoubleProperty PersonsAge6ToProperty(){return c;}
+	public DoubleProperty PersonsAge6ToProperty(){return persons_age_6_to_18;}
 
 
-	public double getPersonsAge6To18(){ return persons_age_6_to_18.get();}
+	public double getPersonsAge6To18(){return persons_age_6_to_18.get();}
 
-	public void setPersonsAge6To18(double persons_age_6_to_18){this.persons_age_6_to_18set(persons_age_6_to_18);}
+	public void setPersonsAge6To18(double persons_age_6_to_18){this.persons_age_6_to_18.set(persons_age_6_to_18);}
 
-	public DoubleProperty PersonsAge6To18Property(){return c;}
+	public DoubleProperty PersonsAge6To18Property(){return persons_age_6_to_18;}
 
 
-	public double getPersons(){ return persons_age_65_plus.get();}
+	public double getPersons(){return persons_age_65_plus.get();}
 
-	public void setPersons(double persons_age_65_plus){this.persons_age_65_plusset(persons_age_65_plus);}
+	public void setPersons(double persons_age_65_plus){this.persons_age_65_plus.set(persons_age_65_plus);}
 
-	public DoubleProperty PersonsProperty(){return c;}
+	public DoubleProperty PersonsProperty(){return persons_age_65_plus;}
 
 
-	public double getPersonsAge(){ return persons_age_65_plus.get();}
+	public double getPersonsAge(){return persons_age_65_plus.get();}
 
-	public void setPersonsAge(double persons_age_65_plus){this.persons_age_65_plusset(persons_age_65_plus);}
+	public void setPersonsAge(double persons_age_65_plus){this.persons_age_65_plus.set(persons_age_65_plus);}
 
-	public DoubleProperty PersonsAgeProperty(){return c;}
+	public DoubleProperty PersonsAgeProperty(){return persons_age_65_plus;}
 
 
-	public double getPersonsAge65(){ return persons_age_65_plus.get();}
+	public double getPersonsAge65(){return persons_age_65_plus.get();}
 
-	public void setPersonsAge65(double persons_age_65_plus){this.persons_age_65_plusset(persons_age_65_plus);}
+	public void setPersonsAge65(double persons_age_65_plus){this.persons_age_65_plus.set(persons_age_65_plus);}
 
-	public DoubleProperty PersonsAge65Property(){return c;}
+	public DoubleProperty PersonsAge65Property(){return persons_age_65_plus;}
 
 
-	public double getPersonsAge65Plus(){ return persons_age_65_plus.get();}
+	public double getPersonsAge65Plus(){return persons_age_65_plus.get();}
 
-	public void setPersonsAge65Plus(double persons_age_65_plus){this.persons_age_65_plusset(persons_age_65_plus);}
+	public void setPersonsAge65Plus(double persons_age_65_plus){this.persons_age_65_plus.set(persons_age_65_plus);}
 
-	public DoubleProperty PersonsAge65PlusProperty(){return c;}
+	public DoubleProperty PersonsAge65PlusProperty(){return persons_age_65_plus;}
 
 
 }
