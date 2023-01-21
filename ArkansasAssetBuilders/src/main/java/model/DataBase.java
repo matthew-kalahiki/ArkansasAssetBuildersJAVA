@@ -632,24 +632,20 @@ public class DataBase {
             if(demographic) {
                 dataObject.setClient_ID(rs.getString("Client_ID"));
                 dataObject.setTaxYear(rs.getInt("TaxYear"));
-                dataObject.setAddress(rs.getString("Address"));
-                dataObject.setCounty(rs.getString("County"));
-                dataObject.setZip(rs.getInt("Zip"));
+                dataObject.setZip(rs.getString("Zip"));
                 dataObject.setState(rs.getString("State"));
             }
             if(returnData){
-                dataObject.setFederalReturn(rs.getInt("FederalReturn"));
+                dataObject.setFederalReturn(rs.getBoolean("FederalReturn"));
                 dataObject.setTotalRefund(rs.getInt("TotalRefund"));
                 dataObject.setEITC(rs.getInt("EITC"));
                 dataObject.setCTC(rs.getInt("CTC"));
-                dataObject.setDependents(rs.getInt("Dependents"));
-                dataObject.setSurveyScore(rs.getInt("SurveyScore"));
             }
             if(client){
                 dataObject.setFirstName(rs.getString("FirstName"));
                 dataObject.setLastName(rs.getString("LastName"));
                 dataObject.setDoB(rs.getString("DoB"));
-                dataObject.setLast4SS(rs.getInt("Last4SS"));
+                dataObject.setLast4SS(rs.getString("Last4SS"));
             }
             //This may not be a good way to set TaxYear
             //
@@ -669,7 +665,7 @@ public class DataBase {
      * @throws SQLException Unable to retrieve data, loss of connection, or other errors.
      * @throws ClassNotFoundException Client class unable to be found.
      */
-    public static OldClient searchClient(String ID) throws SQLException, ClassNotFoundException{
+    public static Client searchClient(String ID) throws SQLException, ClassNotFoundException{
         String selectStmt = "SELECT * From Client WHERE ID = " + ID;
 
         try{
@@ -681,15 +677,15 @@ public class DataBase {
         }
     }
 
-    private static OldClient getClientFromResultSet(ResultSet rs) throws SQLException{
-        OldClient client = null;
+    private static Client getClientFromResultSet(ResultSet rs) throws SQLException{
+        Client client = null;
         if(rs.next()){
-            client = new OldClient();
-            client.setID(rs.getString("ID"));
+            client = new Client();
+            client.setId(rs.getString("ID"));
             client.setFirstName(rs.getString("FirstName"));
             client.setLastName(rs.getString("LastName"));
             client.setDoB(rs.getString("DoB"));
-            client.setLast4SS(rs.getInt("Last4SS"));
+            client.setL4SSN(rs.getString("Last4SS"));
         }
         return client;
     }

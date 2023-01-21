@@ -1,5 +1,7 @@
 package model;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.StringProperty;
 
@@ -17,13 +19,13 @@ public class DataObject {
     }
 
     public String getClient_ID(){
-        return client.getID();
+        return client.getId();
     }
     public void setClient_ID(String Client_ID){
-        client.setID(Client_ID);
+        client.setId(Client_ID);
     }
     public StringProperty Client_IDProperty(){
-        return client.Client_IDProperty();
+        return client.IdProperty();
     }
     public int getTaxYear(){
         return taxYear.getTaxYear();
@@ -34,34 +36,18 @@ public class DataObject {
     }
 
     public IntegerProperty taxYearProperty(){
-        return taxYear.taxYearProperty();
+        return taxYear.TaxYearProperty();
     }
 
-    public String getAddress(){
-        return demographic.getAddress();
+
+    public String getZip(){return demographic.getZip();}
+
+    public void setZip(String Zip){demographic.setZip(Zip);}
+
+    public StringProperty zipProperty(){
+        return demographic.ZipProperty();
     }
 
-    public void setAddress(String Address){demographic.setAddress(Address);}
-
-    public StringProperty addressProperty(){return demographic.addressProperty();}
-
-    public int getZip(){return demographic.getZip();}
-
-    public void setZip(int Zip){demographic.setZip(Zip);}
-
-    public IntegerProperty zipProperty(){
-        return demographic.zipProperty();
-    }
-
-    public String getCounty(){return demographic.getCounty();}
-
-    public void setCounty(String County){
-        demographic.setCounty(County);
-    }
-
-    public StringProperty countyProperty(){
-        return demographic.countyProperty();
-    }
 
     public String getState(){
         return demographic.getState();
@@ -72,66 +58,59 @@ public class DataObject {
     }
 
     public StringProperty stateProperty(){
-        return demographic.stateProperty();
+        return demographic.StateProperty();
     }
 
     public String getFirstName(){return client.getFirstName();}
 
     public void setFirstName(String FirstName){client.setFirstName(FirstName);}
 
-    public StringProperty firstNameProperty(){return client.firstNameProperty();}
+    public StringProperty firstNameProperty(){return client.FirstNameProperty();}
 
     public String getLastName(){return client.getLastName();}
 
     public void setLastName(String LastName){client.setLastName(LastName);}
 
-    public StringProperty lastNameProperty(){return client.lastNameProperty();}
+    public StringProperty lastNameProperty(){return client.LastNameProperty();}
 
     public String getDoB(){return client.getDoB();}
 
     public void setDoB(String DoB){client.setDoB(DoB);}
 
-    public StringProperty doBProperty(){return client.doBProperty();}
+    public StringProperty doBProperty(){return client.DoBProperty();}
 
-    public int getLast4SS(){return client.getLast4SS();}
+    public String getLast4SS(){return client.getL4SSN();}
 
-    public void setLast4SS(int Last4SS){client.setLast4SS(Last4SS);}
+    public void setLast4SS(String Last4SS){client.setL4SSN(Last4SS);}
 
-    public IntegerProperty last4SSProperty(){return client.last4SSProperty();}
+    public StringProperty last4SSProperty(){return client. L4SSNProperty();}
 
-    public int getFederalReturn(){return returnData.getFederalReturn();}
+    public boolean getFederalReturn(){return returnData.getFederal();}
 
-    public void setFederalReturn(int FederalReturn){returnData.setFederalReturn(FederalReturn);}
+    public void setFederalReturn(boolean FederalReturn){
+        returnData.setFederal(FederalReturn);}
 
-    public IntegerProperty federalReturnProperty(){return returnData.federalReturnProperty();}
+    public BooleanProperty federalReturnProperty(){return returnData.FederalProperty();}
 
-    public int getTotalRefund(){return returnData.getTotalRefund();}
+    public double getTotalRefund(){return returnData.getRefund();}
 
-    public void setTotalRefund(int TotalRefund){returnData.setTotalRefund(TotalRefund);}
+    public void setTotalRefund(int TotalRefund){
+        returnData.setRefund(TotalRefund);}
 
-    public IntegerProperty totalRefundProperty(){return returnData.totalRefundProperty();}
+    public DoubleProperty totalRefundProperty(){return returnData.RefundProperty();}
 
-    public int getEITC(){return returnData.getEITC();}
+    public double getEITC(){return returnData.getEic();}
 
-    public void setEITC(int EITC){returnData.setEITC(EITC);}
+    public void setEITC(int EITC){
+        returnData.setEic(EITC);}
 
-    public IntegerProperty EITCProperty(){return returnData.EITCProperty();}
+    public DoubleProperty EITCProperty(){return returnData.EicProperty();}
 
-    public int getCTC(){return returnData.getCTC();}
+    public double getCTC(){return returnData.getAddCTC();}
 
-    public void setCTC(int CTC){returnData.setCTC(CTC);}
+    public void setCTC(int CTC){
+        returnData.setAddCTC(CTC);}
 
-    public IntegerProperty CTCProperty(){return returnData.CTCProperty();}
+    public DoubleProperty CTCProperty(){return returnData.AddCTCProperty();}
 
-    public int getDependents(){return returnData.getDependents();}
-
-    public void setDependents(int Dependents){returnData.setDependents(Dependents);}
-
-    public IntegerProperty dependentsProperty(){return returnData.dependentsProperty();}
-
-    public int getSurveyScore(){return returnData.getSurveyScore();}
-
-    public void setSurveyScore(int SurveyScore){returnData.setSurveyScore(SurveyScore);}
-
-    public IntegerProperty surveyScoreProperty(){return returnData.surveyScoreProperty();}
 }
