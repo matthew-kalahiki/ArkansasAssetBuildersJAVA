@@ -630,22 +630,22 @@ public class DataBase {
         while(rs.next()){
             DataObject dataObject = new DataObject();
             if(demographic) {
-                dataObject.setClient_ID(rs.getString("Client_ID"));
+                dataObject.setId(rs.getString("Client_ID"));
                 dataObject.setTaxYear(rs.getInt("TaxYear"));
                 dataObject.setZip(rs.getString("Zip"));
                 dataObject.setState(rs.getString("State"));
             }
             if(returnData){
-                dataObject.setFederalReturn(rs.getBoolean("FederalReturn"));
-                dataObject.setTotalRefund(rs.getInt("TotalRefund"));
-                dataObject.setEITC(rs.getInt("EITC"));
-                dataObject.setCTC(rs.getInt("CTC"));
+                dataObject.setFederal(rs.getBoolean("FederalReturn"));
+                dataObject.setRefund(rs.getInt("TotalRefund"));
+                dataObject.setEic(rs.getInt("EITC"));
+                dataObject.setChildTaxCredit(rs.getInt("CTC"));
             }
             if(client){
                 dataObject.setFirstName(rs.getString("FirstName"));
                 dataObject.setLastName(rs.getString("LastName"));
                 dataObject.setDoB(rs.getString("DoB"));
-                dataObject.setLast4SS(rs.getString("Last4SS"));
+                dataObject.setL4SSN(rs.getString("Last4SS"));
             }
             //This may not be a good way to set TaxYear
             //

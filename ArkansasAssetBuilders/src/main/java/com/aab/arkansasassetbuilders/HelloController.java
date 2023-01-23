@@ -98,7 +98,7 @@ public class HelloController {
     private TableColumn<DataObject, String> last4ssColumn;
 
     @FXML
-    private TableColumn<DataObject, Integer> taxYearColumn;
+    private TableColumn<DataObject, Double> taxYearColumn;
 
     @FXML
     private TableColumn<DataObject, String> zipColumn;
@@ -121,16 +121,16 @@ public class HelloController {
 
     @FXML
     private void initialize () throws SQLException, ClassNotFoundException {
-        clientIDColumn.setCellValueFactory(cellData -> cellData.getValue().Client_IDProperty());
+        clientIDColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty());
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
         doBColumn.setCellValueFactory(cellData -> cellData.getValue().doBProperty());
-        last4ssColumn.setCellValueFactory(cellData -> cellData.getValue().last4SSProperty());
+        last4ssColumn.setCellValueFactory(cellData -> cellData.getValue().l4SSNProperty());
 
         ObservableList<String> ty = FXCollections.observableArrayList();
         ObservableList<DataObject> taxYears = DataBase.searchTaxYears("");
         for(DataObject d : taxYears){
-            ty.add(Integer.toString(d.getTaxYear()));
+            ty.add(Double.toString(d.getTaxYear()));
         }
         taxYear.setItems(ty);
     }
@@ -470,7 +470,7 @@ public class HelloController {
         l4ss.setDisable(!l4ss.isDisable());
         last4ssColumn.setVisible(!last4ssColumn.isVisible());
         if(last4ssColumn.isVisible()){
-            last4ssColumn.setCellValueFactory(cellData -> cellData.getValue().last4SSProperty());
+            last4ssColumn.setCellValueFactory(cellData -> cellData.getValue().l4SSNProperty());
         }else{
             last4ssColumn.setCellValueFactory(null);
         }
@@ -510,7 +510,7 @@ public class HelloController {
         federalReturn.setDisable(!federalReturn.isDisable());
         federalReturnColumn.setVisible(!federalReturnColumn.isVisible());
         if(federalReturnColumn.isVisible()){
-            federalReturnColumn.setCellValueFactory(cellData -> cellData.getValue().federalReturnProperty());
+            federalReturnColumn.setCellValueFactory(cellData -> cellData.getValue().federalProperty());
         }else{
             federalReturnColumn.setCellValueFactory(null);
         }
@@ -520,7 +520,7 @@ public class HelloController {
         totalRefund.setDisable(!totalRefund.isDisable());
         totalRefundColumn.setVisible(!totalRefundColumn.isVisible());
         if(totalRefundColumn.isVisible()){
-            totalRefundColumn.setCellValueFactory(cellData-> cellData.getValue().totalRefundProperty().asObject());
+            totalRefundColumn.setCellValueFactory(cellData-> cellData.getValue().refundProperty().asObject());
         }else{
             totalRefundColumn.setCellValueFactory(null);
         }
@@ -530,7 +530,7 @@ public class HelloController {
         eitc.setDisable(!eitc.isDisable());
         eitcColumn.setVisible(!eitcColumn.isVisible());
         if(eitcColumn.isVisible()){
-            eitcColumn.setCellValueFactory(cellData -> cellData.getValue().EITCProperty().asObject());
+            eitcColumn.setCellValueFactory(cellData -> cellData.getValue().eicProperty().asObject());
         }else{
             eitcColumn.setCellValueFactory(null);
         }
@@ -540,7 +540,7 @@ public class HelloController {
         ctc.setDisable(!ctc.isDisable());
         ctcColumn.setVisible(!ctcColumn.isVisible());
         if(ctcColumn.isVisible()){
-            ctcColumn.setCellValueFactory(cellData -> cellData.getValue().CTCProperty().asObject());
+            ctcColumn.setCellValueFactory(cellData -> cellData.getValue().childTaxCreditProperty().asObject());
         }else{
             ctcColumn.setCellValueFactory(null);
         }

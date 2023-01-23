@@ -1,15 +1,15 @@
 package model;
 import javafx.beans.property.*;
-public class TaxYear {
-	private IntegerProperty tax_year;
+public class TaxYear{
+	private DoubleProperty taxYear;
 	public TaxYear(){
-		this.tax_year = new SimpleIntegerProperty();
+		this.taxYear = new SimpleDoubleProperty();
 	}
-	public int getTaxYear(){return tax_year.get();}
+	public double getTaxYear(){return taxYear.get();}
 
-	public void setTaxYear(int tax_year){this.tax_year.set(tax_year);}
+	public void setTaxYear(double taxYear){this.taxYear.set(taxYear);}
 
-	public IntegerProperty TaxYearProperty(){return tax_year;}
+	public DoubleProperty taxYearProperty(){return taxYear;}
 
 
 }

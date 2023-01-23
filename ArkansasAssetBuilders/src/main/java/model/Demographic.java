@@ -1,67 +1,69 @@
 package model;
 import javafx.beans.property.*;
-public class Demographic {
-	private StringProperty client_id;
-	private DoubleProperty tax_year;
+public class Demographic{
+	private StringProperty clientId;
+	private DoubleProperty taxYear;
 	private StringProperty city;
 	private StringProperty state;
 	private StringProperty zip;
-	private DoubleProperty primary_secondary_60_plus;
+	private DoubleProperty primarySecondary60Plus;
 	private StringProperty residency;
 	public Demographic(){
-		this.client_id = new SimpleStringProperty();
-		this.tax_year = new SimpleDoubleProperty();
+		this.clientId = new SimpleStringProperty();
+		this.taxYear = new SimpleDoubleProperty();
 		this.city = new SimpleStringProperty();
-		this.zip = new SimpleStringProperty();
 		this.state = new SimpleStringProperty();
-		this.primary_secondary_60_plus = new SimpleDoubleProperty();
+		this.zip = new SimpleStringProperty();
+		this.primarySecondary60Plus = new SimpleDoubleProperty();
 		this.residency = new SimpleStringProperty();
 	}
+	public String getClientId(){return clientId.get();}
 
-	public String getClientId(){ return client_id.get();}
+	public void setClientId(String clientId){this.clientId.set(clientId);}
 
-	public void setClientId(String client_id){this.client_id.set(client_id);}
+	public StringProperty clientIdProperty(){return clientId;}
 
-	public StringProperty ClientIdProperty(){return client_id;}
 
-	public double getTaxYear(){ return tax_year.get();}
+	public double getTaxYear(){return taxYear.get();}
 
-	public void setTaxYear(double tax_year){this.tax_year.set(tax_year);}
+	public void setTaxYear(double taxYear){this.taxYear.set(taxYear);}
 
-	public DoubleProperty TaxYearProperty(){return tax_year;}
+	public DoubleProperty taxYearProperty(){return taxYear;}
 
-	public String getCity(){ return city.get();}
+
+	public String getCity(){return city.get();}
 
 	public void setCity(String city){this.city.set(city);}
 
-	public StringProperty CityProperty(){return city;}
+	public StringProperty cityProperty(){return city;}
 
 
-	public String getState(){ return state.get();}
+	public String getState(){return state.get();}
 
 	public void setState(String state){this.state.set(state);}
 
-	public StringProperty StateProperty(){return state;}
+	public StringProperty stateProperty(){return state;}
 
 
-	public String getZip(){ return zip.get();}
+	public String getZip(){return zip.get();}
 
 	public void setZip(String zip){this.zip.set(zip);}
 
-	public StringProperty ZipProperty(){return zip;}
-
-	public double getPrimarySecondary60Plus(){ return primary_secondary_60_plus.get();}
-
-	public void setPrimarySecondary60Plus(double primary_secondary_60_plus){this.primary_secondary_60_plus.set(primary_secondary_60_plus);}
-
-	public DoubleProperty PrimarySecondary60PlusProperty(){return primary_secondary_60_plus;}
+	public StringProperty zipProperty(){return zip;}
 
 
-	public String getResidency(){ return residency.get();}
+	public double getPrimarySecondary60Plus(){return primarySecondary60Plus.get();}
+
+	public void setPrimarySecondary60Plus(double primarySecondary60Plus){this.primarySecondary60Plus.set(primarySecondary60Plus);}
+
+	public DoubleProperty primarySecondary60PlusProperty(){return primarySecondary60Plus;}
+
+
+	public String getResidency(){return residency.get();}
 
 	public void setResidency(String residency){this.residency.set(residency);}
 
-	public StringProperty ResidencyProperty(){return residency;}
+	public StringProperty residencyProperty(){return residency;}
 
 
 }
