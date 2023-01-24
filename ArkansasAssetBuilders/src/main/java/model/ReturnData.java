@@ -1,265 +1,402 @@
 package model;
-
 import javafx.beans.property.*;
+public class ReturnData{
+	private StringProperty clientId;
+	private DoubleProperty taxYear;
+	private BooleanProperty federal;
+	private StringProperty acceptedData;
+	private StringProperty returnType;
+	private StringProperty filingStatus;
+	private DoubleProperty totalIrsExemptions;
+	private DoubleProperty refund;
+	private BooleanProperty paperState;
+	private BooleanProperty paperFed;
+	private BooleanProperty requestingDd;
+	private DoubleProperty agi;
+	private StringProperty createdDate;
+	private DoubleProperty addctc;
+	private StringProperty poundSavingsBonds;
+	private StringProperty savingsBonds;
+	private DoubleProperty eic;
+	private DoubleProperty childTaxCredit;
+	private DoubleProperty educationTaxCredit;
+	private DoubleProperty elderlyCredit;
+	private DoubleProperty totalRespPayment;
+	private DoubleProperty totalAdvptcRepayment;
+	private DoubleProperty averageAdvptcPayment;
+	private DoubleProperty totalPtc;
+	private DoubleProperty balanceDue;
+	private BooleanProperty itin;
+	private BooleanProperty exemption7;
+	private BooleanProperty fullYearCoverage;
+	private BooleanProperty form8888;
+	private BooleanProperty scheduleA;
+	private BooleanProperty scheduleB;
+	private BooleanProperty scheduleC;
+	private BooleanProperty scheduleCEz;
+	private BooleanProperty scheduleD;
+	private BooleanProperty scheduleE;
+	private BooleanProperty scheduleF;
+	private BooleanProperty scheduleH;
+	private BooleanProperty scheduleR;
+	private BooleanProperty scheduleSetP;
+	private BooleanProperty scheduleSesP;
+	private StringProperty agencyId;
+	private DoubleProperty stateWithholding;
+	private DoubleProperty stateTaxLiability;
+	private DoubleProperty aAmountTaxpayerIsPlanningToSave;
+	public ReturnData(){
+		this.clientId = new SimpleStringProperty();
+		this.taxYear = new SimpleDoubleProperty();
+		this.federal = new SimpleBooleanProperty();
+		this.acceptedData = new SimpleStringProperty();
+		this.returnType = new SimpleStringProperty();
+		this.filingStatus = new SimpleStringProperty();
+		this.totalIrsExemptions = new SimpleDoubleProperty();
+		this.refund = new SimpleDoubleProperty();
+		this.paperState = new SimpleBooleanProperty();
+		this.paperFed = new SimpleBooleanProperty();
+		this.requestingDd = new SimpleBooleanProperty();
+		this.agi = new SimpleDoubleProperty();
+		this.createdDate = new SimpleStringProperty();
+		this.addctc = new SimpleDoubleProperty();
+		this.poundSavingsBonds = new SimpleStringProperty();
+		this.savingsBonds = new SimpleStringProperty();
+		this.eic = new SimpleDoubleProperty();
+		this.childTaxCredit = new SimpleDoubleProperty();
+		this.educationTaxCredit = new SimpleDoubleProperty();
+		this.elderlyCredit = new SimpleDoubleProperty();
+		this.totalRespPayment = new SimpleDoubleProperty();
+		this.totalAdvptcRepayment = new SimpleDoubleProperty();
+		this.averageAdvptcPayment = new SimpleDoubleProperty();
+		this.totalPtc = new SimpleDoubleProperty();
+		this.balanceDue = new SimpleDoubleProperty();
+		this.itin = new SimpleBooleanProperty();
+		this.exemption7 = new SimpleBooleanProperty();
+		this.fullYearCoverage = new SimpleBooleanProperty();
+		this.form8888 = new SimpleBooleanProperty();
+		this.scheduleA = new SimpleBooleanProperty();
+		this.scheduleB = new SimpleBooleanProperty();
+		this.scheduleC = new SimpleBooleanProperty();
+		this.scheduleCEz = new SimpleBooleanProperty();
+		this.scheduleD = new SimpleBooleanProperty();
+		this.scheduleE = new SimpleBooleanProperty();
+		this.scheduleF = new SimpleBooleanProperty();
+		this.scheduleH = new SimpleBooleanProperty();
+		this.scheduleR = new SimpleBooleanProperty();
+		this.scheduleSetP = new SimpleBooleanProperty();
+		this.scheduleSesP = new SimpleBooleanProperty();
+		this.agencyId = new SimpleStringProperty();
+		this.stateWithholding = new SimpleDoubleProperty();
+		this.stateTaxLiability = new SimpleDoubleProperty();
+		this.aAmountTaxpayerIsPlanningToSave = new SimpleDoubleProperty();
+	}
+	public String getClientId(){return clientId.get();}
 
-/**
- * ReturnData class
- * <br/>
- * <br/>
- * Tax return data from inputted tax information.
- * Tax return information is stored in the local database.
- */
-public class ReturnData {
-    private IntegerProperty FederalReturn;
-    private IntegerProperty TotalRefund;
-    private IntegerProperty EITC;
-    private IntegerProperty CTC;
-    private IntegerProperty Dependents;
-    private IntegerProperty SurveyScore;
-    private Client client;
-    private TaxYear taxYear;
+	public void setClientId(String clientId){this.clientId.set(clientId);}
 
-    /**
-     * Constructor for the ReturnData class.
-     */
-    public ReturnData(){
-        this.FederalReturn = new SimpleIntegerProperty();
-        this.TotalRefund = new SimpleIntegerProperty();
-        this.EITC = new SimpleIntegerProperty();
-        this.CTC = new SimpleIntegerProperty();
-        this.Dependents = new SimpleIntegerProperty();
-        this.SurveyScore = new SimpleIntegerProperty();
-        this.client = new Client();
-        this.taxYear = new TaxYear();
-    }
+	public StringProperty clientIdProperty(){return clientId;}
 
-    /**
-     * Method for getting the ID of the ReturnData object.
-     * @return int, ID of the ReturnData object.
-     */
-    public String getClient_ID(){
-        return client.getID();
-    }
 
-    /**
-     * Method for setting the ID of the ReturnData object.
-     * @param Client_ID int, ID that the old ID will be set to.
-     */
-    public void setClient_ID(String Client_ID){
-        client.setID(Client_ID);
-    }
+	public double getTaxYear(){return taxYear.get();}
 
-    /**
-     * Method for retrieving ReturnData ID from the database in an
-     * IntegerProperty format.<br/>
-     * @return IntegerProperty, the ID of the ReturnData.
-     */
-    public StringProperty Client_IDProperty(){
-        return client.Client_IDProperty();
-    }
+	public void setTaxYear(double taxYear){this.taxYear.set(taxYear);}
 
-    /**
-     * Method for getting the tax year ID of the ReturnData object.
-     * @return int, tax year ID of the ReturnData object.
-     */
-    public int getTaxYear(){
-        return taxYear.getTaxYear();
-    }
+	public DoubleProperty taxYearProperty(){return taxYear;}
 
-    /**
-     * Method for setting the tax year ID of the ReturnData object.
-     * @param TaxYear int, ID that will replace the old tax year ID.
-     */
-    public void setTaxYear(int TaxYear){
-        taxYear.setTaxYear(TaxYear);
-    }
 
-    /**
-     * Method for retrieving ReturnData tax year ID from the database in an
-     * IntegerProperty format.<br/>
-     * @return IntegerProperty, the tax year ID of the ReturnData.
-     */
-    public IntegerProperty taxYearProperty(){
-        return taxYear.taxYearProperty();
-    }
+	public boolean getFederal(){return federal.get();}
 
-    /**
-     * Method for getting the federal return from the ReturnData object.
-     * @return int, federal return of the ReturnData object.
-     */
-    public int getFederalReturn(){
-        return FederalReturn.get();
-    }
+	public void setFederal(boolean federal){this.federal.set(federal);}
 
-    /**
-     * Method for setting the federal return of the ReturnData object.
-     * @param FederalReturn int, federal return that will replace the old federal
-     *                      return.
-     */
-    public void setFederalReturn(int FederalReturn){
-        this.FederalReturn.set(FederalReturn);
-    }
+	public BooleanProperty federalProperty(){return federal;}
 
-    /**
-     * Method for retrieving ReturnData federal return from the database in an
-     * IntegerProperty format.<br/>
-     * @return IntegerProperty, the federal return of the ReturnData.
-     */
-    public IntegerProperty federalReturnProperty(){
-        return FederalReturn;
-    }
 
-    /**
-     * Method for getting the total refund of a ReturnData object.
-     * @return int, total refund of the ReturnData object.
-     */
-    public int getTotalRefund(){
-        return TotalRefund.get();
-    }
+	public String getAcceptedData(){return acceptedData.get();}
 
-    /**
-     * Method for setting the total refund of a ReturnData object.
-     * @param TotalRefund int, total refund that will replace the old total
-     *                    refund.
-     */
-    public void setTotalRefund(int TotalRefund){
-        this.TotalRefund.set(TotalRefund);
-    }
+	public void setAcceptedData(String acceptedData){this.acceptedData.set(acceptedData);}
 
-    /**
-     * Method for retrieving ReturnData total refund from the database in an
-     * IntegerProperty format.<br/>
-     * @return IntegerProperty, the total refund of the ReturnData.
-     */
-    public IntegerProperty totalRefundProperty(){
-        return TotalRefund;
-    }
+	public StringProperty acceptedDataProperty(){return acceptedData;}
 
-    /**
-     * Method for getting the EITC of the ReturnData object.
-     * @return int, the EITC of the ReturnData object.
-     */
-    public int getEITC(){
-        return EITC.get();
-    }
 
-    /**
-     * Method for setting the EITC of the ReturnData object.
-     * @param EITC int, the EITC that will replace the old EITC.
-     */
-    public void setEITC(int EITC){
-        this.EITC.set(EITC);
-    }
+	public String getReturnType(){return returnType.get();}
 
-    /**
-     * Method for retrieving ReturnData EITC from the database in an
-     * IntegerProperty format.<br/>
-     * @return IntegerProperty, the EITC of the ReturnData.
-     */
-    public IntegerProperty EITCProperty(){
-        return EITC;
-    }
+	public void setReturnType(String returnType){this.returnType.set(returnType);}
 
-    /**
-     * Method for getting the CTC of the ReturnData object.
-     * @return int, CTC of the ReturnData object.
-     */
-    public int getCTC(){
-        return CTC.get();
-    }
+	public StringProperty returnTypeProperty(){return returnType;}
 
-    /**
-     * Method for setting the CTC of the ReturnData object.
-     * @param CTC int, the CTC that will replace the old CTC.
-     */
-    public void setCTC(int CTC){
-        this.CTC.set(CTC);
-    }
 
-    /**
-     * Method for retrieving ReturnData CTC from the database in an
-     * IntegerProperty format.<br/>
-     * @return IntegerProperty, the CTC of the ReturnData.
-     */
-    public IntegerProperty CTCProperty(){
-        return CTC;
-    }
+	public String getFilingStatus(){return filingStatus.get();}
 
-    /**
-     * Method for getting the dependents of the ReturnData object.
-     * @return int, dependents of the ReturnData object.
-     */
-    public int getDependents(){
-        return Dependents.get();
-    }
+	public void setFilingStatus(String filingStatus){this.filingStatus.set(filingStatus);}
 
-    /**
-     * Method for setting the dependents of the ReturnData object.
-     * @param Dependents int, the dependents that the old dependents
-     *                   will be set to.
-     */
-    public void setDependents(int Dependents){
-        this.Dependents.set(Dependents);
-    }
+	public StringProperty filingStatusProperty(){return filingStatus;}
 
-    /**
-     * Method for retrieving ReturnData dependents from the database in an
-     * IntegerProperty format.<br/>
-     * @return IntegerProperty, the dependents of the ReturnData.
-     */
-    public IntegerProperty dependentsProperty(){
-        return Dependents;
-    }
 
-    /**
-     * Method for getting the survey score of a ReturnData object.
-     * @return int, survey score of the ReturnData object.
-     */
-    public int getSurveyScore(){
-        return SurveyScore.get();
-    }
+	public double getTotalIrsExemptions(){return totalIrsExemptions.get();}
 
-    /**
-     * Method for setting the survey score of the ReturnData object.
-     * @param SurveyScore int, the survey score that will replace the
-     *                    old survey score.
-     */
-    public void setSurveyScore(int SurveyScore){
-        this.SurveyScore.set(SurveyScore);
-    }
+	public void setTotalIrsExemptions(double totalIrsExemptions){this.totalIrsExemptions.set(totalIrsExemptions);}
 
-    /**
-     * Method for retrieving ReturnData survey score from the database in an
-     * IntegerProperty format.<br/>
-     * @return IntegerProperty, the survey score of the ReturnData.
-     */
-    public IntegerProperty surveyScoreProperty(){
-        return SurveyScore;
-    }
+	public DoubleProperty totalIrsExemptionsProperty(){return totalIrsExemptions;}
 
-    public String getFirstName(){return client.getFirstName();}
 
-    public void setFirstName(String FirstName){client.setFirstName(FirstName);}
+	public double getRefund(){return refund.get();}
 
-    public StringProperty firstNameProperty(){return client.firstNameProperty();}
+	public void setRefund(double refund){this.refund.set(refund);}
 
-    public String getLastName(){return client.getLastName();}
+	public DoubleProperty refundProperty(){return refund;}
 
-    public void setLastName(String LastName){client.setLastName(LastName);}
 
-    public StringProperty lastNameProperty(){return client.lastNameProperty();}
+	public boolean getPaperState(){return paperState.get();}
 
-    public String getDoB(){return client.getDoB();}
+	public void setPaperState(boolean paperState){this.paperState.set(paperState);}
 
-    public void setDoB(String DoB){client.setDoB(DoB);}
+	public BooleanProperty paperStateProperty(){return paperState;}
 
-    public StringProperty doBProperty(){return client.doBProperty();}
 
-    public int getLast4SS(){return client.getLast4SS();}
+	public boolean getPaperFed(){return paperFed.get();}
 
-    public void setLast4SS(int Last4SS){client.setLast4SS(Last4SS);}
+	public void setPaperFed(boolean paperFed){this.paperFed.set(paperFed);}
 
-    public IntegerProperty last4SSProperty(){return client.last4SSProperty();}
+	public BooleanProperty paperFedProperty(){return paperFed;}
+
+
+	public boolean getRequestingDd(){return requestingDd.get();}
+
+	public void setRequestingDd(boolean requestingDd){this.requestingDd.set(requestingDd);}
+
+	public BooleanProperty requestingDdProperty(){return requestingDd;}
+
+
+	public double getAgi(){return agi.get();}
+
+	public void setAgi(double agi){this.agi.set(agi);}
+
+	public DoubleProperty agiProperty(){return agi;}
+
+
+	public String getCreatedDate(){return createdDate.get();}
+
+	public void setCreatedDate(String createdDate){this.createdDate.set(createdDate);}
+
+	public StringProperty createdDateProperty(){return createdDate;}
+
+
+	public double getAddctc(){return addctc.get();}
+
+	public void setAddctc(double addctc){this.addctc.set(addctc);}
+
+	public DoubleProperty addctcProperty(){return addctc;}
+
+
+	public String getPoundSavingsBonds(){return poundSavingsBonds.get();}
+
+	public void setPoundSavingsBonds(String poundSavingsBonds){this.poundSavingsBonds.set(poundSavingsBonds);}
+
+	public StringProperty poundSavingsBondsProperty(){return poundSavingsBonds;}
+
+
+	public String getSavingsBonds(){return savingsBonds.get();}
+
+	public void setSavingsBonds(String savingsBonds){this.savingsBonds.set(savingsBonds);}
+
+	public StringProperty savingsBondsProperty(){return savingsBonds;}
+
+
+	public double getEic(){return eic.get();}
+
+	public void setEic(double eic){this.eic.set(eic);}
+
+	public DoubleProperty eicProperty(){return eic;}
+
+
+	public double getChildTaxCredit(){return childTaxCredit.get();}
+
+	public void setChildTaxCredit(double childTaxCredit){this.childTaxCredit.set(childTaxCredit);}
+
+	public DoubleProperty childTaxCreditProperty(){return childTaxCredit;}
+
+
+	public double getEducationTaxCredit(){return educationTaxCredit.get();}
+
+	public void setEducationTaxCredit(double educationTaxCredit){this.educationTaxCredit.set(educationTaxCredit);}
+
+	public DoubleProperty educationTaxCreditProperty(){return educationTaxCredit;}
+
+
+	public double getElderlyCredit(){return elderlyCredit.get();}
+
+	public void setElderlyCredit(double elderlyCredit){this.elderlyCredit.set(elderlyCredit);}
+
+	public DoubleProperty elderlyCreditProperty(){return elderlyCredit;}
+
+
+	public double getTotalRespPayment(){return totalRespPayment.get();}
+
+	public void setTotalRespPayment(double totalRespPayment){this.totalRespPayment.set(totalRespPayment);}
+
+	public DoubleProperty totalRespPaymentProperty(){return totalRespPayment;}
+
+
+	public double getTotalAdvptcRepayment(){return totalAdvptcRepayment.get();}
+
+	public void setTotalAdvptcRepayment(double totalAdvptcRepayment){this.totalAdvptcRepayment.set(totalAdvptcRepayment);}
+
+	public DoubleProperty totalAdvptcRepaymentProperty(){return totalAdvptcRepayment;}
+
+
+	public double getAverageAdvptcPayment(){return averageAdvptcPayment.get();}
+
+	public void setAverageAdvptcPayment(double averageAdvptcPayment){this.averageAdvptcPayment.set(averageAdvptcPayment);}
+
+	public DoubleProperty averageAdvptcPaymentProperty(){return averageAdvptcPayment;}
+
+
+	public double getTotalPtc(){return totalPtc.get();}
+
+	public void setTotalPtc(double totalPtc){this.totalPtc.set(totalPtc);}
+
+	public DoubleProperty totalPtcProperty(){return totalPtc;}
+
+
+	public double getBalanceDue(){return balanceDue.get();}
+
+	public void setBalanceDue(double balanceDue){this.balanceDue.set(balanceDue);}
+
+	public DoubleProperty balanceDueProperty(){return balanceDue;}
+
+
+	public boolean getItin(){return itin.get();}
+
+	public void setItin(boolean itin){this.itin.set(itin);}
+
+	public BooleanProperty itinProperty(){return itin;}
+
+
+	public boolean getExemption7(){return exemption7.get();}
+
+	public void setExemption7(boolean exemption7){this.exemption7.set(exemption7);}
+
+	public BooleanProperty exemption7Property(){return exemption7;}
+
+
+	public boolean getFullYearCoverage(){return fullYearCoverage.get();}
+
+	public void setFullYearCoverage(boolean fullYearCoverage){this.fullYearCoverage.set(fullYearCoverage);}
+
+	public BooleanProperty fullYearCoverageProperty(){return fullYearCoverage;}
+
+
+	public boolean getForm8888(){return form8888.get();}
+
+	public void setForm8888(boolean form8888){this.form8888.set(form8888);}
+
+	public BooleanProperty form8888Property(){return form8888;}
+
+
+	public boolean getScheduleA(){return scheduleA.get();}
+
+	public void setScheduleA(boolean scheduleA){this.scheduleA.set(scheduleA);}
+
+	public BooleanProperty scheduleAProperty(){return scheduleA;}
+
+
+	public boolean getScheduleB(){return scheduleB.get();}
+
+	public void setScheduleB(boolean scheduleB){this.scheduleB.set(scheduleB);}
+
+	public BooleanProperty scheduleBProperty(){return scheduleB;}
+
+
+	public boolean getScheduleC(){return scheduleC.get();}
+
+	public void setScheduleC(boolean scheduleC){this.scheduleC.set(scheduleC);}
+
+	public BooleanProperty scheduleCProperty(){return scheduleC;}
+
+
+	public boolean getScheduleCEz(){return scheduleCEz.get();}
+
+	public void setScheduleCEz(boolean scheduleCEz){this.scheduleCEz.set(scheduleCEz);}
+
+	public BooleanProperty scheduleCEzProperty(){return scheduleCEz;}
+
+
+	public boolean getScheduleD(){return scheduleD.get();}
+
+	public void setScheduleD(boolean scheduleD){this.scheduleD.set(scheduleD);}
+
+	public BooleanProperty scheduleDProperty(){return scheduleD;}
+
+
+	public boolean getScheduleE(){return scheduleE.get();}
+
+	public void setScheduleE(boolean scheduleE){this.scheduleE.set(scheduleE);}
+
+	public BooleanProperty scheduleEProperty(){return scheduleE;}
+
+
+	public boolean getScheduleF(){return scheduleF.get();}
+
+	public void setScheduleF(boolean scheduleF){this.scheduleF.set(scheduleF);}
+
+	public BooleanProperty scheduleFProperty(){return scheduleF;}
+
+
+	public boolean getScheduleH(){return scheduleH.get();}
+
+	public void setScheduleH(boolean scheduleH){this.scheduleH.set(scheduleH);}
+
+	public BooleanProperty scheduleHProperty(){return scheduleH;}
+
+
+	public boolean getScheduleR(){return scheduleR.get();}
+
+	public void setScheduleR(boolean scheduleR){this.scheduleR.set(scheduleR);}
+
+	public BooleanProperty scheduleRProperty(){return scheduleR;}
+
+
+	public boolean getScheduleSetP(){return scheduleSetP.get();}
+
+	public void setScheduleSetP(boolean scheduleSetP){this.scheduleSetP.set(scheduleSetP);}
+
+	public BooleanProperty scheduleSetPProperty(){return scheduleSetP;}
+
+
+	public boolean getScheduleSesP(){return scheduleSesP.get();}
+
+	public void setScheduleSesP(boolean scheduleSesP){this.scheduleSesP.set(scheduleSesP);}
+
+	public BooleanProperty scheduleSesPProperty(){return scheduleSesP;}
+
+
+	public String getAgencyId(){return agencyId.get();}
+
+	public void setAgencyId(String agencyId){this.agencyId.set(agencyId);}
+
+	public StringProperty agencyIdProperty(){return agencyId;}
+
+
+	public double getStateWithholding(){return stateWithholding.get();}
+
+	public void setStateWithholding(double stateWithholding){this.stateWithholding.set(stateWithholding);}
+
+	public DoubleProperty stateWithholdingProperty(){return stateWithholding;}
+
+
+	public double getStateTaxLiability(){return stateTaxLiability.get();}
+
+	public void setStateTaxLiability(double stateTaxLiability){this.stateTaxLiability.set(stateTaxLiability);}
+
+	public DoubleProperty stateTaxLiabilityProperty(){return stateTaxLiability;}
+
+
+	public double getAAmountTaxpayerIsPlanningToSave(){return aAmountTaxpayerIsPlanningToSave.get();}
+
+	public void setAAmountTaxpayerIsPlanningToSave(double aAmountTaxpayerIsPlanningToSave){this.aAmountTaxpayerIsPlanningToSave.set(aAmountTaxpayerIsPlanningToSave);}
+
+	public DoubleProperty aAmountTaxpayerIsPlanningToSaveProperty(){return aAmountTaxpayerIsPlanningToSave;}
 
 
 }

@@ -49,22 +49,10 @@
                         <ChoiceBox fx:id="taxYear" disable="true" prefWidth="150.0" />
                      </children>
                   </HBox>
-                  <HBox layoutX="10.0" layoutY="288.0" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <CheckBox mnemonicParsing="false" onAction="#addressBoxAction" text="Address:" />
-                        <TextField fx:id="address" disable="true" />
-                     </children>
-                  </HBox>
                   <HBox layoutX="10.0" layoutY="306.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <CheckBox mnemonicParsing="false" onAction="#zipBoxAction" text="ZIP Code:" />
                         <TextField fx:id="zip" disable="true" />
-                     </children>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="318.0" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <CheckBox mnemonicParsing="false" onAction="#countyBoxAction" text="County:" />
-                        <TextField fx:id="county" disable="true" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="327.0" prefHeight="100.0" prefWidth="200.0">
@@ -95,18 +83,6 @@
                      <children>
                         <CheckBox mnemonicParsing="false" onAction="#ctcBoxAction" text="CTC:" />
                         <TextField fx:id="ctc" disable="true" />
-                     </children>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="349.0" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <CheckBox mnemonicParsing="false" onAction="#dependentsBoxAction" text="Dependents:" />
-                        <TextField fx:id="dependents" disable="true" />
-                     </children>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="352.0" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <CheckBox mnemonicParsing="false" onAction="#surveyScoreBoxAction" text="Survey Score:" />
-                        <TextField fx:id="surveyScore" disable="true" />
                      </children>
                   </HBox>
                </children>

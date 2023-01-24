@@ -62,13 +62,7 @@ public class HelloController {
     private ChoiceBox taxYear;
 
     @FXML
-    private TextField address;
-
-    @FXML
     private TextField zip;
-
-    @FXML
-    private TextField county;
 
     @FXML
     private TextField state;
@@ -86,12 +80,6 @@ public class HelloController {
     private TextField ctc;
 
     @FXML
-    private TextField dependents;
-
-    @FXML
-    private TextField surveyScore;
-
-    @FXML
     private TableView resultsTable;
 
     @FXML
@@ -107,53 +95,42 @@ public class HelloController {
     private TableColumn<DataObject, String> doBColumn;
 
     @FXML
-    private TableColumn<DataObject, Integer> last4ssColumn;
+    private TableColumn<DataObject, String> last4ssColumn;
 
     @FXML
-    private TableColumn<DataObject, Integer> taxYearColumn;
+    private TableColumn<DataObject, Double> taxYearColumn;
 
     @FXML
-    private TableColumn<DataObject, String> addressColumn;
+    private TableColumn<DataObject, String> zipColumn;
 
-    @FXML
-    private TableColumn<DataObject, Integer> zipColumn;
-
-    @FXML
-    private TableColumn<DataObject, String> countyColumn;
 
     @FXML
     private TableColumn<DataObject, String> stateColumn;
 
     @FXML
-    private TableColumn<DataObject, Integer> federalReturnColumn;
+    private TableColumn<DataObject, Boolean> federalReturnColumn;
 
     @FXML
-    private TableColumn<DataObject, Integer> totalRefundColumn;
+    private TableColumn<DataObject, Double> totalRefundColumn;
 
     @FXML
-    private TableColumn<DataObject, Integer> eitcColumn;
+    private TableColumn<DataObject, Double> eitcColumn;
 
     @FXML
-    private TableColumn<DataObject, Integer> ctcColumn;
-
-    @FXML
-    private TableColumn<DataObject, Integer> dependentsColumn;
-
-    @FXML
-    private TableColumn<DataObject, Integer> surveyScoreColumn;
+    private TableColumn<DataObject, Double> ctcColumn;
 
     @FXML
     private void initialize () throws SQLException, ClassNotFoundException {
-        clientIDColumn.setCellValueFactory(cellData -> cellData.getValue().Client_IDProperty());
+        clientIDColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty());
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
         doBColumn.setCellValueFactory(cellData -> cellData.getValue().doBProperty());
-        last4ssColumn.setCellValueFactory(cellData -> cellData.getValue().last4SSProperty().asObject());
+        last4ssColumn.setCellValueFactory(cellData -> cellData.getValue().l4SSNProperty());
 
         ObservableList<String> ty = FXCollections.observableArrayList();
         ObservableList<DataObject> taxYears = DataBase.searchTaxYears("");
         for(DataObject d : taxYears){
-            ty.add(Integer.toString(d.getTaxYear()));
+            ty.add(Double.toString(d.getTaxYear()));
         }
         taxYear.setItems(ty);
     }
@@ -169,7 +146,7 @@ public class HelloController {
     @FXML
     private void searchClient(ActionEvent actionEvent) throws ClassNotFoundException, SQLException{
         try{
-            Client client = ClientDAO.searchClient(clientID.getText());
+            Client client = DataBase.searchClient(clientID.getText());
             populateAndShowClient(client);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -207,7 +184,7 @@ public class HelloController {
                 condition += "Last4SS = " + l4ss.getText();
                 //if(numCols > 0){condition += " AND ";}
             }
-            ObservableList<DataObject> clientData = ClientDAO.searchClients(condition);
+            ObservableList<DataObject> clientData = DataBase.searchClients(condition);
             populateClients(clientData);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -257,8 +234,8 @@ public class HelloController {
         resultsTable.setItems(returnDataData);
     }
     @FXML
-    private void populateYears(ObservableList<TaxYear> taxYearData){
-        resultsTable.setItems(taxYearData);
+    private void populateYears(ObservableList<TaxYear> TaxYearData){
+        resultsTable.setItems(TaxYearData);
     }
 
     @FXML
@@ -288,9 +265,9 @@ public class HelloController {
             String condition = "";
 
             //The cols array stores which boxes are checked; i.e. the columns that will be visible and the values that need to be checked
-            boolean[] cols = {!name.isDisable(), !dob.isDisable(), !l4ss.isDisable(), !taxYear.isDisable(), !address.isDisable(), !zip.isDisable(), !county.isDisable(), !state.isDisable(), !federalReturn.isDisable(), !totalRefund.isDisable(), !eitc.isDisable(), !ctc.isDisable(), !dependents.isDisable(), !surveyScore.isDisable()};
+            boolean[] cols = {!name.isDisable(), !dob.isDisable(), !l4ss.isDisable(), !taxYear.isDisable(), !zip.isDisable(), !state.isDisable(), !federalReturn.isDisable(), !totalRefund.isDisable(), !eitc.isDisable(), !ctc.isDisable()};
             //The conds array stores which filters have values set that need to be included in the SQL condition
-            boolean[] conds = {!name.getText().isEmpty(), dob.getValue() != null, !l4ss.getText().isEmpty(), taxYear.getValue() != null, !address.getText().isEmpty(), !zip.getText().isEmpty(), !county.getText().isEmpty(), !state.getText().isEmpty(), !federalReturn.getText().isEmpty(), !totalRefund.getText().isEmpty(), !eitc.getText().isEmpty(), !ctc.getText().isEmpty(), !dependents.getText().isEmpty(), !surveyScore.getText().isEmpty()};
+            boolean[] conds = {!name.getText().isEmpty(), dob.getValue() != null, !l4ss.getText().isEmpty(), taxYear.getValue() != null, !zip.getText().isEmpty(), !state.getText().isEmpty(), !federalReturn.getText().isEmpty(), !totalRefund.getText().isEmpty(), !eitc.getText().isEmpty(), !ctc.getText().isEmpty()};
 
             //The following section of code checks which tables need to be included in the SQL statement
             boolean clientFilter = false;
@@ -351,57 +328,41 @@ public class HelloController {
                     condition += "Demographic.";
                 }else if(returnDataFilter){
                     condition += "ReturnData.";
+                }else if(clientFilter){
+                    condition += "Demographic.";
                 }
                 condition += "TaxYear = " + taxYear.getValue().toString();
                 if(numCols > 0){condition += " AND ";}
             }
             if(cols[4] && conds[4]){
                 numCols--;
-                condition += "Address = '" + address.getText() + "'";
+                condition += "Zip = " + zip.getText();
                 if(numCols > 0){condition += " AND ";}
             }
             if(cols[5] && conds[5]){
                 numCols--;
-                condition += "Zip = " + zip.getText();
+                condition += "State = '" + state.getText() + "'";
                 if(numCols > 0){condition += " AND ";}
             }
             if(cols[6] && conds[6]){
                 numCols--;
-                condition += "County = '" + county.getText() + "'";
+                condition += "FederalReturn = " + federalReturn.getText();
                 if(numCols > 0){condition += " AND ";}
             }
             if(cols[7] && conds[7]){
                 numCols--;
-                condition += "State = '" + state.getText() + "'";
+                condition += "TotalRefund = " + totalRefund.getText();
                 if(numCols > 0){condition += " AND ";}
             }
             if(cols[8] && conds[8]){
                 numCols--;
-                condition += "FederalReturn = " + federalReturn.getText();
+                condition += "EITC = " + eitc.getText();
                 if(numCols > 0){condition += " AND ";}
             }
             if(cols[9] && conds[9]){
                 numCols--;
-                condition += "TotalRefund = " + totalRefund.getText();
-                if(numCols > 0){condition += " AND ";}
-            }
-            if(cols[10] && conds[10]){
-                numCols--;
-                condition += "EITC = " + eitc.getText();
-                if(numCols > 0){condition += " AND ";}
-            }
-            if(cols[11] && conds[11]){
-                numCols--;
                 condition += "CTC = " + ctc.getText();
                 if(numCols > 0){condition += " AND ";}
-            }
-            if(cols[12] && conds[12]){
-                numCols--;
-                condition += "Dependents = " + dependents.getText();
-                if(numCols > 0){condition += " AND ";}
-            }
-            if(cols[13] && conds[13]){
-                condition += "SurveyScore = " + surveyScore.getText();
             }
             System.out.println(condition);
 
@@ -424,11 +385,14 @@ public class HelloController {
             }else if(returnDataFilter){
                 ObservableList<DataObject> returnDataData = DataBase.searchReturnData(condition);
                 populateData(returnDataData);
+            }else if(taxYearFilter && clientFilter){
+                ObservableList<DataObject> taxYearClientData = DataBase.searchDemographicsAndReturnDataAndClients(condition);
+                populateData(taxYearClientData);
             }else if(taxYearFilter){
                 ObservableList<DataObject> taxYearData = DataBase.searchTaxYears(condition);
                 populateData(taxYearData);
             }else {
-                ObservableList<DataObject> clientData = ClientDAO.searchClients(condition);
+                ObservableList<DataObject> clientData = DataBase.searchClients(condition);
                 populateClients(clientData);
             }
         } catch (SQLException e) {
@@ -506,7 +470,7 @@ public class HelloController {
         l4ss.setDisable(!l4ss.isDisable());
         last4ssColumn.setVisible(!last4ssColumn.isVisible());
         if(last4ssColumn.isVisible()){
-            last4ssColumn.setCellValueFactory(cellData -> cellData.getValue().last4SSProperty().asObject());
+            last4ssColumn.setCellValueFactory(cellData -> cellData.getValue().l4SSNProperty());
         }else{
             last4ssColumn.setCellValueFactory(null);
         }
@@ -522,33 +486,13 @@ public class HelloController {
         }
     }
     @FXML
-    private void addressBoxAction(){
-        address.setDisable(!address.isDisable());
-        addressColumn.setVisible(!addressColumn.isVisible());
-        if(addressColumn.isVisible()){
-            addressColumn.setCellValueFactory(cellData -> cellData.getValue().addressProperty());
-        }else{
-            addressColumn.setCellValueFactory(null);
-        }
-    }
-    @FXML
     private void zipBoxAction(){
         zip.setDisable(!zip.isDisable());
         zipColumn.setVisible(!zipColumn.isVisible());
         if(zipColumn.isVisible()){
-            zipColumn.setCellValueFactory(cellData -> cellData.getValue().zipProperty().asObject());
+            zipColumn.setCellValueFactory(cellData -> cellData.getValue().zipProperty());
         }else{
             zipColumn.setCellValueFactory(null);
-        }
-    }
-    @FXML
-    private void countyBoxAction(){
-        county.setDisable(!county.isDisable());
-        countyColumn.setVisible(!countyColumn.isVisible());
-        if(countyColumn.isVisible()){
-            countyColumn.setCellValueFactory(cellData -> cellData.getValue().countyProperty());
-        }else{
-            countyColumn.setCellValueFactory(null);
         }
     }
     @FXML
@@ -566,7 +510,7 @@ public class HelloController {
         federalReturn.setDisable(!federalReturn.isDisable());
         federalReturnColumn.setVisible(!federalReturnColumn.isVisible());
         if(federalReturnColumn.isVisible()){
-            federalReturnColumn.setCellValueFactory(cellData -> cellData.getValue().federalReturnProperty().asObject());
+            federalReturnColumn.setCellValueFactory(cellData -> cellData.getValue().federalProperty());
         }else{
             federalReturnColumn.setCellValueFactory(null);
         }
@@ -576,7 +520,7 @@ public class HelloController {
         totalRefund.setDisable(!totalRefund.isDisable());
         totalRefundColumn.setVisible(!totalRefundColumn.isVisible());
         if(totalRefundColumn.isVisible()){
-            totalRefundColumn.setCellValueFactory(cellData-> cellData.getValue().totalRefundProperty().asObject());
+            totalRefundColumn.setCellValueFactory(cellData-> cellData.getValue().refundProperty().asObject());
         }else{
             totalRefundColumn.setCellValueFactory(null);
         }
@@ -586,7 +530,7 @@ public class HelloController {
         eitc.setDisable(!eitc.isDisable());
         eitcColumn.setVisible(!eitcColumn.isVisible());
         if(eitcColumn.isVisible()){
-            eitcColumn.setCellValueFactory(cellData -> cellData.getValue().EITCProperty().asObject());
+            eitcColumn.setCellValueFactory(cellData -> cellData.getValue().eicProperty().asObject());
         }else{
             eitcColumn.setCellValueFactory(null);
         }
@@ -596,29 +540,10 @@ public class HelloController {
         ctc.setDisable(!ctc.isDisable());
         ctcColumn.setVisible(!ctcColumn.isVisible());
         if(ctcColumn.isVisible()){
-            ctcColumn.setCellValueFactory(cellData -> cellData.getValue().CTCProperty().asObject());
+            ctcColumn.setCellValueFactory(cellData -> cellData.getValue().childTaxCreditProperty().asObject());
         }else{
             ctcColumn.setCellValueFactory(null);
         }
     }
-    @FXML
-    private void dependentsBoxAction(){
-        dependents.setDisable(!dependents.isDisable());
-        dependentsColumn.setVisible(!ctcColumn.isVisible());
-        if(dependentsColumn.isVisible()){
-            dependentsColumn.setCellValueFactory(cellData -> cellData.getValue().dependentsProperty().asObject());
-        }else{
-            dependentsColumn.setCellValueFactory(null);
-        }
-    }
-    @FXML
-    private void surveyScoreBoxAction(){
-        surveyScore.setDisable(!surveyScore.isDisable());
-        surveyScoreColumn.setVisible(!surveyScoreColumn.isVisible());
-        if(surveyScoreColumn.isVisible()){
-            surveyScoreColumn.setCellValueFactory(cellData -> cellData.getValue().surveyScoreProperty().asObject());
-        }else{
-            surveyScoreColumn.setCellValueFactory(null);
-        }
-    }
+
 }
